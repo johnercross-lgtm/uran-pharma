@@ -42,7 +42,8 @@ COMMON_SOURCES=(
 build_runner() {
   local entry="$1"
   local output="$2"
-  swiftc -O -parse-as-library "$entry" "${COMMON_SOURCES[@]}" -o "$output"
+  # Keep CI stable across Xcode/Swift versions: no optimizer required for gate binaries.
+  swiftc -Onone -parse-as-library "$entry" "${COMMON_SOURCES[@]}" -o "$output"
 }
 
 run_update_strict() {
