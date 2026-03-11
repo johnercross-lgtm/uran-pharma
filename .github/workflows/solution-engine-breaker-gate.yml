@@ -44,4 +44,4 @@ jobs:
         run: |
           chmod +x scripts/run_solution_quality_gate.sh
           chmod +x scripts/run_solution_breaker_gate.sh
-          scripts/run_solution_quality_gate.sh
+          scripts/run_solution_quality_gate.sh --skip-build
