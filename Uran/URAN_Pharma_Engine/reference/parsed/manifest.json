@@ -1,0 +1,23 @@
+{
+  "version": "2.0",
+  "sourceFile": "extemp_reference_200.csv",
+  "rowCount": 461,
+  "files": {
+    "reference/parsed/extemp_reference_200_full_records.json": 461,
+    "reference/parsed/substances_master.json": 461,
+    "reference/parsed/dose_limits.json": 461,
+    "reference/parsed/physchem_reference.json": 461,
+    "reference/parsed/solution_reference.json": 461,
+    "reference/parsed/ointment_reference.json": 461,
+    "reference/parsed/herbal_reference.json": 461,
+    "reference/parsed/tincture_reference.json": 461,
+    "reference/parsed/extract_reference.json": 461,
+    "reference/parsed/safety_reference.json": 461,
+    "reference/parsed/substance_alias_table.json": 461
+  },
+  "notes": [
+    "This package is cleaned of macOS metadata files and RTF wrappers.",
+    "All parsed reference layers preserve source trace via __sourceMeta.",
+    "Full no-loss source mapping is preserved in extemp_reference_200_full_records.json."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "package": "URAN Pharma Engine Full Package",
+  "version": "1.0",
+  "includes": {
+    "reference_parsed": true,
+    "reference_normalization": true,
+    "solutions_spec": true,
+    "engine_support": true,
+    "tests": true
+  },
+  "added_files": [
+    "reference/normalization/NORMALIZATION_DICTIONARY.json",
+    "reference/normalization/REGEX_NORMALIZATION_PATTERNS.json",
+    "engine_support/REFERENCE_PRIORITY_POLICY.json",
+    "engine_support/MANUAL_OVERRIDE_LAYER.json",
+    "engine_support/ENGINE_DECISION_LOG_SCHEMA.json",
+    "tests/RECIPE_BREAKER_TEST_SET.json"
+  ]
+}

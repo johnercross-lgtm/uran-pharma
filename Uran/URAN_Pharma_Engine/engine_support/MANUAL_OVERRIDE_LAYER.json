@@ -1,0 +1,43 @@
+{
+  "version": "1.0",
+  "description": "Manual override layer for exceptional pharmaceutical logic in URAN Pharma.",
+  "globalPolicy": {
+    "enabled": true,
+    "highestPriority": true
+  },
+  "items": [
+    {
+      "overrideKey": "iodum_force_special_path",
+      "overrideType": "substance_override",
+      "enabled": true,
+      "match": {
+        "substanceKeys": [
+          "iodum"
+        ]
+      },
+      "action": {
+        "forceBranch": "special_dissolution_path",
+        "blockBranches": [
+          "aqueous_true_solution"
+        ]
+      },
+      "reason": "Iodum must never silently pass through plain aqueous true solution."
+    },
+    {
+      "overrideKey": "injection_route_block_for_normal_engine",
+      "overrideType": "route_override",
+      "enabled": true,
+      "match": {
+        "route": "injection"
+      },
+      "action": {
+        "forceConfidence": "blocked",
+        "addWarnings": [
+          "sterility_required_but_not_supported",
+          "unsupported_route_claimed_complete"
+        ]
+      },
+      "reason": "Normal solution engine must not claim parenteral completeness."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "description": "Schema for structured decision logging in URAN Pharma engine.",
+  "rootObject": {
+    "logId": "string",
+    "timestamp": "iso_datetime",
+    "engineVersion": "string",
+    "module": "string",
+    "inputType": "free_text | structured | hybrid",
+    "finalStatus": "exact | approximate | heuristic | blocked",
+    "finalSummary": "string"
+  },
+  "requiredSections": [
+    "inputSnapshot",
+    "normalization",
+    "parsing",
+    "substanceResolution",
+    "routeResolution",
+    "classification",
+    "branchSelection",
+    "preCalculationChecks",
+    "calculations",
+    "validation",
+    "confidenceResolution"
+  ]
+}

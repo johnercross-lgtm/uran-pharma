@@ -1,0 +1,125 @@
+{
+  "version": "1.0",
+  "description": "Regex-based normalization patterns for pharmaceutical prescription parsing in URAN Pharma",
+  "patterns": [
+    {
+      "patternKey": "normalize_decimal_comma",
+      "stage": "pre_tokenization",
+      "pattern": "(\\d+),(\\d+)",
+      "replacement": "$1.$2",
+      "flags": "g",
+      "purpose": "Convert decimal comma to decimal dot"
+    },
+    {
+      "patternKey": "normalize_multiple_spaces",
+      "stage": "pre_tokenization",
+      "pattern": "\\s{2,}",
+      "replacement": " ",
+      "flags": "g",
+      "purpose": "Collapse repeated spaces"
+    },
+    {
+      "patternKey": "normalize_unicode_dash",
+      "stage": "pre_tokenization",
+      "pattern": "[—–−]",
+      "replacement": "-",
+      "flags": "g",
+      "purpose": "Normalize long dashes to standard hyphen"
+    },
+    {
+      "patternKey": "normalize_ratio_spacing",
+      "stage": "pre_tokenization",
+      "pattern": "(\\d+)\\s*[:/]\\s*(\\d+)",
+      "replacement": "$1:$2",
+      "flags": "g",
+      "purpose": "Normalize ratio notation"
+    },
+    {
+      "patternKey": "normalize_percent_spacing",
+      "stage": "pre_tokenization",
+      "pattern": "(\\d+(?:\\.\\d+)?)\\s*%",
+      "replacement": "$1%",
+      "flags": "g",
+      "purpose": "Normalize percent spacing"
+    },
+    {
+      "patternKey": "normalize_ml_spacing",
+      "stage": "pre_tokenization",
+      "pattern": "(\\d+(?:\\.\\d+)?)\\s*(ml|mL|мл)\\b",
+      "replacement": "$1 ml",
+      "flags": "gi",
+      "purpose": "Normalize ml notation"
+    },
+    {
+      "patternKey": "normalize_g_spacing",
+      "stage": "pre_tokenization",
+      "pattern": "(\\d+(?:\\.\\d+)?)\\s*(g|gr|г|гр)\\b",
+      "replacement": "$1 g",
+      "flags": "gi",
+      "purpose": "Normalize gram notation"
+    },
+    {
+      "patternKey": "normalize_recipe_start",
+      "stage": "lexical_normalization",
+      "pattern": "\\b(rp\\.?|recipe|рп\\.?)\\b",
+      "replacement": "Rp.",
+      "flags": "gi",
+      "purpose": "Normalize recipe start marker"
+    },
+    {
+      "patternKey": "normalize_ds",
+      "stage": "lexical_normalization",
+      "pattern": "\\b(m\\.?\\s*d\\.?\\s*s\\.?|d\\.?\\s*s\\.?|da\\.?\\s*signa\\.?|signa\\.?|s\\.)\\b",
+      "replacement": "D.S.",
+      "flags": "gi",
+      "purpose": "Normalize signa marker"
+    },
+    {
+      "patternKey": "normalize_solution_abbr",
+      "stage": "lexical_normalization",
+      "pattern": "\\bsol\\.?\\b",
+      "replacement": "Sol.",
+      "flags": "gi",
+      "purpose": "Normalize solution abbreviation"
+    },
+    {
+      "patternKey": "normalize_tincture_abbr",
+      "stage": "lexical_normalization",
+      "pattern": "\\b(t\\s*[-]?\\s*ra\\.?|tr\\.)\\b",
+      "replacement": "Tinctura",
+      "flags": "gi",
+      "purpose": "Normalize tincture abbreviation variants"
+    },
+    {
+      "patternKey": "normalize_extract_abbr",
+      "stage": "lexical_normalization",
+      "pattern": "\\bextr\\.?\\b",
+      "replacement": "Extractum",
+      "flags": "gi",
+      "purpose": "Normalize extract abbreviation"
+    },
+    {
+      "patternKey": "normalize_syrup_abbr",
+      "stage": "lexical_normalization",
+      "pattern": "\\b(sir\\.?|syr\\.?|sirup\\.)\\b",
+      "replacement": "Sirupus",
+      "flags": "gi",
+      "purpose": "Normalize syrup abbreviation"
+    },
+    {
+      "patternKey": "normalize_aqua_purificata_abbr",
+      "stage": "substance_normalization",
+      "pattern": "\\b(aq\\.?\\s*purif\\.?|aq\\.?\\s*purific\\.?|aqua\\s+purificata|aquae\\s+purificatae)\\b",
+      "replacement": "Aqua purificata",
+      "flags": "gi",
+      "purpose": "Normalize purified water variants"
+    }
+  ],
+  "policies": {
+    "applyInOrder": true,
+    "preserveOriginalText": true,
+    "storeMatchedPatternKeys": true,
+    "doNotResolveSubstanceByRegexAloneIfAliasLayerFails": true,
+    "doNotInventMissingRouteFromOneWeakHint": true
+  }
+}

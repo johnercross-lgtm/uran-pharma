@@ -1,0 +1,11 @@
+name_lat_nom,name_lat_gen,type,density,solvent_type,is_volatile,is_flammable,heating_allowed,heating_temp_max_c,default_ethanol_strength,incompatible_with_ethanol,physical_state,storage,interaction_notes
+Spiritus aethylici,Spiritus aethylici,Solv,0.829,ethanol,1,1,forbidden,,90,0,Жидкие,flammable,default ethanol strength 90%
+Spiritus aethylici 70%,Spiritus aethylici 70%,Solv,0.89,ethanol,1,1,forbidden,,90,0,Жидкие,flammable,ethanol dilution profile 70%
+Spiritus aethylici 90%,Spiritus aethylici 90%,Solv,0.829,ethanol,1,1,forbidden,,90,0,Жидкие,flammable,ethanol dilution profile 90%
+Spiritus aethylici 96%,Spiritus aethylici 96%,Solv,0.811,ethanol,1,1,forbidden,,90,0,Жидкие,flammable,ethanol dilution profile 96%
+Aether,Aetheris,Solv,0.715,ether,1,1,forbidden,,,0,Жидкие,volatile flammable,no heating
+Chloroformium,Chloroformii,Solv,1.480,chloroform,1,0,conditional,60,,0,Жидкие,volatile,heating only if needed
+Glycerinum,Glycerini,Solv,1.228,glycerin,0,0,waterBathOnly,50,,0,Жидкие,,viscous non-aqueous solvent
+Oleum pingue,Olei pinguis,Solv,0.925,fattyOil,0,0,waterBathOnly,50,,0,Жидкие,,fatty oil average density
+Oleum Vaselini,Olei Vaselini,Solv,0.883,mineralOil,0,0,waterBathOnly,50,,0,Жидкие,,mineral oil profile
+Vinylinum,Vinylini,Solv,0.912,vinylin,0,0,waterBathOnly,50,,0,Жидкие,,vinylin profile

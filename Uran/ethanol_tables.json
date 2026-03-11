@@ -1,0 +1,78 @@
+{
+  "schema": "uran.ethanol_dilution_tables.v1",
+  "tables": [
+    {
+      "id": "ethanol_dilution_table_5_5_2_mass",
+      "version": 1,
+      "basis": { "resultMass_g": 1000, "temperatureC": 20 },
+      "unit": "g",
+      "targetsPercent": [30, 40, 50, 60, 70, 80, 90, 92],
+      "rows": [
+        { "sourcePercent": 96, "parts": { "30": {"ethanol":262,"water":738}, "40":{"ethanol":355,"water":645}, "50":{"ethanol":452,"water":548}, "60":{"ethanol":555,"water":445}, "70":{"ethanol":665,"water":335}, "80":{"ethanol":783,"water":217}, "90":{"ethanol":913,"water":87}, "92":{"ethanol":941,"water":59} } },
+        { "sourcePercent": 95, "parts": { "30": {"ethanol":266,"water":734}, "40":{"ethanol":360,"water":640}, "50":{"ethanol":459,"water":541}, "60":{"ethanol":564,"water":436}, "70":{"ethanol":675,"water":325}, "80":{"ethanol":795,"water":205}, "90":{"ethanol":927,"water":73}, "92":{"ethanol":955,"water":45} } },
+        { "sourcePercent": 94, "parts": { "30": {"ethanol":270,"water":730}, "40":{"ethanol":366,"water":634}, "50":{"ethanol":466,"water":534}, "60":{"ethanol":572,"water":428}, "70":{"ethanol":686,"water":314}, "80":{"ethanol":807,"water":193}, "90":{"ethanol":941,"water":59}, "92":{"ethanol":970,"water":30} } },
+        { "sourcePercent": 93, "parts": { "30": {"ethanol":275,"water":725}, "40":{"ethanol":371,"water":629}, "50":{"ethanol":473,"water":527}, "60":{"ethanol":581,"water":419}, "70":{"ethanol":696,"water":304}, "80":{"ethanol":820,"water":180}, "90":{"ethanol":956,"water":44}, "92":{"ethanol":985,"water":15} } },
+        { "sourcePercent": 92, "parts": { "30": {"ethanol":279,"water":721}, "40":{"ethanol":377,"water":623}, "50":{"ethanol":481,"water":519}, "60":{"ethanol":590,"water":410}, "70":{"ethanol":707,"water":293}, "80":{"ethanol":832,"water":168}, "90":{"ethanol":970,"water":30} } },
+        { "sourcePercent": 91, "parts": { "30": {"ethanol":283,"water":717}, "40":{"ethanol":383,"water":617}, "50":{"ethanol":488,"water":512}, "60":{"ethanol":599,"water":401}, "70":{"ethanol":717,"water":283}, "80":{"ethanol":845,"water":155}, "90":{"ethanol":985,"water":15} } },
+        { "sourcePercent": 90, "parts": { "30": {"ethanol":287,"water":713}, "40":{"ethanol":389,"water":611}, "50":{"ethanol":495,"water":505}, "60":{"ethanol":608,"water":392}, "70":{"ethanol":728,"water":272}, "80":{"ethanol":858,"water":142} } },
+        { "sourcePercent": 89, "parts": { "30": {"ethanol":292,"water":708}, "40":{"ethanol":395,"water":605}, "50":{"ethanol":503,"water":497}, "60":{"ethanol":617,"water":383}, "70":{"ethanol":739,"water":261}, "80":{"ethanol":871,"water":129} } },
+        { "sourcePercent": 88, "parts": { "30": {"ethanol":296,"water":704}, "40":{"ethanol":401,"water":599}, "50":{"ethanol":511,"water":489}, "60":{"ethanol":627,"water":373}, "70":{"ethanol":751,"water":249}, "80":{"ethanol":884,"water":116} } },
+        { "sourcePercent": 87, "parts": { "30": {"ethanol":301,"water":699}, "40":{"ethanol":407,"water":593}, "50":{"ethanol":518,"water":482}, "60":{"ethanol":636,"water":364}, "70":{"ethanol":762,"water":238}, "80":{"ethanol":898,"water":102} } },
+        { "sourcePercent": 86, "parts": { "30": {"ethanol":305,"water":695}, "40":{"ethanol":413,"water":587}, "50":{"ethanol":526,"water":474}, "60":{"ethanol":646,"water":354}, "70":{"ethanol":774,"water":226}, "80":{"ethanol":911,"water":89} } },
+        { "sourcePercent": 85, "parts": { "30": {"ethanol":310,"water":690}, "40":{"ethanol":419,"water":581}, "50":{"ethanol":534,"water":466}, "60":{"ethanol":656,"water":344}, "70":{"ethanol":786,"water":214}, "80":{"ethanol":925,"water":75} } },
+        { "sourcePercent": 84, "parts": { "30": {"ethanol":315,"water":685}, "40":{"ethanol":426,"water":574}, "50":{"ethanol":543,"water":457}, "60":{"ethanol":666,"water":334}, "70":{"ethanol":798,"water":202}, "80":{"ethanol":940,"water":60} } },
+        { "sourcePercent": 83, "parts": { "30": {"ethanol":320,"water":680}, "40":{"ethanol":432,"water":568}, "50":{"ethanol":551,"water":449}, "60":{"ethanol":676,"water":324}, "70":{"ethanol":810,"water":190}, "80":{"ethanol":954,"water":46} } },
+        { "sourcePercent": 82, "parts": { "30": {"ethanol":325,"water":675}, "40":{"ethanol":439,"water":561}, "50":{"ethanol":560,"water":440}, "60":{"ethanol":687,"water":313}, "70":{"ethanol":823,"water":177}, "80":{"ethanol":969,"water":31} } },
+        { "sourcePercent": 81, "parts": { "30": {"ethanol":330,"water":670}, "40":{"ethanol":446,"water":554}, "50":{"ethanol":568,"water":432}, "60":{"ethanol":698,"water":302}, "70":{"ethanol":836,"water":164}, "80":{"ethanol":984,"water":16} } },
+        { "sourcePercent": 80, "parts": { "30": {"ethanol":335,"water":665}, "40":{"ethanol":453,"water":547}, "50":{"ethanol":577,"water":423}, "60":{"ethanol":709,"water":291}, "70":{"ethanol":849,"water":151} } },
+        { "sourcePercent": 79, "parts": { "30": {"ethanol":340,"water":660}, "40":{"ethanol":460,"water":540}, "50":{"ethanol":587,"water":413}, "60":{"ethanol":720,"water":280}, "70":{"ethanol":863,"water":137} } },
+        { "sourcePercent": 78, "parts": { "30": {"ethanol":346,"water":654}, "40":{"ethanol":468,"water":532}, "50":{"ethanol":596,"water":404}, "60":{"ethanol":732,"water":268}, "70":{"ethanol":876,"water":124} } },
+        { "sourcePercent": 77, "parts": { "30": {"ethanol":351,"water":649}, "40":{"ethanol":475,"water":525}, "50":{"ethanol":605,"water":395}, "60":{"ethanol":743,"water":257}, "70":{"ethanol":890,"water":110} } },
+        { "sourcePercent": 76, "parts": { "30": {"ethanol":357,"water":643}, "40":{"ethanol":483,"water":517}, "50":{"ethanol":615,"water":385}, "60":{"ethanol":755,"water":245}, "70":{"ethanol":905,"water":95} } },
+        { "sourcePercent": 75, "parts": { "30": {"ethanol":363,"water":637}, "40":{"ethanol":491,"water":509}, "50":{"ethanol":625,"water":375}, "60":{"ethanol":768,"water":232}, "70":{"ethanol":920,"water":80} } },
+        { "sourcePercent": 74, "parts": { "30": {"ethanol":369,"water":631}, "40":{"ethanol":499,"water":501}, "50":{"ethanol":636,"water":364}, "60":{"ethanol":781,"water":219}, "70":{"ethanol":935,"water":65} } },
+        { "sourcePercent": 73, "parts": { "30": {"ethanol":375,"water":625}, "40":{"ethanol":507,"water":493}, "50":{"ethanol":646,"water":354}, "60":{"ethanol":794,"water":206}, "70":{"ethanol":951,"water":49} } },
+        { "sourcePercent": 72, "parts": { "30": {"ethanol":381,"water":619}, "40":{"ethanol":516,"water":484}, "50":{"ethanol":657,"water":343}, "60":{"ethanol":807,"water":193}, "70":{"ethanol":967,"water":33} } },
+        { "sourcePercent": 71, "parts": { "30": {"ethanol":388,"water":612}, "40":{"ethanol":525,"water":475}, "50":{"ethanol":669,"water":331}, "60":{"ethanol":821,"water":179}, "70":{"ethanol":983,"water":17} } },
+        { "sourcePercent": 70, "parts": { "30": {"ethanol":394,"water":606}, "40":{"ethanol":534,"water":466}, "50":{"ethanol":680,"water":320}, "60":{"ethanol":835,"water":165} } },
+        { "sourcePercent": 69, "parts": { "30": {"ethanol":401,"water":599}, "40":{"ethanol":543,"water":457}, "50":{"ethanol":692,"water":308}, "60":{"ethanol":849,"water":151} } },
+        { "sourcePercent": 68, "parts": { "30": {"ethanol":408,"water":592}, "40":{"ethanol":553,"water":447}, "50":{"ethanol":704,"water":296}, "60":{"ethanol":864,"water":136} } },
+        { "sourcePercent": 67, "parts": { "30": {"ethanol":416,"water":584}, "40":{"ethanol":562,"water":438}, "50":{"ethanol":716,"water":284}, "60":{"ethanol":879,"water":121} } },
+        { "sourcePercent": 66, "parts": { "30": {"ethanol":423,"water":577}, "40":{"ethanol":572,"water":428}, "50":{"ethanol":729,"water":271}, "60":{"ethanol":895,"water":105} } },
+        { "sourcePercent": 65, "parts": { "30": {"ethanol":431,"water":569}, "40":{"ethanol":583,"water":417}, "50":{"ethanol":742,"water":258}, "60":{"ethanol":911,"water":89} } }
+      ]
+    },
+    {
+      "id": "ethanol_dilution_table_5_5_3_volume_main",
+      "version": 1,
+      "basis": { "resultVolume_ml": 1000, "temperatureC": 20 },
+      "unit": "ml",
+      "targetsPercent": [30, 35, 40, 45, 50, 55, 60, 65],
+      "rows": [
+        { "sourcePercent": 95, "parts": { "30":{"ethanol":316,"water":707}, "35":{"ethanol":368,"water":658}, "40":{"ethanol":421,"water":607}, "45":{"ethanol":474,"water":556}, "50":{"ethanol":526,"water":504}, "55":{"ethanol":579,"water":451}, "60":{"ethanol":632,"water":397}, "65":{"ethanol":684,"water":343} } },
+        { "sourcePercent": 90, "parts": { "30":{"ethanol":333,"water":687}, "35":{"ethanol":389,"water":634}, "40":{"ethanol":444,"water":581}, "45":{"ethanol":500,"water":526}, "50":{"ethanol":556,"water":470}, "55":{"ethanol":611,"water":414}, "60":{"ethanol":667,"water":357}, "65":{"ethanol":722,"water":299} } },
+        { "sourcePercent": 85, "parts": { "30":{"ethanol":353,"water":665}, "35":{"ethanol":412,"water":609}, "40":{"ethanol":471,"water":551}, "45":{"ethanol":529,"water":493}, "50":{"ethanol":588,"water":434}, "55":{"ethanol":647,"water":374}, "60":{"ethanol":706,"water":313}, "65":{"ethanol":765,"water":252} } },
+        { "sourcePercent": 80, "parts": { "30":{"ethanol":375,"water":641}, "35":{"ethanol":438,"water":581}, "40":{"ethanol":500,"water":519}, "45":{"ethanol":562,"water":457}, "50":{"ethanol":625,"water":394}, "55":{"ethanol":688,"water":330}, "60":{"ethanol":750,"water":265}, "65":{"ethanol":812,"water":200} } },
+        { "sourcePercent": 75, "parts": { "30":{"ethanol":400,"water":614}, "35":{"ethanol":467,"water":549}, "40":{"ethanol":533,"water":483}, "45":{"ethanol":600,"water":417}, "50":{"ethanol":667,"water":349}, "55":{"ethanol":733,"water":280}, "60":{"ethanol":800,"water":211}, "65":{"ethanol":867,"water":141} } },
+        { "sourcePercent": 70, "parts": { "30":{"ethanol":429,"water":584}, "35":{"ethanol":500,"water":514}, "40":{"ethanol":571,"water":443}, "45":{"ethanol":643,"water":371}, "50":{"ethanol":714,"water":298}, "55":{"ethanol":786,"water":225}, "60":{"ethanol":857,"water":150}, "65":{"ethanol":929,"water":76} } },
+        { "sourcePercent": 65, "parts": { "30":{"ethanol":462,"water":549}, "35":{"ethanol":538,"water":473}, "40":{"ethanol":615,"water":396}, "45":{"ethanol":692,"water":319}, "50":{"ethanol":769,"water":240}, "55":{"ethanol":846,"water":161}, "60":{"ethanol":923,"water":81} } },
+        { "sourcePercent": 60, "parts": { "30":{"ethanol":500,"water":509}, "35":{"ethanol":583,"water":426}, "40":{"ethanol":667,"water":343}, "45":{"ethanol":750,"water":258}, "50":{"ethanol":833,"water":173}, "55":{"ethanol":916,"water":87} } },
+        { "sourcePercent": 55, "parts": { "30":{"ethanol":545,"water":462}, "35":{"ethanol":636,"water":371}, "40":{"ethanol":727,"water":279}, "45":{"ethanol":818,"water":187}, "50":{"ethanol":909,"water":94} } },
+        { "sourcePercent": 50, "parts": { "30":{"ethanol":600,"water":405}, "35":{"ethanol":700,"water":305}, "40":{"ethanol":800,"water":204}, "45":{"ethanol":900,"water":103} } },
+        { "sourcePercent": 45, "parts": { "30":{"ethanol":667,"water":336}, "35":{"ethanol":778,"water":225}, "40":{"ethanol":889,"water":113} } },
+        { "sourcePercent": 40, "parts": { "30":{"ethanol":750,"water":252}, "35":{"ethanol":875,"water":126} } },
+        { "sourcePercent": 35, "parts": { "30":{"ethanol":857,"water":143} } }
+      ]
+    },
+    {
+      "id": "ethanol_dilution_table_5_5_3_volume_cont_95",
+      "version": 1,
+      "basis": { "resultVolume_ml": 1000, "temperatureC": 20 },
+      "unit": "ml",
+      "targetsPercent": [70, 75, 80, 85, 90],
+      "rows": [
+        { "sourcePercent": 95, "parts": { "70":{"ethanol":737,"water":288}, "75":{"ethanol":778,"water":240}, "80":{"ethanol":824,"water":190}, "85":{"ethanol":875,"water":134}, "90":{"ethanol":933,"water":71} } }
+      ]
+    }
+  ]
+}

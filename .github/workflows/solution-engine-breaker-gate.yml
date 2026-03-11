@@ -1,0 +1,53 @@
+name: Solution Engine Quality Gate
+
+on:
+  pull_request:
+    paths:
+      - "scripts/**"
+      - "Uran/RxEngine/SolutionEngine/**"
+      - "Uran/RxEngine/Core/WaterSolubilityHeuristics.swift"
+      - "Uran/SubstancePropertyCatalog.swift"
+      - "Uran/URAN_Pharma_Engine/tests/RECIPE_BREAKER_TEST_SET.json"
+      - "Uran/URAN_Pharma_Engine/tests/RECIPE_BREAKER_STRICT_SNAPSHOTS.json"
+      - "Uran.xcodeproj/**"
+      - ".github/workflows/solution-engine-breaker-gate.yml"
+  push:
+    branches:
+      - main
+      - master
+      - develop
+    paths:
+      - "scripts/**"
+      - "Uran/RxEngine/SolutionEngine/**"
+      - "Uran/RxEngine/Core/WaterSolubilityHeuristics.swift"
+      - "Uran/SubstancePropertyCatalog.swift"
+      - "Uran/URAN_Pharma_Engine/tests/RECIPE_BREAKER_TEST_SET.json"
+      - "Uran/URAN_Pharma_Engine/tests/RECIPE_BREAKER_STRICT_SNAPSHOTS.json"
+      - "Uran.xcodeproj/**"
+      - ".github/workflows/solution-engine-breaker-gate.yml"
+  workflow_dispatch:
+
+jobs:
+  quality-gate:
+    runs-on: macos-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Toolchain info
+        run: |
+          # No-op marker: keeps paths filter triggered when we need to retrigger PR checks.
+          xcodebuild -version
+          swift --version
+
+      - name: Run solution quality gate
+        run: |
+          chmod +x scripts/run_solution_quality_gate.sh
+          chmod +x scripts/run_solution_breaker_gate.sh
+          scripts/run_solution_quality_gate.sh --skip-build
