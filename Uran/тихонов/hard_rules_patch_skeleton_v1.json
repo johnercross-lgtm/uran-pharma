@@ -1,0 +1,533 @@
+{
+  "metadata": {
+    "generated_at_utc": "2026-03-07T16:23:35.008855+00:00",
+    "source_file": "validated_rules_v1.json",
+    "hard_rules_count": 15,
+    "skeleton_records_count": 30,
+    "targets": [
+      "BaseTechnologyBlock",
+      "InfusionDecoctionBlock",
+      "NonAqueousSolutionsBlock",
+      "OintmentsBlock",
+      "PowdersTriturationsBlock",
+      "PpkRenderer",
+      "SubstancePropertyCatalog",
+      "SuppositoriesBlock",
+      "VMSColloidsBlock",
+      "WaterSolutionsBlock"
+    ]
+  },
+  "records": [
+    {
+      "skeleton_id": "sk_001_SubstancePropertyCatalog",
+      "candidate_id": "cand_00170",
+      "rule_text": "Следует учитывать, что твины и спены несовместимы с салицилатами, производными параокси-бензойной кислоты, фенолами и т.",
+      "category_primary": "safety_incompatibility",
+      "suggested_severity": "blocking_candidate",
+      "target": "SubstancePropertyCatalog",
+      "target_file": "/Users/eugentamara/URAN/Uran/SubstancePropertyCatalog.swift",
+      "integration_kind": "catalog_rule",
+      "todo": [
+        "Добавить/обновить aliases + technologyRules/interactionRules для `HR-cand_00170`.",
+        "Привязать правило к конкретным веществам (латинские/русские алиасы) и типу несовместимости.",
+        "Добавить идентификатор `HR-cand_00170` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00170`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/SubstancePropertyCatalog.swift\n@@\n+        // TODO(Tikhonov cand_00170): Следует учитывать, что твины и спены несовместимы с салицилатами, производными параокси-бензойной кислоты, фенолами и т.\n+        // integration_kind: catalog_rule"
+    },
+    {
+      "skeleton_id": "sk_001_NonAqueousSolutionsBlock",
+      "candidate_id": "cand_00170",
+      "rule_text": "Следует учитывать, что твины и спены несовместимы с салицилатами, производными параокси-бензойной кислоты, фенолами и т.",
+      "category_primary": "safety_incompatibility",
+      "suggested_severity": "blocking_candidate",
+      "target": "NonAqueousSolutionsBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/NonAqueousSolutionsBlock.swift",
+      "integration_kind": "route_rule",
+      "todo": [
+        "В `apply(context:)` добавить ветку-правило `HR-cand_00170` с предикатом по составу/растворителю.",
+        "При срабатывании формировать `context.addIssue(...)` и/или `context.addStep(...)`.",
+        "Проверить конфликт с существующими правилами блока для: \"Следует учитывать, что твины и спены несовместимы с салицилатами, производными параокси-бе...\"",
+        "Добавить идентификатор `HR-cand_00170` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00170`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/NonAqueousSolutionsBlock.swift\n@@\n+        // TODO(Tikhonov cand_00170): Следует учитывать, что твины и спены несовместимы с салицилатами, производными параокси-бензойной кислоты, фенолами и т.\n+        // integration_kind: route_rule"
+    },
+    {
+      "skeleton_id": "sk_001_WaterSolutionsBlock",
+      "candidate_id": "cand_00170",
+      "rule_text": "Следует учитывать, что твины и спены несовместимы с салицилатами, производными параокси-бензойной кислоты, фенолами и т.",
+      "category_primary": "safety_incompatibility",
+      "suggested_severity": "blocking_candidate",
+      "target": "WaterSolutionsBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/WaterSolutionsBlock.swift",
+      "integration_kind": "route_rule",
+      "todo": [
+        "В `apply(context:)` добавить ветку-правило `HR-cand_00170` с предикатом по составу/растворителю.",
+        "При срабатывании формировать `context.addIssue(...)` и/или `context.addStep(...)`.",
+        "Проверить конфликт с существующими правилами блока для: \"Следует учитывать, что твины и спены несовместимы с салицилатами, производными параокси-бе...\"",
+        "Добавить идентификатор `HR-cand_00170` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00170`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/WaterSolutionsBlock.swift\n@@\n+        // TODO(Tikhonov cand_00170): Следует учитывать, что твины и спены несовместимы с салицилатами, производными параокси-бензойной кислоты, фенолами и т.\n+        // integration_kind: route_rule"
+    },
+    {
+      "skeleton_id": "sk_002_OintmentsBlock",
+      "candidate_id": "cand_00036",
+      "rule_text": "Серу осторожно, но тщательно растирают в подогретой ступке, добавляют часть (50,0—60,0 г) основы и диспергируют.",
+      "category_primary": "dissolution",
+      "suggested_severity": "warning_candidate",
+      "target": "OintmentsBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/OintmentsBlock.swift",
+      "integration_kind": "form_rule",
+      "todo": [
+        "Добавить form-specific предикат `HR-cand_00036` в `apply(context:)`.",
+        "Сгенерировать технологический шаг и/или предупреждение в PPK секциях.",
+        "Добавить идентификатор `HR-cand_00036` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00036`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/OintmentsBlock.swift\n@@\n+        // TODO(Tikhonov cand_00036): Серу осторожно, но тщательно растирают в подогретой ступке, добавляют часть (50,0—60,0 г) основы и диспергируют.\n+        // integration_kind: form_rule"
+    },
+    {
+      "skeleton_id": "sk_002_BaseTechnologyBlock",
+      "candidate_id": "cand_00036",
+      "rule_text": "Серу осторожно, но тщательно растирают в подогретой ступке, добавляют часть (50,0—60,0 г) основы и диспергируют.",
+      "category_primary": "dissolution",
+      "suggested_severity": "warning_candidate",
+      "target": "BaseTechnologyBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/BaseTechnologyBlock.swift",
+      "integration_kind": "generic_rule",
+      "todo": [
+        "Добавить интеграцию `HR-cand_00036` в целевой блок.",
+        "Добавить идентификатор `HR-cand_00036` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00036`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/BaseTechnologyBlock.swift\n@@\n+        // TODO(Tikhonov cand_00036): Серу осторожно, но тщательно растирают в подогретой ступке, добавляют часть (50,0—60,0 г) основы и диспергируют.\n+        // integration_kind: generic_rule"
+    },
+    {
+      "skeleton_id": "sk_003_WaterSolutionsBlock",
+      "candidate_id": "cand_00079",
+      "rule_text": "Если калия перманганат прописан в виде концентрированного раствора (3, 4, 5 %), то для ускорения растворения его осторожно растирают в ступке с частью теплой процеженной очищенной воды, а затем добавляют остальное количество растворителя.",
+      "category_primary": "mixing_order",
+      "suggested_severity": "warning_candidate",
+      "target": "WaterSolutionsBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/WaterSolutionsBlock.swift",
+      "integration_kind": "route_rule",
+      "todo": [
+        "В `apply(context:)` добавить ветку-правило `HR-cand_00079` с предикатом по составу/растворителю.",
+        "При срабатывании формировать `context.addIssue(...)` и/или `context.addStep(...)`.",
+        "Проверить конфликт с существующими правилами блока для: \"Если калия перманганат прописан в виде концентрированного раствора (3, 4, 5 %), то для уск...\"",
+        "Добавить идентификатор `HR-cand_00079` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00079`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/WaterSolutionsBlock.swift\n@@\n+        // TODO(Tikhonov cand_00079): Если калия перманганат прописан в виде концентрированного раствора (3, 4, 5 %), то для ускорения растворения его осторожно растирают в ступке с частью теплой процеженной очищенной \n+        // integration_kind: route_rule"
+    },
+    {
+      "skeleton_id": "sk_003_SubstancePropertyCatalog",
+      "candidate_id": "cand_00079",
+      "rule_text": "Если калия перманганат прописан в виде концентрированного раствора (3, 4, 5 %), то для ускорения растворения его осторожно растирают в ступке с частью теплой процеженной очищенной воды, а затем добавляют остальное количество растворителя.",
+      "category_primary": "mixing_order",
+      "suggested_severity": "warning_candidate",
+      "target": "SubstancePropertyCatalog",
+      "target_file": "/Users/eugentamara/URAN/Uran/SubstancePropertyCatalog.swift",
+      "integration_kind": "catalog_rule",
+      "todo": [
+        "Добавить/обновить aliases + technologyRules/interactionRules для `HR-cand_00079`.",
+        "Привязать правило к конкретным веществам (латинские/русские алиасы) и типу несовместимости.",
+        "Добавить идентификатор `HR-cand_00079` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00079`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/SubstancePropertyCatalog.swift\n@@\n+        // TODO(Tikhonov cand_00079): Если калия перманганат прописан в виде концентрированного раствора (3, 4, 5 %), то для ускорения растворения его осторожно растирают в ступке с частью теплой процеженной очищенной \n+        // integration_kind: catalog_rule"
+    },
+    {
+      "skeleton_id": "sk_004_NonAqueousSolutionsBlock",
+      "candidate_id": "cand_00223",
+      "rule_text": "Нагревать хлороформ при растворении парафина необходимо очень осторожно, неплотно прикрыв склянку, чтобы не произошло разрыва флакона.",
+      "category_primary": "heating",
+      "suggested_severity": "warning_candidate",
+      "target": "NonAqueousSolutionsBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/NonAqueousSolutionsBlock.swift",
+      "integration_kind": "route_rule",
+      "todo": [
+        "В `apply(context:)` добавить ветку-правило `HR-cand_00223` с предикатом по составу/растворителю.",
+        "При срабатывании формировать `context.addIssue(...)` и/или `context.addStep(...)`.",
+        "Проверить конфликт с существующими правилами блока для: \"Нагревать хлороформ при растворении парафина необходимо очень осторожно, неплотно прикрыв ...\"",
+        "Добавить идентификатор `HR-cand_00223` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00223`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/NonAqueousSolutionsBlock.swift\n@@\n+        // TODO(Tikhonov cand_00223): Нагревать хлороформ при растворении парафина необходимо очень осторожно, неплотно прикрыв склянку, чтобы не произошло разрыва флакона.\n+        // integration_kind: route_rule"
+    },
+    {
+      "skeleton_id": "sk_004_SubstancePropertyCatalog",
+      "candidate_id": "cand_00223",
+      "rule_text": "Нагревать хлороформ при растворении парафина необходимо очень осторожно, неплотно прикрыв склянку, чтобы не произошло разрыва флакона.",
+      "category_primary": "heating",
+      "suggested_severity": "warning_candidate",
+      "target": "SubstancePropertyCatalog",
+      "target_file": "/Users/eugentamara/URAN/Uran/SubstancePropertyCatalog.swift",
+      "integration_kind": "catalog_rule",
+      "todo": [
+        "Добавить/обновить aliases + technologyRules/interactionRules для `HR-cand_00223`.",
+        "Привязать правило к конкретным веществам (латинские/русские алиасы) и типу несовместимости.",
+        "Добавить идентификатор `HR-cand_00223` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00223`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/SubstancePropertyCatalog.swift\n@@\n+        // TODO(Tikhonov cand_00223): Нагревать хлороформ при растворении парафина необходимо очень осторожно, неплотно прикрыв склянку, чтобы не произошло разрыва флакона.\n+        // integration_kind: catalog_rule"
+    },
+    {
+      "skeleton_id": "sk_005_BaseTechnologyBlock",
+      "candidate_id": "cand_00004",
+      "rule_text": "Вследствие большой вязкости растворение в нем лекарственных веществ при комнатной температуре происходит медленно, поэтому его следует производить при нагревании на водяной бане до температуры 40—60 °С.",
+      "category_primary": "dissolution",
+      "suggested_severity": "info_candidate",
+      "target": "BaseTechnologyBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/BaseTechnologyBlock.swift",
+      "integration_kind": "generic_rule",
+      "todo": [
+        "Добавить интеграцию `HR-cand_00004` в целевой блок.",
+        "Добавить идентификатор `HR-cand_00004` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00004`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/BaseTechnologyBlock.swift\n@@\n+        // TODO(Tikhonov cand_00004): Вследствие большой вязкости растворение в нем лекарственных веществ при комнатной температуре происходит медленно, поэтому его следует производить при нагревании на водяной бане до\n+        // integration_kind: generic_rule"
+    },
+    {
+      "skeleton_id": "sk_006_BaseTechnologyBlock",
+      "candidate_id": "cand_00005",
+      "rule_text": "Растворение лекарственных веществ в них, как и в глицерине, следует производить при нагревании на водяной бане.",
+      "category_primary": "dissolution",
+      "suggested_severity": "info_candidate",
+      "target": "BaseTechnologyBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/BaseTechnologyBlock.swift",
+      "integration_kind": "generic_rule",
+      "todo": [
+        "Добавить интеграцию `HR-cand_00005` в целевой блок.",
+        "Добавить идентификатор `HR-cand_00005` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00005`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/BaseTechnologyBlock.swift\n@@\n+        // TODO(Tikhonov cand_00005): Растворение лекарственных веществ в них, как и в глицерине, следует производить при нагревании на водяной бане.\n+        // integration_kind: generic_rule"
+    },
+    {
+      "skeleton_id": "sk_007_BaseTechnologyBlock",
+      "candidate_id": "cand_00013",
+      "rule_text": "Лекарства с антибиотиками отпускают в стерильной посуде, максимально исключающей попадание микрофлоры, оформляют этикетками «Приготовлено асептически», «Хранить в прохладном месте».",
+      "category_primary": "sterility",
+      "suggested_severity": "info_candidate",
+      "target": "BaseTechnologyBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/BaseTechnologyBlock.swift",
+      "integration_kind": "generic_rule",
+      "todo": [
+        "Добавить интеграцию `HR-cand_00013` в целевой блок.",
+        "Добавить идентификатор `HR-cand_00013` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00013`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/BaseTechnologyBlock.swift\n@@\n+        // TODO(Tikhonov cand_00013): Лекарства с антибиотиками отпускают в стерильной посуде, максимально исключающей попадание микрофлоры, оформляют этикетками «Приготовлено асептически», «Хранить в прохладном месте»\n+        // integration_kind: generic_rule"
+    },
+    {
+      "skeleton_id": "sk_007_PpkRenderer",
+      "candidate_id": "cand_00013",
+      "rule_text": "Лекарства с антибиотиками отпускают в стерильной посуде, максимально исключающей попадание микрофлоры, оформляют этикетками «Приготовлено асептически», «Хранить в прохладном месте».",
+      "category_primary": "sterility",
+      "suggested_severity": "info_candidate",
+      "target": "PpkRenderer",
+      "target_file": "/Users/eugentamara/URAN/Uran/PpkRenderer.swift",
+      "integration_kind": "generic_rule",
+      "todo": [
+        "Добавить интеграцию `HR-cand_00013` в целевой блок.",
+        "Добавить идентификатор `HR-cand_00013` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00013`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/PpkRenderer.swift\n@@\n+        // TODO(Tikhonov cand_00013): Лекарства с антибиотиками отпускают в стерильной посуде, максимально исключающей попадание микрофлоры, оформляют этикетками «Приготовлено асептически», «Хранить в прохладном месте»\n+        // integration_kind: generic_rule"
+    },
+    {
+      "skeleton_id": "sk_008_PowdersTriturationsBlock",
+      "candidate_id": "cand_00014",
+      "rule_text": "Присыпки, применяемые для нанесения на раны, поврежденную кожу или слизистые оболочки, а также порошки для новорожденных должны готовиться в асептических условиях, а если они выдерживают воздействие высокой температуры — должны подвергаться стерилизации.",
+      "category_primary": "sterility",
+      "suggested_severity": "info_candidate",
+      "target": "PowdersTriturationsBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/PowdersTriturationsBlock.swift",
+      "integration_kind": "form_rule",
+      "todo": [
+        "Добавить form-specific предикат `HR-cand_00014` в `apply(context:)`.",
+        "Сгенерировать технологический шаг и/или предупреждение в PPK секциях.",
+        "Добавить идентификатор `HR-cand_00014` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00014`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/PowdersTriturationsBlock.swift\n@@\n+        // TODO(Tikhonov cand_00014): Присыпки, применяемые для нанесения на раны, поврежденную кожу или слизистые оболочки, а также порошки для новорожденных должны готовиться в асептических условиях, а если они выдер\n+        // integration_kind: form_rule"
+    },
+    {
+      "skeleton_id": "sk_008_BaseTechnologyBlock",
+      "candidate_id": "cand_00014",
+      "rule_text": "Присыпки, применяемые для нанесения на раны, поврежденную кожу или слизистые оболочки, а также порошки для новорожденных должны готовиться в асептических условиях, а если они выдерживают воздействие высокой температуры — должны подвергаться стерилизации.",
+      "category_primary": "sterility",
+      "suggested_severity": "info_candidate",
+      "target": "BaseTechnologyBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/BaseTechnologyBlock.swift",
+      "integration_kind": "generic_rule",
+      "todo": [
+        "Добавить интеграцию `HR-cand_00014` в целевой блок.",
+        "Добавить идентификатор `HR-cand_00014` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00014`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/BaseTechnologyBlock.swift\n@@\n+        // TODO(Tikhonov cand_00014): Присыпки, применяемые для нанесения на раны, поврежденную кожу или слизистые оболочки, а также порошки для новорожденных должны готовиться в асептических условиях, а если они выдер\n+        // integration_kind: generic_rule"
+    },
+    {
+      "skeleton_id": "sk_008_PpkRenderer",
+      "candidate_id": "cand_00014",
+      "rule_text": "Присыпки, применяемые для нанесения на раны, поврежденную кожу или слизистые оболочки, а также порошки для новорожденных должны готовиться в асептических условиях, а если они выдерживают воздействие высокой температуры — должны подвергаться стерилизации.",
+      "category_primary": "sterility",
+      "suggested_severity": "info_candidate",
+      "target": "PpkRenderer",
+      "target_file": "/Users/eugentamara/URAN/Uran/PpkRenderer.swift",
+      "integration_kind": "generic_rule",
+      "todo": [
+        "Добавить интеграцию `HR-cand_00014` в целевой блок.",
+        "Добавить идентификатор `HR-cand_00014` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00014`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/PpkRenderer.swift\n@@\n+        // TODO(Tikhonov cand_00014): Присыпки, применяемые для нанесения на раны, поврежденную кожу или слизистые оболочки, а также порошки для новорожденных должны готовиться в асептических условиях, а если они выдер\n+        // integration_kind: generic_rule"
+    },
+    {
+      "skeleton_id": "sk_009_InfusionDecoctionBlock",
+      "candidate_id": "cand_00027",
+      "rule_text": "Отвары из данной группы сырья немедленно процеживают после снятия инфундирки с водяной бани, так как дубильные вещества хорошо растворимы в горячей воде, а при охлаждении выпадают в виде хлопьевидного осадка.",
+      "category_primary": "safety_incompatibility",
+      "suggested_severity": "info_candidate",
+      "target": "InfusionDecoctionBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/InfusionDecoctionBlock.swift",
+      "integration_kind": "form_rule",
+      "todo": [
+        "Добавить form-specific предикат `HR-cand_00027` в `apply(context:)`.",
+        "Сгенерировать технологический шаг и/или предупреждение в PPK секциях.",
+        "Добавить идентификатор `HR-cand_00027` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00027`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/InfusionDecoctionBlock.swift\n@@\n+        // TODO(Tikhonov cand_00027): Отвары из данной группы сырья немедленно процеживают после снятия инфундирки с водяной бани, так как дубильные вещества хорошо растворимы в горячей воде, а при охлаждении выпадают \n+        // integration_kind: form_rule"
+    },
+    {
+      "skeleton_id": "sk_009_WaterSolutionsBlock",
+      "candidate_id": "cand_00027",
+      "rule_text": "Отвары из данной группы сырья немедленно процеживают после снятия инфундирки с водяной бани, так как дубильные вещества хорошо растворимы в горячей воде, а при охлаждении выпадают в виде хлопьевидного осадка.",
+      "category_primary": "safety_incompatibility",
+      "suggested_severity": "info_candidate",
+      "target": "WaterSolutionsBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/WaterSolutionsBlock.swift",
+      "integration_kind": "route_rule",
+      "todo": [
+        "В `apply(context:)` добавить ветку-правило `HR-cand_00027` с предикатом по составу/растворителю.",
+        "При срабатывании формировать `context.addIssue(...)` и/или `context.addStep(...)`.",
+        "Проверить конфликт с существующими правилами блока для: \"Отвары из данной группы сырья немедленно процеживают после снятия инфундирки с водяной бан...\"",
+        "Добавить идентификатор `HR-cand_00027` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00027`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/WaterSolutionsBlock.swift\n@@\n+        // TODO(Tikhonov cand_00027): Отвары из данной группы сырья немедленно процеживают после снятия инфундирки с водяной бани, так как дубильные вещества хорошо растворимы в горячей воде, а при охлаждении выпадают \n+        // integration_kind: route_rule"
+    },
+    {
+      "skeleton_id": "sk_010_NonAqueousSolutionsBlock",
+      "candidate_id": "cand_00016",
+      "rule_text": "В сухую склянку для отпуска из темного стекла помещают 2,0 г ментола, тарируют и отвешивают 80,0 г подсолнечного масла, растворяют (можно при нагревании на теплой водяной бане).",
+      "category_primary": "dissolution",
+      "suggested_severity": "info_candidate",
+      "target": "NonAqueousSolutionsBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/NonAqueousSolutionsBlock.swift",
+      "integration_kind": "route_rule",
+      "todo": [
+        "В `apply(context:)` добавить ветку-правило `HR-cand_00016` с предикатом по составу/растворителю.",
+        "При срабатывании формировать `context.addIssue(...)` и/или `context.addStep(...)`.",
+        "Проверить конфликт с существующими правилами блока для: \"В сухую склянку для отпуска из темного стекла помещают 2,0 г ментола, тарируют и отвешиваю...\"",
+        "Добавить идентификатор `HR-cand_00016` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00016`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/NonAqueousSolutionsBlock.swift\n@@\n+        // TODO(Tikhonov cand_00016): В сухую склянку для отпуска из темного стекла помещают 2,0 г ментола, тарируют и отвешивают 80,0 г подсолнечного масла, растворяют (можно при нагревании на теплой водяной бане).\n+        // integration_kind: route_rule"
+    },
+    {
+      "skeleton_id": "sk_010_SubstancePropertyCatalog",
+      "candidate_id": "cand_00016",
+      "rule_text": "В сухую склянку для отпуска из темного стекла помещают 2,0 г ментола, тарируют и отвешивают 80,0 г подсолнечного масла, растворяют (можно при нагревании на теплой водяной бане).",
+      "category_primary": "dissolution",
+      "suggested_severity": "info_candidate",
+      "target": "SubstancePropertyCatalog",
+      "target_file": "/Users/eugentamara/URAN/Uran/SubstancePropertyCatalog.swift",
+      "integration_kind": "catalog_rule",
+      "todo": [
+        "Добавить/обновить aliases + technologyRules/interactionRules для `HR-cand_00016`.",
+        "Привязать правило к конкретным веществам (латинские/русские алиасы) и типу несовместимости.",
+        "Добавить идентификатор `HR-cand_00016` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00016`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/SubstancePropertyCatalog.swift\n@@\n+        // TODO(Tikhonov cand_00016): В сухую склянку для отпуска из темного стекла помещают 2,0 г ментола, тарируют и отвешивают 80,0 г подсолнечного масла, растворяют (можно при нагревании на теплой водяной бане).\n+        // integration_kind: catalog_rule"
+    },
+    {
+      "skeleton_id": "sk_011_NonAqueousSolutionsBlock",
+      "candidate_id": "cand_00018",
+      "rule_text": "В фарфоровую чашку отвешивают 20,0 г касторового масла и растворяют в нем 1,0 г камфоры, можно при нагревании (до 40 °С) на водяной бане.",
+      "category_primary": "dissolution",
+      "suggested_severity": "info_candidate",
+      "target": "NonAqueousSolutionsBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/NonAqueousSolutionsBlock.swift",
+      "integration_kind": "route_rule",
+      "todo": [
+        "В `apply(context:)` добавить ветку-правило `HR-cand_00018` с предикатом по составу/растворителю.",
+        "При срабатывании формировать `context.addIssue(...)` и/или `context.addStep(...)`.",
+        "Проверить конфликт с существующими правилами блока для: \"В фарфоровую чашку отвешивают 20,0 г касторового масла и растворяют в нем 1,0 г камфоры, м...\"",
+        "Добавить идентификатор `HR-cand_00018` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00018`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/NonAqueousSolutionsBlock.swift\n@@\n+        // TODO(Tikhonov cand_00018): В фарфоровую чашку отвешивают 20,0 г касторового масла и растворяют в нем 1,0 г камфоры, можно при нагревании (до 40 °С) на водяной бане.\n+        // integration_kind: route_rule"
+    },
+    {
+      "skeleton_id": "sk_011_SubstancePropertyCatalog",
+      "candidate_id": "cand_00018",
+      "rule_text": "В фарфоровую чашку отвешивают 20,0 г касторового масла и растворяют в нем 1,0 г камфоры, можно при нагревании (до 40 °С) на водяной бане.",
+      "category_primary": "dissolution",
+      "suggested_severity": "info_candidate",
+      "target": "SubstancePropertyCatalog",
+      "target_file": "/Users/eugentamara/URAN/Uran/SubstancePropertyCatalog.swift",
+      "integration_kind": "catalog_rule",
+      "todo": [
+        "Добавить/обновить aliases + technologyRules/interactionRules для `HR-cand_00018`.",
+        "Привязать правило к конкретным веществам (латинские/русские алиасы) и типу несовместимости.",
+        "Добавить идентификатор `HR-cand_00018` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00018`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/SubstancePropertyCatalog.swift\n@@\n+        // TODO(Tikhonov cand_00018): В фарфоровую чашку отвешивают 20,0 г касторового масла и растворяют в нем 1,0 г камфоры, можно при нагревании (до 40 °С) на водяной бане.\n+        // integration_kind: catalog_rule"
+    },
+    {
+      "skeleton_id": "sk_012_OintmentsBlock",
+      "candidate_id": "cand_00019",
+      "rule_text": "Лекарственные вещества растворяют в расплавленной основе в фарфоровой чашке при осторожном нагревании на водяной бане.",
+      "category_primary": "dissolution",
+      "suggested_severity": "info_candidate",
+      "target": "OintmentsBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/OintmentsBlock.swift",
+      "integration_kind": "form_rule",
+      "todo": [
+        "Добавить form-specific предикат `HR-cand_00019` в `apply(context:)`.",
+        "Сгенерировать технологический шаг и/или предупреждение в PPK секциях.",
+        "Добавить идентификатор `HR-cand_00019` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00019`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/OintmentsBlock.swift\n@@\n+        // TODO(Tikhonov cand_00019): Лекарственные вещества растворяют в расплавленной основе в фарфоровой чашке при осторожном нагревании на водяной бане.\n+        // integration_kind: form_rule"
+    },
+    {
+      "skeleton_id": "sk_012_SuppositoriesBlock",
+      "candidate_id": "cand_00019",
+      "rule_text": "Лекарственные вещества растворяют в расплавленной основе в фарфоровой чашке при осторожном нагревании на водяной бане.",
+      "category_primary": "dissolution",
+      "suggested_severity": "info_candidate",
+      "target": "SuppositoriesBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/SuppositoriesBlock.swift",
+      "integration_kind": "form_rule",
+      "todo": [
+        "Добавить form-specific предикат `HR-cand_00019` в `apply(context:)`.",
+        "Сгенерировать технологический шаг и/или предупреждение в PPK секциях.",
+        "Добавить идентификатор `HR-cand_00019` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00019`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/SuppositoriesBlock.swift\n@@\n+        // TODO(Tikhonov cand_00019): Лекарственные вещества растворяют в расплавленной основе в фарфоровой чашке при осторожном нагревании на водяной бане.\n+        // integration_kind: form_rule"
+    },
+    {
+      "skeleton_id": "sk_013_InfusionDecoctionBlock",
+      "candidate_id": "cand_00021",
+      "rule_text": "По истечении указанного выше времени инфундирку снимают с водяной бани и охлаждают при комнатной температуре ( настои – 45, отвары – 10 минут ), после чего процеживают в мерный цилиндр ( при помощи пресс-цидилки ) через двойной слой марли и ватный тампон в устье воронки, отжимают остаток растительного материала и добавляют воду ( через тот же растительный материал ) до предписанного объёма вытяжки.",
+      "category_primary": "heating",
+      "suggested_severity": "info_candidate",
+      "target": "InfusionDecoctionBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/InfusionDecoctionBlock.swift",
+      "integration_kind": "form_rule",
+      "todo": [
+        "Добавить form-specific предикат `HR-cand_00021` в `apply(context:)`.",
+        "Сгенерировать технологический шаг и/или предупреждение в PPK секциях.",
+        "Добавить идентификатор `HR-cand_00021` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00021`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/InfusionDecoctionBlock.swift\n@@\n+        // TODO(Tikhonov cand_00021): По истечении указанного выше времени инфундирку снимают с водяной бани и охлаждают при комнатной температуре ( настои – 45, отвары – 10 минут ), после чего процеживают в мерный цил\n+        // integration_kind: form_rule"
+    },
+    {
+      "skeleton_id": "sk_014_OintmentsBlock",
+      "candidate_id": "cand_00023",
+      "rule_text": "Мазь для носа Колларгол (3,0г) растирают в ступке с водой (20 капель) и оставляют на несколько минут, потом добавляют ланолин водный (2,0г) и перемешивают до поглощения раствора, после чего добавляют вазелин и смешивают до однородности.",
+      "category_primary": "mixing_order",
+      "suggested_severity": "info_candidate",
+      "target": "OintmentsBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/OintmentsBlock.swift",
+      "integration_kind": "form_rule",
+      "todo": [
+        "Добавить form-specific предикат `HR-cand_00023` в `apply(context:)`.",
+        "Сгенерировать технологический шаг и/или предупреждение в PPK секциях.",
+        "Добавить идентификатор `HR-cand_00023` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00023`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/OintmentsBlock.swift\n@@\n+        // TODO(Tikhonov cand_00023): Мазь для носа Колларгол (3,0г) растирают в ступке с водой (20 капель) и оставляют на несколько минут, потом добавляют ланолин водный (2,0г) и перемешивают до поглощения раствора, п\n+        // integration_kind: form_rule"
+    },
+    {
+      "skeleton_id": "sk_014_WaterSolutionsBlock",
+      "candidate_id": "cand_00023",
+      "rule_text": "Мазь для носа Колларгол (3,0г) растирают в ступке с водой (20 капель) и оставляют на несколько минут, потом добавляют ланолин водный (2,0г) и перемешивают до поглощения раствора, после чего добавляют вазелин и смешивают до однородности.",
+      "category_primary": "mixing_order",
+      "suggested_severity": "info_candidate",
+      "target": "WaterSolutionsBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/WaterSolutionsBlock.swift",
+      "integration_kind": "route_rule",
+      "todo": [
+        "В `apply(context:)` добавить ветку-правило `HR-cand_00023` с предикатом по составу/растворителю.",
+        "При срабатывании формировать `context.addIssue(...)` и/или `context.addStep(...)`.",
+        "Проверить конфликт с существующими правилами блока для: \"Мазь для носа Колларгол (3,0г) растирают в ступке с водой (20 капель) и оставляют на неско...\"",
+        "Добавить идентификатор `HR-cand_00023` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00023`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/WaterSolutionsBlock.swift\n@@\n+        // TODO(Tikhonov cand_00023): Мазь для носа Колларгол (3,0г) растирают в ступке с водой (20 капель) и оставляют на несколько минут, потом добавляют ланолин водный (2,0г) и перемешивают до поглощения раствора, п\n+        // integration_kind: route_rule"
+    },
+    {
+      "skeleton_id": "sk_015_VMSColloidsBlock",
+      "candidate_id": "cand_00032",
+      "rule_text": "В данном случае в ступке растирают протаргол с 6—8 каплями глицерина, после чего его растворяют в воде (0,9 мл).",
+      "category_primary": "dissolution",
+      "suggested_severity": "info_candidate",
+      "target": "VMSColloidsBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/VMSColloidsBlock.swift",
+      "integration_kind": "generic_rule",
+      "todo": [
+        "Добавить интеграцию `HR-cand_00032` в целевой блок.",
+        "Добавить идентификатор `HR-cand_00032` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00032`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/VMSColloidsBlock.swift\n@@\n+        // TODO(Tikhonov cand_00032): В данном случае в ступке растирают протаргол с 6—8 каплями глицерина, после чего его растворяют в воде (0,9 мл).\n+        // integration_kind: generic_rule"
+    },
+    {
+      "skeleton_id": "sk_015_WaterSolutionsBlock",
+      "candidate_id": "cand_00032",
+      "rule_text": "В данном случае в ступке растирают протаргол с 6—8 каплями глицерина, после чего его растворяют в воде (0,9 мл).",
+      "category_primary": "dissolution",
+      "suggested_severity": "info_candidate",
+      "target": "WaterSolutionsBlock",
+      "target_file": "/Users/eugentamara/URAN/Uran/RxEngine/Blocks/WaterSolutionsBlock.swift",
+      "integration_kind": "route_rule",
+      "todo": [
+        "В `apply(context:)` добавить ветку-правило `HR-cand_00032` с предикатом по составу/растворителю.",
+        "При срабатывании формировать `context.addIssue(...)` и/или `context.addStep(...)`.",
+        "Проверить конфликт с существующими правилами блока для: \"В данном случае в ступке растирают протаргол с 6—8 каплями глицерина, после чего его раств...\"",
+        "Добавить идентификатор `HR-cand_00032` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00032`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/RxEngine/Blocks/WaterSolutionsBlock.swift\n@@\n+        // TODO(Tikhonov cand_00032): В данном случае в ступке растирают протаргол с 6—8 каплями глицерина, после чего его растворяют в воде (0,9 мл).\n+        // integration_kind: route_rule"
+    },
+    {
+      "skeleton_id": "sk_015_SubstancePropertyCatalog",
+      "candidate_id": "cand_00032",
+      "rule_text": "В данном случае в ступке растирают протаргол с 6—8 каплями глицерина, после чего его растворяют в воде (0,9 мл).",
+      "category_primary": "dissolution",
+      "suggested_severity": "info_candidate",
+      "target": "SubstancePropertyCatalog",
+      "target_file": "/Users/eugentamara/URAN/Uran/SubstancePropertyCatalog.swift",
+      "integration_kind": "catalog_rule",
+      "todo": [
+        "Добавить/обновить aliases + technologyRules/interactionRules для `HR-cand_00032`.",
+        "Привязать правило к конкретным веществам (латинские/русские алиасы) и типу несовместимости.",
+        "Добавить идентификатор `HR-cand_00032` в локальный список hard-rules блока.",
+        "Добавить unit-тест/fixture на срабатывание `HR-cand_00032`."
+      ],
+      "patch_hunk_skeleton": "*** Update File: /Users/eugentamara/URAN/Uran/SubstancePropertyCatalog.swift\n@@\n+        // TODO(Tikhonov cand_00032): В данном случае в ступке растирают протаргол с 6—8 каплями глицерина, после чего его растворяют в воде (0,9 мл).\n+        // integration_kind: catalog_rule"
+    }
+  ]
+}

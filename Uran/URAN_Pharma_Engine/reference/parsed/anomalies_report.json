@@ -1,0 +1,31 @@
+{
+  "version": "2.0",
+  "sourceFile": "extemp_reference_200.csv",
+  "anomalyCount": 3,
+  "items": [
+    {
+      "csvLine": 37,
+      "type": "blank_row",
+      "rawLength": 0,
+      "rawRow": []
+    },
+    {
+      "csvLine": 272,
+      "type": "row_length_mismatch_fixed",
+      "rawLength": 72,
+      "expectedLength": 73,
+      "fixedLength": 73,
+      "fixNote": "Inserted missing empty field at column 17 (ointment_note) to realign pediatric and subsequent fields.",
+      "name": "Protargolum"
+    },
+    {
+      "csvLine": 273,
+      "type": "row_length_mismatch_fixed",
+      "rawLength": 74,
+      "expectedLength": 73,
+      "fixedLength": 73,
+      "fixNote": "Removed one extra empty field before Solubility to realign Storage/InteractionNotes and subsequent fields.",
+      "name": "Pepsinum"
+    }
+  ]
+}

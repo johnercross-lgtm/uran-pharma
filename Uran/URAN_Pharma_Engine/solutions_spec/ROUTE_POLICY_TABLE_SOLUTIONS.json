@@ -1,0 +1,389 @@
+{
+  "version": "1.0",
+  "description": "Route-dependent policy table for pharmaceutical solutions in URAN Pharma",
+  "items": [
+    {
+      "routeKey": "oral",
+      "aliases": [
+        "per os",
+        "oral",
+        "internally"
+      ],
+      "routeType": "internal",
+      "allowedSolutionBranches": [
+        "aqueous_true_solution",
+        "aqueous_burette_solution",
+        "standard_solution_mix",
+        "mixed_solution_reference_dependent"
+      ],
+      "defaultPackaging": "glass_bottle",
+      "defaultLabels": [
+        "internal_use"
+      ],
+      "additionalLabels": [],
+      "requiresSterility": false,
+      "requiresIsotonicityCheck": false,
+      "requiresPHCheck": false,
+      "requiresDoseControlWhenApplicable": true,
+      "defaultDoseParserEnabled": true,
+      "supportsSpoonDosing": true,
+      "supportsMlDosing": true,
+      "supportsDropDosing": true,
+      "defaultQualityControl": [
+        "appearance",
+        "clarity_if_true_solution",
+        "absence_of_mechanical_particles",
+        "final_volume_check",
+        "label_check"
+      ],
+      "forbiddenByDefault": [
+        "sterile_claim_without_reference"
+      ],
+      "technologyPolicy": {
+        "allowHeatingIfIngredientAllows": true,
+        "allowRoutineFiltrationIfIndicated": true,
+        "allowDarkGlassIfComponentRequires": true,
+        "allowCoolStorageIfComponentRequires": true,
+        "defaultShakeLabel": false
+      },
+      "notes": [
+        "Main route for mixtures and oral solutions",
+        "Dose control may be required for potent/poisonous substances"
+      ]
+    },
+    {
+      "routeKey": "external",
+      "aliases": [
+        "external",
+        "for external use"
+      ],
+      "routeType": "external",
+      "allowedSolutionBranches": [
+        "aqueous_true_solution",
+        "standard_solution_mix",
+        "non_aqueous_solution",
+        "alcoholic_solution",
+        "glycerinic_solution",
+        "oily_solution",
+        "volatile_non_aqueous_solution"
+      ],
+      "defaultPackaging": "glass_bottle",
+      "defaultLabels": [
+        "external_use"
+      ],
+      "additionalLabels": [],
+      "requiresSterility": false,
+      "requiresIsotonicityCheck": false,
+      "requiresPHCheck": false,
+      "requiresDoseControlWhenApplicable": false,
+      "defaultDoseParserEnabled": false,
+      "supportsSpoonDosing": false,
+      "supportsMlDosing": false,
+      "supportsDropDosing": false,
+      "defaultQualityControl": [
+        "appearance",
+        "clarity_if_true_solution",
+        "absence_of_mechanical_particles",
+        "final_volume_check",
+        "label_check"
+      ],
+      "forbiddenByDefault": [],
+      "technologyPolicy": {
+        "allowHeatingIfIngredientAllows": true,
+        "allowRoutineFiltrationIfIndicated": true,
+        "allowDarkGlassIfComponentRequires": true,
+        "allowCoolStorageIfComponentRequires": true,
+        "defaultShakeLabel": false
+      },
+      "notes": [
+        "Broader solvent options than oral route",
+        "Alcoholic, oily, and volatile branches are often route-compatible here"
+      ]
+    },
+    {
+      "routeKey": "ophthalmic",
+      "aliases": [
+        "ocular",
+        "ophthalmic",
+        "eye drops",
+        "pro oculis"
+      ],
+      "routeType": "ophthalmic",
+      "allowedSolutionBranches": [
+        "aqueous_true_solution_reference_restricted",
+        "special_ophthalmic_solution_reference_required"
+      ],
+      "defaultPackaging": "sterile_dropper_bottle",
+      "defaultLabels": [
+        "for_eyes"
+      ],
+      "additionalLabels": [
+        "sterile_if_reference_supported"
+      ],
+      "requiresSterility": true,
+      "requiresIsotonicityCheck": true,
+      "requiresPHCheck": true,
+      "requiresDoseControlWhenApplicable": false,
+      "defaultDoseParserEnabled": false,
+      "supportsSpoonDosing": false,
+      "supportsMlDosing": false,
+      "supportsDropDosing": true,
+      "defaultQualityControl": [
+        "appearance",
+        "clarity",
+        "absence_of_mechanical_particles",
+        "sterility_if_applicable",
+        "final_volume_check",
+        "label_check"
+      ],
+      "forbiddenByDefault": [
+        "non_aqueous_solution_without_reference",
+        "routine_nonsterile_claim",
+        "ordinary_oral_packaging"
+      ],
+      "technologyPolicy": {
+        "allowHeatingIfIngredientAllows": false,
+        "allowRoutineFiltrationIfIndicated": false,
+        "allowDarkGlassIfComponentRequires": true,
+        "allowCoolStorageIfComponentRequires": true,
+        "defaultShakeLabel": false
+      },
+      "notes": [
+        "Do not let ordinary oral/external logic leak into ophthalmic route",
+        "If sterility/isotonicity reference is missing, emit warning rather than invent full protocol"
+      ]
+    },
+    {
+      "routeKey": "nasal",
+      "aliases": [
+        "nasal",
+        "for nose",
+        "guttae nasales"
+      ],
+      "routeType": "nasal",
+      "allowedSolutionBranches": [
+        "aqueous_true_solution",
+        "special_nasal_solution_reference_dependent"
+      ],
+      "defaultPackaging": "dropper_bottle",
+      "defaultLabels": [
+        "for_nose"
+      ],
+      "additionalLabels": [],
+      "requiresSterility": false,
+      "requiresIsotonicityCheck": true,
+      "requiresPHCheck": true,
+      "requiresDoseControlWhenApplicable": false,
+      "defaultDoseParserEnabled": false,
+      "supportsSpoonDosing": false,
+      "supportsMlDosing": false,
+      "supportsDropDosing": true,
+      "defaultQualityControl": [
+        "appearance",
+        "clarity_if_true_solution",
+        "absence_of_mechanical_particles",
+        "final_volume_check",
+        "label_check"
+      ],
+      "forbiddenByDefault": [
+        "oily_solution_without_reference",
+        "volatile_non_aqueous_solution_without_reference"
+      ],
+      "technologyPolicy": {
+        "allowHeatingIfIngredientAllows": false,
+        "allowRoutineFiltrationIfIndicated": true,
+        "allowDarkGlassIfComponentRequires": true,
+        "allowCoolStorageIfComponentRequires": true,
+        "defaultShakeLabel": false
+      },
+      "notes": [
+        "Route is more restrictive than oral/external",
+        "Reference may be required for nonstandard solvents"
+      ]
+    },
+    {
+      "routeKey": "otic",
+      "aliases": [
+        "otic",
+        "ear drops",
+        "for ear",
+        "guttae auriculares"
+      ],
+      "routeType": "otic",
+      "allowedSolutionBranches": [
+        "aqueous_true_solution",
+        "alcoholic_solution",
+        "glycerinic_solution",
+        "special_otic_solution_reference_dependent"
+      ],
+      "defaultPackaging": "dropper_bottle",
+      "defaultLabels": [
+        "for_ears"
+      ],
+      "additionalLabels": [],
+      "requiresSterility": false,
+      "requiresIsotonicityCheck": false,
+      "requiresPHCheck": false,
+      "requiresDoseControlWhenApplicable": false,
+      "defaultDoseParserEnabled": false,
+      "supportsSpoonDosing": false,
+      "supportsMlDosing": false,
+      "supportsDropDosing": true,
+      "defaultQualityControl": [
+        "appearance",
+        "clarity_if_true_solution",
+        "absence_of_mechanical_particles",
+        "final_volume_check",
+        "label_check"
+      ],
+      "forbiddenByDefault": [],
+      "technologyPolicy": {
+        "allowHeatingIfIngredientAllows": false,
+        "allowRoutineFiltrationIfIndicated": true,
+        "allowDarkGlassIfComponentRequires": true,
+        "allowCoolStorageIfComponentRequires": true,
+        "defaultShakeLabel": false
+      },
+      "notes": [
+        "Allows more non-aqueous flexibility than ophthalmic/nasal routes"
+      ]
+    },
+    {
+      "routeKey": "mouthwash",
+      "aliases": [
+        "mouthwash",
+        "gargle",
+        "for rinsing"
+      ],
+      "routeType": "local_internal_cavity",
+      "allowedSolutionBranches": [
+        "aqueous_true_solution",
+        "standard_solution_mix",
+        "special_mouthwash_solution_reference_dependent"
+      ],
+      "defaultPackaging": "glass_bottle",
+      "defaultLabels": [
+        "for_rinsing",
+        "do_not_swallow_if_applicable"
+      ],
+      "additionalLabels": [],
+      "requiresSterility": false,
+      "requiresIsotonicityCheck": false,
+      "requiresPHCheck": false,
+      "requiresDoseControlWhenApplicable": false,
+      "defaultDoseParserEnabled": false,
+      "supportsSpoonDosing": false,
+      "supportsMlDosing": true,
+      "supportsDropDosing": false,
+      "defaultQualityControl": [
+        "appearance",
+        "clarity_if_true_solution",
+        "absence_of_mechanical_particles",
+        "final_volume_check",
+        "label_check"
+      ],
+      "forbiddenByDefault": [],
+      "technologyPolicy": {
+        "allowHeatingIfIngredientAllows": true,
+        "allowRoutineFiltrationIfIndicated": true,
+        "allowDarkGlassIfComponentRequires": true,
+        "allowCoolStorageIfComponentRequires": true,
+        "defaultShakeLabel": false
+      },
+      "notes": [
+        "Local route; oral dose parser usually not needed"
+      ]
+    },
+    {
+      "routeKey": "inhalation",
+      "aliases": [
+        "inhalation",
+        "for inhalation"
+      ],
+      "routeType": "inhalation",
+      "allowedSolutionBranches": [
+        "special_inhalation_solution_reference_required"
+      ],
+      "defaultPackaging": "special_container_reference_required",
+      "defaultLabels": [
+        "for_inhalation"
+      ],
+      "additionalLabels": [],
+      "requiresSterility": false,
+      "requiresIsotonicityCheck": false,
+      "requiresPHCheck": false,
+      "requiresDoseControlWhenApplicable": false,
+      "defaultDoseParserEnabled": false,
+      "supportsSpoonDosing": false,
+      "supportsMlDosing": false,
+      "supportsDropDosing": false,
+      "defaultQualityControl": [
+        "reference_specific_qc_required"
+      ],
+      "forbiddenByDefault": [
+        "ordinary_oral_solution_logic",
+        "ordinary_external_solution_logic"
+      ],
+      "technologyPolicy": {
+        "allowHeatingIfIngredientAllows": false,
+        "allowRoutineFiltrationIfIndicated": false,
+        "allowDarkGlassIfComponentRequires": true,
+        "allowCoolStorageIfComponentRequires": true,
+        "defaultShakeLabel": false
+      },
+      "notes": [
+        "Do not generalize with oral/external route",
+        "Reference-specific path only"
+      ]
+    },
+    {
+      "routeKey": "injection",
+      "aliases": [
+        "parenteral",
+        "injection",
+        "pro injectionibus"
+      ],
+      "routeType": "parenteral",
+      "allowedSolutionBranches": [
+        "special_parenteral_solution_reference_required"
+      ],
+      "defaultPackaging": "sterile_ampoule_or_vial",
+      "defaultLabels": [
+        "for_injection"
+      ],
+      "additionalLabels": [
+        "sterile"
+      ],
+      "requiresSterility": true,
+      "requiresIsotonicityCheck": true,
+      "requiresPHCheck": true,
+      "requiresDoseControlWhenApplicable": true,
+      "defaultDoseParserEnabled": false,
+      "supportsSpoonDosing": false,
+      "supportsMlDosing": false,
+      "supportsDropDosing": false,
+      "defaultQualityControl": [
+        "sterility",
+        "clarity",
+        "absence_of_mechanical_particles",
+        "volume_check",
+        "reference_specific_qc"
+      ],
+      "forbiddenByDefault": [
+        "ordinary_extemporaneous_oral_logic",
+        "routine_nonsterile_preparation",
+        "ordinary_burette_solution_path"
+      ],
+      "technologyPolicy": {
+        "allowHeatingIfIngredientAllows": false,
+        "allowRoutineFiltrationIfIndicated": false,
+        "allowDarkGlassIfComponentRequires": true,
+        "allowCoolStorageIfComponentRequires": true,
+        "defaultShakeLabel": false
+      },
+      "notes": [
+        "Block from normal solution engine unless dedicated sterile/parenteral module exists"
+      ]
+    }
+  ]
+}

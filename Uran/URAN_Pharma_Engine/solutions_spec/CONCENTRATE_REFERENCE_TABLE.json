@@ -1,0 +1,246 @@
+{
+  "version": "1.0",
+  "description": "Reference table of standard concentrates for solution calculations in URAN Pharma",
+  "items": [
+    {
+      "substanceKey": "Natrii bromidi",
+      "aliases": [
+        "Natrii bromidi",
+        "Natrii bromidum"
+      ],
+      "hasStandardConcentrate": true,
+      "concentrateName": "Sol. Natrii bromidi 20%",
+      "concentrationPercent": 20.0,
+      "concentrationDecimalGPerMl": 0.2,
+      "ratioNotation": "1:5",
+      "calculationMode": "mass_to_volume_by_percent_or_ratio",
+      "formula": "V = m / 0.2",
+      "formulaAlt": "V = m × 5",
+      "presentationKind": "concentrate",
+      "phaseType": "aqueous",
+      "isBuretteCompatible": true,
+      "defaultUsePath": "burette_system",
+      "notes": [
+        "Counts as liquid in final calculation",
+        "Does not enter solids branch when introduced as concentrate",
+        "KVO not applied in concentrate path"
+      ]
+    },
+    {
+      "substanceKey": "Coffeini-natrii benzoas",
+      "aliases": [
+        "Coffeini-natrii benzoas",
+        "Coffeinum-natrii benzoas"
+      ],
+      "hasStandardConcentrate": true,
+      "concentrateName": "Sol. Coffeini-natrii benzoatis 10%",
+      "concentrationPercent": 10.0,
+      "concentrationDecimalGPerMl": 0.1,
+      "ratioNotation": "1:10",
+      "calculationMode": "mass_to_volume_by_percent_or_ratio",
+      "formula": "V = m / 0.1",
+      "formulaAlt": "V = m × 10",
+      "presentationKind": "concentrate",
+      "phaseType": "aqueous",
+      "isBuretteCompatible": true,
+      "defaultUsePath": "burette_system",
+      "notes": [
+        "Counts as liquid in final calculation",
+        "Often requires dark glass in final packaging if light-sensitive branch is active",
+        "KVO not applied in concentrate path"
+      ]
+    },
+    {
+      "substanceKey": "Glucose",
+      "aliases": [
+        "Glucose",
+        "Glucosum"
+      ],
+      "hasStandardConcentrate": true,
+      "concentrateName": "Sol. Glucosi 50%",
+      "concentrationPercent": 50.0,
+      "concentrationDecimalGPerMl": 0.5,
+      "ratioNotation": "1:2",
+      "calculationMode": "mass_to_volume_by_percent_or_ratio",
+      "formula": "V = m / 0.5",
+      "formulaAlt": "V = m × 2",
+      "presentationKind": "concentrate",
+      "phaseType": "aqueous",
+      "isBuretteCompatible": true,
+      "defaultUsePath": "burette_system",
+      "notes": [
+        "Counts as liquid in final calculation",
+        "KVO not applied in concentrate path"
+      ]
+    },
+    {
+      "substanceKey": "Calcii chloridi",
+      "aliases": [
+        "Calcii chloridum",
+        "Calcii chloridi"
+      ],
+      "hasStandardConcentrate": true,
+      "concentrateName": "Sol. Calcii chloridi 10%",
+      "concentrationPercent": 10.0,
+      "concentrationDecimalGPerMl": 0.1,
+      "ratioNotation": "1:10",
+      "calculationMode": "mass_to_volume_by_percent_or_ratio",
+      "formula": "V = m / 0.1",
+      "formulaAlt": "V = m × 10",
+      "presentationKind": "concentrate",
+      "phaseType": "aqueous",
+      "isBuretteCompatible": true,
+      "defaultUsePath": "burette_system",
+      "notes": [
+        "Counts as liquid",
+        "Use concentrate path if available"
+      ]
+    },
+    {
+      "substanceKey": "Magnesii sulfas",
+      "aliases": [
+        "Magnesii sulfas",
+        "Magnesii sulfatis"
+      ],
+      "hasStandardConcentrate": true,
+      "concentrateName": "Sol. Magnesii sulfatis 25%",
+      "concentrationPercent": 25.0,
+      "concentrationDecimalGPerMl": 0.25,
+      "ratioNotation": "1:4",
+      "calculationMode": "mass_to_volume_by_percent_or_ratio",
+      "formula": "V = m / 0.25",
+      "formulaAlt": "V = m × 4",
+      "presentationKind": "concentrate",
+      "phaseType": "aqueous",
+      "isBuretteCompatible": true,
+      "defaultUsePath": "burette_system",
+      "notes": [
+        "If introduced as dry substance, may require KVO branch",
+        "If introduced as concentrate, behaves only as liquid"
+      ]
+    },
+    {
+      "substanceKey": "Natrii hydrocarbonatis",
+      "aliases": [
+        "Natrii hydrocarbonas",
+        "Natrii hydrocarbonatis"
+      ],
+      "hasStandardConcentrate": true,
+      "concentrateName": "Sol. Natrii hydrocarbonatis 5%",
+      "concentrationPercent": 5.0,
+      "concentrationDecimalGPerMl": 0.05,
+      "ratioNotation": "1:20",
+      "calculationMode": "mass_to_volume_by_percent_or_ratio",
+      "formula": "V = m / 0.05",
+      "formulaAlt": "V = m × 20",
+      "presentationKind": "concentrate",
+      "phaseType": "aqueous",
+      "isBuretteCompatible": true,
+      "defaultUsePath": "burette_system",
+      "notes": [
+        "Use only if such concentrate is present in reference stock policy"
+      ]
+    },
+    {
+      "substanceKey": "Kalii iodidi",
+      "aliases": [
+        "Kalii iodidi",
+        "Kalii iodidum"
+      ],
+      "hasStandardConcentrate": true,
+      "concentrateName": "Sol. Kalii iodidi 20%",
+      "concentrationPercent": 20.0,
+      "concentrationDecimalGPerMl": 0.2,
+      "ratioNotation": "1:5",
+      "calculationMode": "mass_to_volume_by_percent_or_ratio",
+      "formula": "V = m / 0.2",
+      "formulaAlt": "V = m × 5",
+      "presentationKind": "concentrate",
+      "phaseType": "aqueous",
+      "isBuretteCompatible": true,
+      "defaultUsePath": "burette_system",
+      "notes": [
+        "If used as concentrate, count only as liquid"
+      ]
+    },
+    {
+      "substanceKey": "Natrii benzoas",
+      "aliases": [
+        "Natrii benzoas"
+      ],
+      "hasStandardConcentrate": true,
+      "concentrateName": "Sol. Natrii benzoatis 10%",
+      "concentrationPercent": 10.0,
+      "concentrationDecimalGPerMl": 0.1,
+      "ratioNotation": "1:10",
+      "calculationMode": "mass_to_volume_by_percent_or_ratio",
+      "formula": "V = m / 0.1",
+      "formulaAlt": "V = m × 10",
+      "presentationKind": "concentrate",
+      "phaseType": "aqueous",
+      "isBuretteCompatible": true,
+      "defaultUsePath": "burette_system",
+      "notes": [
+        "Standard aqueous concentrate branch"
+      ]
+    },
+    {
+      "substanceKey": "Natrii bromidi target solution",
+      "aliases": [
+        "Sol. Natrii bromidum 2%",
+        "Natrii bromidum 2% 150 ml"
+      ],
+      "hasStandardConcentrate": true,
+      "concentrateName": "Sol. Natrii bromidi 20%",
+      "concentrationPercent": 20.0,
+      "concentrationDecimalGPerMl": 0.2,
+      "ratioNotation": "1:5",
+      "calculationMode": "target_solution_to_required_mass_then_to_concentrate",
+      "formula": "m = Ctarget × Vtarget / 100; then Vconc = m / 0.2",
+      "formulaAlt": "m = Ctarget × Vtarget / 100; then Vconc = m × 5",
+      "presentationKind": "concentrate",
+      "phaseType": "aqueous",
+      "isBuretteCompatible": true,
+      "defaultUsePath": "target_solution_via_concentrate",
+      "notes": [
+        "First calculate required dry mass for target solution",
+        "Then convert required mass to concentrate volume",
+        "Never interpret target volume as concentrate volume"
+      ]
+    },
+    {
+      "substanceKey": "Glucose target mass",
+      "aliases": [
+        "Glucosi 6,0",
+        "Glucose 6.0 g"
+      ],
+      "hasStandardConcentrate": true,
+      "concentrateName": "Sol. Glucosi 50%",
+      "concentrationPercent": 50.0,
+      "concentrationDecimalGPerMl": 0.5,
+      "ratioNotation": "1:2",
+      "calculationMode": "direct_mass_to_concentrate",
+      "formula": "V = 6 / 0.5",
+      "formulaAlt": "V = 6 × 2",
+      "presentationKind": "concentrate",
+      "phaseType": "aqueous",
+      "isBuretteCompatible": true,
+      "defaultUsePath": "burette_system",
+      "notes": [
+        "Useful as a reference example row"
+      ]
+    },
+    {
+      "substanceKey": "No standard concentrate placeholder",
+      "aliases": [],
+      "hasStandardConcentrate": false,
+      "calculationMode": "no_concentrate_available",
+      "isBuretteCompatible": false,
+      "defaultUsePath": "dry_substance_or_other_reference_path",
+      "notes": [
+        "If no concentrate reference exists, the engine must not invent one",
+        "Fall back to dry-substance path or unresolved warning depending on rules"
+      ]
+    }
+  ]
+}

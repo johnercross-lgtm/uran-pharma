@@ -1,0 +1,531 @@
+{
+  "version": "1.0",
+  "description": "Special dissolution and preparation cases for pharmaceutical solutions in URAN Pharma",
+  "items": [
+    {
+      "caseKey": "Acidum boricum",
+      "aliases": [
+        "Acidum boricum"
+      ],
+      "caseType": "special_dissolution",
+      "defaultRouteScope": [
+        "oral",
+        "external",
+        "otic"
+      ],
+      "allowedBranches": [
+        "aqueous_true_solution_with_conditions",
+        "glycerinic_solution"
+      ],
+      "requiresSeparateDissolution": true,
+      "preDissolutionStageRequired": true,
+      "recommendedPrimarySolvent": "water_or_glycerin_reference_dependent",
+      "recommendedPreDissolutionSolvent": "water_or_glycerin",
+      "dissolutionMethod": "dissolve_separately_then_add_to_main_system",
+      "heatingPolicy": "mild_heating_only",
+      "filtrationPolicy": "normal_if_needed",
+      "orderPolicy": "dissolve_before_final_ad",
+      "countsAsSolidInitially": true,
+      "countsAsLiquidAfterDissolution": false,
+      "blocksSimpleAutoPath": true,
+      "specialWarnings": [
+        "requires_separate_dissolution",
+        "do_not_treat_as_instantly_soluble_in_plain_water"
+      ],
+      "technologyTemplate": [
+        "Measure part of the suitable solvent",
+        "Dissolve Acidum boricum separately",
+        "Use mild heating only if policy allows",
+        "Transfer solution into main vessel",
+        "Bring to final volume ad if applicable"
+      ],
+      "notes": [
+        "Do not route as trivial freely soluble dry substance"
+      ]
+    },
+    {
+      "caseKey": "Mentholum",
+      "aliases": [
+        "Mentholum"
+      ],
+      "caseType": "requires_co_solvent",
+      "defaultRouteScope": [
+        "external",
+        "otic"
+      ],
+      "allowedBranches": [
+        "alcoholic_solution",
+        "oily_solution"
+      ],
+      "requiresSeparateDissolution": true,
+      "preDissolutionStageRequired": true,
+      "recommendedPrimarySolvent": "alcohol_or_oil",
+      "recommendedPreDissolutionSolvent": "alcohol_or_oil",
+      "dissolutionMethod": "dissolve_in_co_solvent_before_main_combination",
+      "heatingPolicy": "no_heating",
+      "filtrationPolicy": "avoid_if_possible",
+      "orderPolicy": "prepare_co_solvent_solution_first",
+      "countsAsSolidInitially": true,
+      "countsAsLiquidAfterDissolution": false,
+      "blocksSimpleAutoPath": true,
+      "specialWarnings": [
+        "requires_co_solvent",
+        "block_simple_aqueous_true_solution"
+      ],
+      "technologyTemplate": [
+        "Select alcohol or oil according to formulation path",
+        "Dissolve Mentholum separately in the suitable co-solvent",
+        "Do not assign routine heating",
+        "Then combine with the remaining liquid phase if compatible"
+      ],
+      "notes": [
+        "Must not be auto-routed to ordinary aqueous true solution"
+      ]
+    },
+    {
+      "caseKey": "Camphora",
+      "aliases": [
+        "Camphora"
+      ],
+      "caseType": "requires_co_solvent",
+      "defaultRouteScope": [
+        "external",
+        "otic"
+      ],
+      "allowedBranches": [
+        "alcoholic_solution",
+        "oily_solution"
+      ],
+      "requiresSeparateDissolution": true,
+      "preDissolutionStageRequired": true,
+      "recommendedPrimarySolvent": "alcohol_or_oil",
+      "recommendedPreDissolutionSolvent": "alcohol_or_oil",
+      "dissolutionMethod": "dissolve_in_co_solvent_before_main_combination",
+      "heatingPolicy": "no_heating",
+      "filtrationPolicy": "avoid_if_possible",
+      "orderPolicy": "prepare_co_solvent_solution_first",
+      "countsAsSolidInitially": true,
+      "countsAsLiquidAfterDissolution": false,
+      "blocksSimpleAutoPath": true,
+      "specialWarnings": [
+        "requires_co_solvent",
+        "block_simple_aqueous_true_solution"
+      ],
+      "technologyTemplate": [
+        "Select alcohol or oil according to formulation path",
+        "Dissolve Camphora separately in the suitable co-solvent",
+        "Do not apply routine heating",
+        "Combine only with compatible phases"
+      ],
+      "notes": []
+    },
+    {
+      "caseKey": "Iodum",
+      "aliases": [
+        "Iodum"
+      ],
+      "caseType": "special_iodine_system",
+      "defaultRouteScope": [
+        "external"
+      ],
+      "allowedBranches": [
+        "alcoholic_solution",
+        "special_iodine_system"
+      ],
+      "requiresSeparateDissolution": true,
+      "preDissolutionStageRequired": true,
+      "recommendedPrimarySolvent": "alcohol_or_iodide_assisted_system",
+      "recommendedPreDissolutionSolvent": "alcohol_or_special_system",
+      "dissolutionMethod": "special_dissolution_required",
+      "heatingPolicy": "no_heating",
+      "filtrationPolicy": "avoid_if_possible",
+      "orderPolicy": "prepare_special_solution_first_then_finalize",
+      "countsAsSolidInitially": true,
+      "countsAsLiquidAfterDissolution": false,
+      "blocksSimpleAutoPath": true,
+      "specialWarnings": [
+        "special_iodine_path_required",
+        "block_simple_aqueous_true_solution",
+        "protect_from_light"
+      ],
+      "technologyTemplate": [
+        "Do not place Iodum into ordinary aqueous true-solution path",
+        "Use alcohol or special iodine-compatible system according to reference",
+        "Avoid routine heating",
+        "Use light-protective packaging if required"
+      ],
+      "notes": [
+        "Do not invent exact iodine technology if reference is missing"
+      ]
+    },
+    {
+      "caseKey": "Protargolum",
+      "aliases": [
+        "Protargolum"
+      ],
+      "caseType": "special_colloidal_dissolution",
+      "defaultRouteScope": [
+        "ophthalmic",
+        "nasal",
+        "external"
+      ],
+      "allowedBranches": [
+        "aqueous_special_dissolution_path",
+        "special_ophthalmic_solution_reference_required"
+      ],
+      "requiresSeparateDissolution": true,
+      "preDissolutionStageRequired": true,
+      "recommendedPrimarySolvent": "water",
+      "recommendedPreDissolutionSolvent": "water",
+      "dissolutionMethod": "special_reference_dependent_dissolution",
+      "heatingPolicy": "no_heating",
+      "filtrationPolicy": "avoid_if_possible",
+      "orderPolicy": "special_dissolution_before_final_transfer",
+      "countsAsSolidInitially": true,
+      "countsAsLiquidAfterDissolution": false,
+      "blocksSimpleAutoPath": true,
+      "specialWarnings": [
+        "special_dissolution_path",
+        "do_not_use_generic_freely_soluble_logic",
+        "protect_from_light"
+      ],
+      "technologyTemplate": [
+        "Use special Protargolum dissolution path according to reference",
+        "Do not apply routine heating",
+        "Do not use generic dry-substance dissolve shortcut",
+        "Package according to stability policy"
+      ],
+      "notes": [
+        "If detailed protocol is unavailable, warn instead of inventing"
+      ]
+    },
+    {
+      "caseKey": "Collargolum",
+      "aliases": [
+        "Collargolum"
+      ],
+      "caseType": "special_colloidal_dissolution",
+      "defaultRouteScope": [
+        "ophthalmic",
+        "external"
+      ],
+      "allowedBranches": [
+        "aqueous_special_dissolution_path",
+        "special_ophthalmic_solution_reference_required"
+      ],
+      "requiresSeparateDissolution": true,
+      "preDissolutionStageRequired": true,
+      "recommendedPrimarySolvent": "water",
+      "recommendedPreDissolutionSolvent": "water",
+      "dissolutionMethod": "special_reference_dependent_dissolution",
+      "heatingPolicy": "no_heating",
+      "filtrationPolicy": "avoid_if_possible",
+      "orderPolicy": "special_dissolution_before_final_transfer",
+      "countsAsSolidInitially": true,
+      "countsAsLiquidAfterDissolution": false,
+      "blocksSimpleAutoPath": true,
+      "specialWarnings": [
+        "special_dissolution_path",
+        "do_not_use_generic_freely_soluble_logic",
+        "protect_from_light"
+      ],
+      "technologyTemplate": [
+        "Use special Collargolum dissolution path according to reference",
+        "Avoid routine heating",
+        "Do not auto-apply generic aqueous dissolution"
+      ],
+      "notes": []
+    },
+    {
+      "caseKey": "Argenti nitras",
+      "aliases": [
+        "Argenti nitras"
+      ],
+      "caseType": "light_sensitive_aqueous_solution",
+      "defaultRouteScope": [
+        "external",
+        "ophthalmic"
+      ],
+      "allowedBranches": [
+        "aqueous_true_solution",
+        "special_ophthalmic_solution_reference_required"
+      ],
+      "requiresSeparateDissolution": false,
+      "preDissolutionStageRequired": false,
+      "recommendedPrimarySolvent": "water",
+      "recommendedPreDissolutionSolvent": "water",
+      "dissolutionMethod": "ordinary_aqueous_dissolution_with_light_protection",
+      "heatingPolicy": "no_heating",
+      "filtrationPolicy": "normal_if_needed",
+      "orderPolicy": "standard_order_with_light_protection",
+      "countsAsSolidInitially": true,
+      "countsAsLiquidAfterDissolution": false,
+      "blocksSimpleAutoPath": false,
+      "specialWarnings": [
+        "protect_from_light",
+        "no_heating"
+      ],
+      "technologyTemplate": [
+        "Dissolve in suitable amount of water",
+        "Avoid unnecessary heating",
+        "Use dark glass if final stability requires"
+      ],
+      "notes": [
+        "Special point here is stability/light, not complex co-solvent logic"
+      ]
+    },
+    {
+      "caseKey": "Acidum salicylicum",
+      "aliases": [
+        "Acidum salicylicum"
+      ],
+      "caseType": "requires_co_solvent",
+      "defaultRouteScope": [
+        "external"
+      ],
+      "allowedBranches": [
+        "alcoholic_solution",
+        "special_mixed_solution"
+      ],
+      "requiresSeparateDissolution": true,
+      "preDissolutionStageRequired": true,
+      "recommendedPrimarySolvent": "alcohol",
+      "recommendedPreDissolutionSolvent": "alcohol",
+      "dissolutionMethod": "dissolve_in_alcohol_before_final_combination",
+      "heatingPolicy": "no_heating",
+      "filtrationPolicy": "avoid_if_possible",
+      "orderPolicy": "prepare_alcoholic_subsolution_first",
+      "countsAsSolidInitially": true,
+      "countsAsLiquidAfterDissolution": false,
+      "blocksSimpleAutoPath": true,
+      "specialWarnings": [
+        "requires_co_solvent",
+        "block_simple_aqueous_true_solution"
+      ],
+      "technologyTemplate": [
+        "Do not route into plain aqueous solution automatically",
+        "Dissolve Acidum salicylicum in alcohol",
+        "Combine only with compatible system"
+      ],
+      "notes": []
+    },
+    {
+      "caseKey": "Phenolum",
+      "aliases": [
+        "Phenolum"
+      ],
+      "caseType": "safety_sensitive_solution",
+      "defaultRouteScope": [
+        "external",
+        "oral_reference_dependent"
+      ],
+      "allowedBranches": [
+        "aqueous_true_solution",
+        "alcoholic_solution",
+        "glycerinic_solution"
+      ],
+      "requiresSeparateDissolution": false,
+      "preDissolutionStageRequired": false,
+      "recommendedPrimarySolvent": "water_or_alcohol_reference_dependent",
+      "recommendedPreDissolutionSolvent": "water_or_alcohol",
+      "dissolutionMethod": "ordinary_dissolution_with_safety_validation",
+      "heatingPolicy": "no_heating",
+      "filtrationPolicy": "normal_if_needed",
+      "orderPolicy": "standard_order_with_safety_check",
+      "countsAsSolidInitially": true,
+      "countsAsLiquidAfterDissolution": false,
+      "blocksSimpleAutoPath": false,
+      "specialWarnings": [
+        "safety_validation_required"
+      ],
+      "technologyTemplate": [
+        "Use suitable solvent according to formulation",
+        "Run safety validation separately"
+      ],
+      "notes": [
+        "Main special aspect is safety, not dissolution complexity alone"
+      ]
+    },
+    {
+      "caseKey": "Mentholum + Camphora combined",
+      "aliases": [
+        "Mentholum et Camphora"
+      ],
+      "caseType": "combined_co_solvent_case",
+      "defaultRouteScope": [
+        "external"
+      ],
+      "allowedBranches": [
+        "alcoholic_solution",
+        "oily_solution"
+      ],
+      "requiresSeparateDissolution": true,
+      "preDissolutionStageRequired": true,
+      "recommendedPrimarySolvent": "alcohol_or_oil",
+      "recommendedPreDissolutionSolvent": "shared_compatible_co_solvent",
+      "dissolutionMethod": "prepare_shared_co_solvent_phase_then_finalize",
+      "heatingPolicy": "no_heating",
+      "filtrationPolicy": "avoid_if_possible",
+      "orderPolicy": "prepare_combined_subsolution_first",
+      "countsAsSolidInitially": true,
+      "countsAsLiquidAfterDissolution": false,
+      "blocksSimpleAutoPath": true,
+      "specialWarnings": [
+        "requires_co_solvent",
+        "combined_special_dissolution_case"
+      ],
+      "technologyTemplate": [
+        "Select a compatible co-solvent for both ingredients",
+        "Prepare combined subsolution first",
+        "Do not force plain aqueous route"
+      ],
+      "notes": [
+        "Useful because combination cases often break simplistic engines"
+      ]
+    },
+    {
+      "caseKey": "Iodum + Kalii iodidi system",
+      "aliases": [
+        "Iodum cum Kalii iodidi"
+      ],
+      "caseType": "special_assisted_dissolution",
+      "defaultRouteScope": [
+        "external"
+      ],
+      "allowedBranches": [
+        "special_iodine_system"
+      ],
+      "requiresSeparateDissolution": true,
+      "preDissolutionStageRequired": true,
+      "recommendedPrimarySolvent": "special_iodine_system",
+      "recommendedPreDissolutionSolvent": "iodide_assisted_system",
+      "dissolutionMethod": "special_assisted_dissolution",
+      "heatingPolicy": "no_heating",
+      "filtrationPolicy": "avoid_if_possible",
+      "orderPolicy": "prepare_assisted_solution_first",
+      "countsAsSolidInitially": true,
+      "countsAsLiquidAfterDissolution": false,
+      "blocksSimpleAutoPath": true,
+      "specialWarnings": [
+        "special_iodine_path_required",
+        "do_not_route_as_plain_iodine_or_plain_aqueous_solution"
+      ],
+      "technologyTemplate": [
+        "Use iodide-assisted dissolution system according to reference",
+        "Do not invent generic plain-water iodine path"
+      ],
+      "notes": [
+        "Classic case where a single component combination changes the whole path"
+      ]
+    },
+    {
+      "caseKey": "Volatile solvent late addition",
+      "aliases": [
+        "Aether",
+        "Chloroformium",
+        "volatile solvent class"
+      ],
+      "caseType": "volatile_late_addition",
+      "defaultRouteScope": [
+        "external"
+      ],
+      "allowedBranches": [
+        "volatile_non_aqueous_solution"
+      ],
+      "requiresSeparateDissolution": false,
+      "preDissolutionStageRequired": false,
+      "recommendedPrimarySolvent": "volatile_non_aqueous_branch",
+      "recommendedPreDissolutionSolvent": "not_applicable",
+      "dissolutionMethod": "late_addition_when_technologically_possible",
+      "heatingPolicy": "no_heating",
+      "filtrationPolicy": "avoid_if_possible",
+      "orderPolicy": "add_last_or_near_last",
+      "countsAsSolidInitially": false,
+      "countsAsLiquidAfterDissolution": true,
+      "blocksSimpleAutoPath": false,
+      "specialWarnings": [
+        "no_heating",
+        "late_addition_preferred",
+        "minimize_open_exposure"
+      ],
+      "technologyTemplate": [
+        "Avoid routine heating",
+        "Add volatile solvent at a late stage when possible",
+        "Minimize open exposure time"
+      ],
+      "notes": [
+        "This is behavior-driven special handling rather than difficult dissolution"
+      ]
+    },
+    {
+      "caseKey": "Protargolum ophthalmic unresolved",
+      "aliases": [
+        "Protargolum ophthalmic without sterile reference"
+      ],
+      "caseType": "reference_required_route_restricted",
+      "defaultRouteScope": [
+        "ophthalmic"
+      ],
+      "allowedBranches": [
+        "special_ophthalmic_solution_reference_required"
+      ],
+      "requiresSeparateDissolution": true,
+      "preDissolutionStageRequired": true,
+      "recommendedPrimarySolvent": "water_reference_required",
+      "recommendedPreDissolutionSolvent": "water_reference_required",
+      "dissolutionMethod": "block_full_protocol_without_reference",
+      "heatingPolicy": "no_heating",
+      "filtrationPolicy": "avoid_if_possible",
+      "orderPolicy": "warn_and_stop_if_sterile_path_unknown",
+      "countsAsSolidInitially": true,
+      "countsAsLiquidAfterDissolution": false,
+      "blocksSimpleAutoPath": true,
+      "specialWarnings": [
+        "ophthalmic_reference_required",
+        "sterility_path_unresolved",
+        "do_not_invent_protocol"
+      ],
+      "technologyTemplate": [
+        "Warn that ophthalmic reference-specific protocol is required",
+        "Do not invent full sterile technology"
+      ],
+      "notes": [
+        "Important safety stop-case for strict routes"
+      ]
+    },
+    {
+      "caseKey": "General poorly soluble in water",
+      "aliases": [
+        "generic poorly soluble dry substance"
+      ],
+      "caseType": "generic_gate_rule",
+      "defaultRouteScope": [
+        "all"
+      ],
+      "allowedBranches": [
+        "reference_dependent"
+      ],
+      "requiresSeparateDissolution": true,
+      "preDissolutionStageRequired": true,
+      "recommendedPrimarySolvent": "reference_dependent",
+      "recommendedPreDissolutionSolvent": "reference_dependent",
+      "dissolutionMethod": "do_not_auto_classify_as_true_solution",
+      "heatingPolicy": "unknown",
+      "filtrationPolicy": "unknown",
+      "orderPolicy": "require_reference_or_special_rule",
+      "countsAsSolidInitially": true,
+      "countsAsLiquidAfterDissolution": false,
+      "blocksSimpleAutoPath": true,
+      "specialWarnings": [
+        "requires_reference_for_special_dissolution"
+      ],
+      "technologyTemplate": [
+        "Do not auto-place into generic aqueous true-solution path",
+        "Require explicit rule, table entry, or reference-backed handling"
+      ],
+      "notes": [
+        "Fallback protection against overconfident automation"
+      ]
+    }
+  ]
+}

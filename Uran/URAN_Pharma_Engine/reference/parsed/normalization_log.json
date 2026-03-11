@@ -1,0 +1,85 @@
+{
+  "version": "1.0",
+  "sourceFile": "extemp_reference_200.csv",
+  "rowCount": 461,
+  "booleanFields": [
+    "NeedsTrituration",
+    "IsNarcotic",
+    "List_A",
+    "List_B",
+    "IsListA_Poison",
+    "Strain",
+    "PressMarc",
+    "BringToVolume",
+    "IsHerbalMix",
+    "ShakeDaily",
+    "Filter",
+    "IsOintmentFitocomp",
+    "Sterile"
+  ],
+  "numericFields": [
+    "VrdG",
+    "VsdG",
+    "GttsPerMl",
+    "Density",
+    "E_Factor",
+    "KUO",
+    "KV",
+    "PedsVrdG",
+    "PedsRdG",
+    "VrdChild_0_1",
+    "VrdChild_1_6",
+    "VrdChild_7_14",
+    "WaterTempC",
+    "HeatBathMin",
+    "StandMin",
+    "CoolMin",
+    "ShelfLifeHours",
+    "TinctureRatio",
+    "MacerationDays",
+    "ExtractRatio",
+    "ExtractStd",
+    "OintmentStrength",
+    "BufferPH",
+    "BufferMolarity"
+  ],
+  "enumMappings": {
+    "PhysicalState": {
+      "Твердые": "solid",
+      "Жидкие": "liquid",
+      "Мягкие": "semisolid",
+      "Газообразные": "gas"
+    },
+    "Type": {
+      "Act": "active",
+      "Aux": "excipient",
+      "Solv": "solvent",
+      "Mix": "mixture"
+    }
+  },
+  "anomalyFixesApplied": [
+    {
+      "csvLine": 272,
+      "type": "row_length_mismatch_fixed",
+      "rawLength": 72,
+      "expectedLength": 73,
+      "fixedLength": 73,
+      "fixNote": "Inserted missing empty field at column 17 (ointment_note) to realign pediatric and subsequent fields.",
+      "name": "Protargolum"
+    },
+    {
+      "csvLine": 273,
+      "type": "row_length_mismatch_fixed",
+      "rawLength": 74,
+      "expectedLength": 73,
+      "fixedLength": 73,
+      "fixNote": "Removed one extra empty field before Solubility to realign Storage/InteractionNotes and subsequent fields.",
+      "name": "Pepsinum"
+    }
+  ],
+  "notes": [
+    "Empty strings are preserved in __raw layers and normalized to null in typed fields.",
+    "No source columns were dropped from full_records.",
+    "Protargolum and Pepsinum rows were structurally realigned before derived-file generation."
+  ]
+}

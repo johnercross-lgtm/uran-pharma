@@ -1,0 +1,1266 @@
+{
+  "version": "1.0",
+  "suite": "solutions",
+  "description": "Stress test suite for pharmaceutical solutions engine",
+  "cases": [
+    {
+      "id": "SOL_001",
+      "title": "Simple aqueous solution from dry substance below 3%",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 100,
+        "ingredients": [
+          {
+            "name": "Natrii bromidi",
+            "presentationKind": "solid",
+            "massG": 2.0
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 100
+          }
+        ]
+      },
+      "expected": {
+        "classification": "aqueous_solution_from_dry_substance",
+        "solidPercent": 2.0,
+        "kvoApplied": false
+      }
+    },
+    {
+      "id": "SOL_002",
+      "title": "Simple aqueous solution from dry substance exactly 3%",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 100,
+        "ingredients": [
+          {
+            "name": "Natrii bromidi",
+            "presentationKind": "solid",
+            "massG": 3.0,
+            "kvoMlPerG": 0.26
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 100
+          }
+        ]
+      },
+      "expected": {
+        "classification": "aqueous_solution_from_dry_substance",
+        "solidPercent": 3.0,
+        "kvoApplied": true
+      }
+    },
+    {
+      "id": "SOL_003",
+      "title": "Aqueous solution with KVO branch",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 200,
+        "ingredients": [
+          {
+            "name": "Magnesii sulfas",
+            "presentationKind": "solid",
+            "massG": 25.0,
+            "kvoMlPerG": 0.5
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 200
+          }
+        ]
+      },
+      "expected": {
+        "kvoApplied": true,
+        "kvoContributionMl": 12.5
+      }
+    },
+    {
+      "id": "SOL_004",
+      "title": "Two dry substances in aqueous solution",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 150,
+        "ingredients": [
+          {
+            "name": "Natrii bromidi",
+            "presentationKind": "solid",
+            "massG": 3.0,
+            "kvoMlPerG": 0.26
+          },
+          {
+            "name": "Kalii iodidi",
+            "presentationKind": "solid",
+            "massG": 2.0,
+            "kvoMlPerG": 0.23
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 150
+          }
+        ]
+      },
+      "expected": {
+        "classification": "aqueous_solution_from_dry_substances"
+      }
+    },
+    {
+      "id": "SOL_005",
+      "title": "Burette solution with sodium bromide caffeine glucose",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 150,
+        "ingredients": [
+          {
+            "name": "Natrii bromidum",
+            "presentationKind": "targetSolution",
+            "targetConcentrationPercent": 2,
+            "targetVolumeMl": 150,
+            "referenceConcentratePercent": 20
+          },
+          {
+            "name": "Coffeini-natrii benzoas",
+            "presentationKind": "solid",
+            "massG": 1.0,
+            "referenceConcentratePercent": 10
+          },
+          {
+            "name": "Glucose",
+            "presentationKind": "solid",
+            "massG": 6.0,
+            "referenceConcentratePercent": 50
+          }
+        ],
+        "signa": "1 3"
+      },
+      "expected": {
+        "classification": "aqueous_burette_solution",
+        "concentrateVolumesMl": {
+          "Sol. Natrii bromidi 20%": 15.0,
+          "Sol. Coffeini-natrii benzoatis 10%": 10.0,
+          "Sol. Glucosi 50%": 12.0
+        },
+        "waterToAddMl": 113.0,
+        "kvoApplied": false
+      }
+    },
+    {
+      "id": "SOL_006",
+      "title": "Burette solution with tincture and ad",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 200,
+        "ingredients": [
+          {
+            "name": "Coffeini-natrii benzoatis",
+            "presentationKind": "solid",
+            "massG": 0.5,
+            "referenceConcentratePercent": 10
+          },
+          {
+            "name": "Natrii bromidi",
+            "presentationKind": "solid",
+            "massG": 2.0,
+            "referenceConcentratePercent": 20
+          },
+          {
+            "name": "Tinctura Valerianae",
+            "presentationKind": "tincture",
+            "volumeMl": 3.0,
+            "phase": "hydroalcoholic"
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 200
+          }
+        ]
+      },
+      "expected": {
+        "sumOtherLiquidsMl": 18.0,
+        "waterToAddMl": 182.0
+      }
+    },
+    {
+      "id": "SOL_007",
+      "title": "Ready solution plus water ad",
+      "input": {
+        "dosageForm": "solution",
+        "route": "external",
+        "targetVolumeMl": 100,
+        "ingredients": [
+          {
+            "name": "Sol. Furacilini 1:5000",
+            "presentationKind": "solution",
+            "volumeMl": 50.0
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 100
+          }
+        ]
+      },
+      "expected": {
+        "sumSolidsG": 0.0,
+        "waterToAddMl": 50.0,
+        "warningsMustNotContain": [
+          "solution_treated_as_solid"
+        ]
+      }
+    },
+    {
+      "id": "SOL_008",
+      "title": "Standard solution plus water ad",
+      "input": {
+        "dosageForm": "solution",
+        "targetVolumeMl": 50,
+        "ingredients": [
+          {
+            "name": "Liquor Burovi",
+            "presentationKind": "standardSolution",
+            "volumeMl": 10.0
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 50
+          }
+        ]
+      },
+      "expected": {
+        "waterToAddMl": 40.0
+      }
+    },
+    {
+      "id": "SOL_009",
+      "title": "Aromatic water plus ad",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 120,
+        "ingredients": [
+          {
+            "name": "Aqua Menthae",
+            "presentationKind": "liquid",
+            "volumeMl": 100.0,
+            "phase": "aqueous"
+          },
+          {
+            "name": "Tinctura Convallariae",
+            "presentationKind": "tincture",
+            "volumeMl": 5.0
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 120
+          }
+        ]
+      },
+      "expected": {
+        "waterToAddMl": 15.0
+      }
+    },
+    {
+      "id": "SOL_010",
+      "title": "Several concentrates plus syrup plus water ad",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 180,
+        "ingredients": [
+          {
+            "name": "Natrii bromidi",
+            "presentationKind": "solid",
+            "massG": 2.0,
+            "referenceConcentratePercent": 20
+          },
+          {
+            "name": "Calcii chloridi",
+            "presentationKind": "solid",
+            "massG": 3.0,
+            "referenceConcentratePercent": 10
+          },
+          {
+            "name": "Sirupus simplex",
+            "presentationKind": "liquid",
+            "volumeMl": 20.0,
+            "phase": "aqueous"
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 180
+          }
+        ]
+      },
+      "expected": {
+        "classification": "aqueous_solution_with_ad"
+      }
+    },
+    {
+      "id": "SOL_011",
+      "title": "Fixed water without ad",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "ingredients": [
+          {
+            "name": "Natrii hydrocarbonatis",
+            "presentationKind": "solid",
+            "massG": 2.0
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "volumeMl": 100.0
+          }
+        ]
+      },
+      "expected": {
+        "finalAdjustmentMode": "fixed_water",
+        "warningsMustNotContain": [
+          "multiple_ad_conflict"
+        ]
+      }
+    },
+    {
+      "id": "SOL_012",
+      "title": "Conflict fixed water and ad",
+      "input": {
+        "dosageForm": "solution",
+        "ingredients": [
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "volumeMl": 100.0
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 200
+          }
+        ]
+      },
+      "expected": {
+        "warningsMustContain": [
+          "fixed_water_vs_ad_conflict"
+        ]
+      }
+    },
+    {
+      "id": "SOL_013",
+      "title": "Multiple ad markers conflict",
+      "input": {
+        "dosageForm": "solution",
+        "ingredients": [
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 100
+          },
+          {
+            "name": "Aqua Menthae",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 100
+          }
+        ]
+      },
+      "expected": {
+        "warningsMustContain": [
+          "multiple_ad_conflict"
+        ]
+      }
+    },
+    {
+      "id": "SOL_014",
+      "title": "Largest liquid must not override explicit ad",
+      "input": {
+        "dosageForm": "solution",
+        "targetVolumeMl": 120,
+        "ingredients": [
+          {
+            "name": "Aqua Menthae",
+            "presentationKind": "liquid",
+            "volumeMl": 100.0
+          },
+          {
+            "name": "Tinctura Valerianae",
+            "presentationKind": "tincture",
+            "volumeMl": 5.0
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 120
+          }
+        ]
+      },
+      "expected": {
+        "warningsMustNotContain": [
+          "target_inferred_by_fallback"
+        ]
+      }
+    },
+    {
+      "id": "SOL_015",
+      "title": "Impossible formulation liquids exceed total volume",
+      "input": {
+        "dosageForm": "solution",
+        "targetVolumeMl": 100,
+        "ingredients": [
+          {
+            "name": "Tinctura Valerianae",
+            "presentationKind": "tincture",
+            "volumeMl": 60.0
+          },
+          {
+            "name": "Sirupus simplex",
+            "presentationKind": "liquid",
+            "volumeMl": 50.0
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 100
+          }
+        ]
+      },
+      "expected": {
+        "status": "error",
+        "warningsMustContain": [
+          "impossible_formulation"
+        ]
+      }
+    },
+    {
+      "id": "SOL_016",
+      "title": "Alcoholic solution external use",
+      "input": {
+        "dosageForm": "solution",
+        "route": "external",
+        "ingredients": [
+          {
+            "name": "Mentholum",
+            "presentationKind": "solid",
+            "massG": 1.0
+          },
+          {
+            "name": "Ethanol 70%",
+            "presentationKind": "nonAqueousSolvent",
+            "volumeMl": 100.0,
+            "phase": "alcoholic"
+          }
+        ]
+      },
+      "expected": {
+        "classification": "non_aqueous_solution",
+        "technologyMustContain": [
+          "avoid_unnecessary_heating"
+        ]
+      }
+    },
+    {
+      "id": "SOL_017",
+      "title": "Glycerin solution requires density-capable branch",
+      "input": {
+        "dosageForm": "solution",
+        "route": "external",
+        "ingredients": [
+          {
+            "name": "Acidum boricum",
+            "presentationKind": "solid",
+            "massG": 2.0
+          },
+          {
+            "name": "Glycerolum",
+            "presentationKind": "nonAqueousSolvent",
+            "volumeMl": 20.0,
+            "density": 1.23,
+            "phase": "glycerinic"
+          }
+        ]
+      },
+      "expected": {
+        "classification": "non_aqueous_solution"
+      }
+    },
+    {
+      "id": "SOL_018",
+      "title": "Dimexide solution branch",
+      "input": {
+        "dosageForm": "solution",
+        "route": "external",
+        "ingredients": [
+          {
+            "name": "Dimexidum",
+            "presentationKind": "nonAqueousSolvent",
+            "volumeMl": 50.0,
+            "phase": "nonAqueous"
+          },
+          {
+            "name": "Novocainum",
+            "presentationKind": "solid",
+            "massG": 0.5
+          }
+        ]
+      },
+      "expected": {
+        "classification": "non_aqueous_solution"
+      }
+    },
+    {
+      "id": "SOL_019",
+      "title": "Mixed water and alcohol phases require compatibility check",
+      "input": {
+        "dosageForm": "solution",
+        "ingredients": [
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "volumeMl": 50.0,
+            "phase": "aqueous"
+          },
+          {
+            "name": "Oleum Vaselini",
+            "presentationKind": "oil",
+            "volumeMl": 20.0,
+            "phase": "oily"
+          }
+        ]
+      },
+      "expected": {
+        "warningsMustContain": [
+          "incompatible_solvent_phases"
+        ]
+      }
+    },
+    {
+      "id": "SOL_020",
+      "title": "Two target concentrations in one final volume",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 200,
+        "ingredients": [
+          {
+            "name": "Natrii bromidum",
+            "presentationKind": "targetSolution",
+            "targetConcentrationPercent": 2.0,
+            "targetVolumeMl": 200,
+            "referenceConcentratePercent": 20
+          },
+          {
+            "name": "Magnesii sulfas",
+            "presentationKind": "targetSolution",
+            "targetConcentrationPercent": 3.0,
+            "targetVolumeMl": 200,
+            "referenceConcentratePercent": 25
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 200
+          }
+        ]
+      },
+      "expected": {
+        "requiredMassesG": {
+          "Natrii bromidum": 4.0,
+          "Magnesii sulfas": 6.0
+        }
+      }
+    },
+    {
+      "id": "SOL_021",
+      "title": "Ready solution plus dry substance",
+      "input": {
+        "dosageForm": "solution",
+        "route": "external",
+        "targetVolumeMl": 100,
+        "ingredients": [
+          {
+            "name": "Sol. Furacilini 1:5000",
+            "presentationKind": "solution",
+            "volumeMl": 80.0
+          },
+          {
+            "name": "Natrii chloridi",
+            "presentationKind": "solid",
+            "massG": 1.0
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 100
+          }
+        ]
+      },
+      "expected": {
+        "warningsMustNotContain": [
+          "solution_treated_as_solid"
+        ]
+      }
+    },
+    {
+      "id": "SOL_022",
+      "title": "Liquid extract reduces water",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 100,
+        "ingredients": [
+          {
+            "name": "Extractum Crataegi fluidum",
+            "presentationKind": "extractLiquid",
+            "volumeMl": 10.0
+          },
+          {
+            "name": "Sirupus simplex",
+            "presentationKind": "liquid",
+            "volumeMl": 20.0
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 100
+          }
+        ]
+      },
+      "expected": {
+        "waterToAddMl": 70.0
+      }
+    },
+    {
+      "id": "SOL_023",
+      "title": "Dry extract must behave as solid",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 100,
+        "ingredients": [
+          {
+            "name": "Extractum Belladonnae siccum",
+            "presentationKind": "solid",
+            "massG": 0.2
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 100
+          }
+        ]
+      },
+      "expected": {
+        "sumSolidsG": 0.2
+      }
+    },
+    {
+      "id": "SOL_024",
+      "title": "Colorless burette meniscus rule",
+      "input": {
+        "dosageForm": "solution",
+        "ingredients": [
+          {
+            "name": "Natrii bromidi",
+            "presentationKind": "solid",
+            "massG": 2.0,
+            "referenceConcentratePercent": 20
+          }
+        ]
+      },
+      "expected": {
+        "auxiliaryNotesMustContain": [
+          "lower_meniscus"
+        ]
+      }
+    },
+    {
+      "id": "SOL_025",
+      "title": "Colored solution upper meniscus rule",
+      "input": {
+        "dosageForm": "solution",
+        "ingredients": [
+          {
+            "name": "Kalii permanganas",
+            "presentationKind": "solution",
+            "volumeMl": 10.0,
+            "isColored": true
+          }
+        ]
+      },
+      "expected": {
+        "auxiliaryNotesMustContain": [
+          "upper_meniscus"
+        ]
+      }
+    },
+    {
+      "id": "SOL_026",
+      "title": "True solution should not get shake label",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 150,
+        "ingredients": [
+          {
+            "name": "Natrii bromidi",
+            "presentationKind": "solid",
+            "massG": 2.0,
+            "referenceConcentratePercent": 20
+          },
+          {
+            "name": "Glucose",
+            "presentationKind": "solid",
+            "massG": 6.0,
+            "referenceConcentratePercent": 50
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 150
+          }
+        ]
+      },
+      "expected": {
+        "labelsMustNotContain": [
+          "shake_before_use"
+        ]
+      }
+    },
+    {
+      "id": "SOL_027",
+      "title": "Light-sensitive component requires dark glass",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "ingredients": [
+          {
+            "name": "Coffeini-natrii benzoas",
+            "presentationKind": "solid",
+            "massG": 1.0,
+            "isLightSensitive": true
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "volumeMl": 100.0
+          }
+        ]
+      },
+      "expected": {
+        "packagingMustContain": [
+          "dark_glass"
+        ]
+      }
+    },
+    {
+      "id": "SOL_028",
+      "title": "Non-light-sensitive component should not force dark glass alone",
+      "input": {
+        "dosageForm": "solution",
+        "ingredients": [
+          {
+            "name": "Natrii bromidi",
+            "presentationKind": "solid",
+            "massG": 2.0,
+            "isLightSensitive": false
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "volumeMl": 100.0
+          }
+        ]
+      },
+      "expected": {
+        "packagingMustNotContain": [
+          "dark_glass"
+        ]
+      }
+    },
+    {
+      "id": "SOL_029",
+      "title": "No duplicate technology sections in PPC",
+      "input": {
+        "dosageForm": "solution",
+        "ppcSections": [
+          "math",
+          "technology",
+          "technology",
+          "qc"
+        ]
+      },
+      "expected": {
+        "rendererMustDeduplicate": true
+      }
+    },
+    {
+      "id": "SOL_030",
+      "title": "Final mixture PPC must not mention stock QC",
+      "input": {
+        "dosageForm": "solution",
+        "classification": "aqueous_burette_solution"
+      },
+      "expected": {
+        "qcMustNotContainPhrases": []
+      }
+    },
+    {
+      "id": "SOL_031",
+      "title": "Dose parser tablespoon",
+      "input": {
+        "signa": "1 3"
+      },
+      "expected": {
+        "singleDoseMl": 15.0,
+        "frequencyPerDay": 3
+      }
+    },
+    {
+      "id": "SOL_032",
+      "title": "Dose parser short tablespoon",
+      "input": {
+        "signa": "1 . . 3 /"
+      },
+      "expected": {
+        "singleDoseMl": 15.0,
+        "frequencyPerDay": 3
+      }
+    },
+    {
+      "id": "SOL_033",
+      "title": "Dose parser teaspoon",
+      "input": {
+        "signa": "1 . . 4"
+      },
+      "expected": {
+        "singleDoseMl": 5.0,
+        "frequencyPerDay": 4
+      }
+    },
+    {
+      "id": "SOL_034",
+      "title": "Dose parser ml notation",
+      "input": {
+        "signa": "10 3"
+      },
+      "expected": {
+        "singleDoseMl": 10.0,
+        "frequencyPerDay": 3
+      }
+    },
+    {
+      "id": "SOL_035",
+      "title": "Dose parser English form",
+      "input": {
+        "signa": "1 tablespoon three times daily"
+      },
+      "expected": {
+        "singleDoseMl": 15.0,
+        "frequencyPerDay": 3
+      }
+    },
+    {
+      "id": "SOL_036",
+      "title": "Unparseable signa with potent substance",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 100,
+        "ingredients": [
+          {
+            "name": "Phenobarbitalum",
+            "presentationKind": "solid",
+            "massG": 0.2,
+            "safetyFlags": {
+              "isPotent": true
+            }
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 100
+          }
+        ],
+        "signa": "As directed"
+      },
+      "expected": {
+        "warningsMustContain": [
+          "dose_control_unresolved"
+        ]
+      }
+    },
+    {
+      "id": "SOL_037",
+      "title": "Per-dose calculation from full homogeneous volume",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 150,
+        "ingredients": [
+          {
+            "name": "Coffeini-natrii benzoas",
+            "presentationKind": "solid",
+            "massG": 1.0,
+            "referenceConcentratePercent": 10
+          }
+        ],
+        "signa": "1 3"
+      },
+      "expected": {
+        "dosesPerContainer": 10.0,
+        "perDoseG": {
+          "Coffeini-natrii benzoas": 0.1
+        },
+        "perDayG": {
+          "Coffeini-natrii benzoas": 0.3
+        }
+      }
+    },
+    {
+      "id": "SOL_038",
+      "title": "Non-divisible total volume by dose volume",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 100,
+        "ingredients": [
+          {
+            "name": "Natrii bromidi",
+            "presentationKind": "solid",
+            "massG": 2.0
+          }
+        ],
+        "signa": "1 3"
+      },
+      "expected": {
+        "doseCountConfidence": "approximate"
+      }
+    },
+    {
+      "id": "SOL_039",
+      "title": "Concentrate path must ignore KVO",
+      "input": {
+        "dosageForm": "solution",
+        "targetVolumeMl": 150,
+        "ingredients": [
+          {
+            "name": "Glucose",
+            "presentationKind": "solid",
+            "massG": 20.0,
+            "referenceConcentratePercent": 50,
+            "kvoMlPerG": 0.62
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 150
+          }
+        ]
+      },
+      "expected": {
+        "classification": "aqueous_burette_solution",
+        "kvoApplied": false
+      }
+    },
+    {
+      "id": "SOL_040",
+      "title": "Mixed dry substance and concentrate branch",
+      "input": {
+        "dosageForm": "solution",
+        "targetVolumeMl": 100,
+        "ingredients": [
+          {
+            "name": "Natrii bromidi",
+            "presentationKind": "solid",
+            "massG": 2.0,
+            "referenceConcentratePercent": 20
+          },
+          {
+            "name": "Acidum boricum",
+            "presentationKind": "solid",
+            "massG": 3.0,
+            "kvoMlPerG": 0.5
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 100
+          }
+        ]
+      },
+      "expected": {
+        "classification": "mixed_solution_path"
+      }
+    },
+    {
+      "id": "SOL_041",
+      "title": "Hydrogen peroxide standard solution path",
+      "input": {
+        "dosageForm": "solution",
+        "route": "external",
+        "ingredients": [
+          {
+            "name": "Solutio Hydrogenii peroxydi diluta",
+            "presentationKind": "standardSolution",
+            "volumeMl": 50.0
+          }
+        ]
+      },
+      "expected": {
+        "classification": "standard_solution_object"
+      }
+    },
+    {
+      "id": "SOL_042",
+      "title": "Demyanovich name only must not activate special branch",
+      "input": {
+        "dosageForm": "solution",
+        "ingredients": [
+          {
+            "name": "Solutio Demyanovich",
+            "presentationKind": "standardSolution",
+            "volumeMl": 100.0,
+            "specialCaseText": "mentioned only in comment"
+          }
+        ]
+      },
+      "expected": {
+        "specialCaseActivated": false
+      }
+    },
+    {
+      "id": "SOL_043",
+      "title": "Demyanovich explicit No.2 may activate special branch",
+      "input": {
+        "dosageForm": "solution",
+        "ingredients": [
+          {
+            "name": "Solutio Demyanovich",
+            "presentationKind": "standardSolution",
+            "volumeMl": 100.0,
+            "standardSolutionSpecialCase": "demyanovich2"
+          }
+        ]
+      },
+      "expected": {
+        "specialCaseActivated": true
+      }
+    },
+    {
+      "id": "SOL_044",
+      "title": "Solution form conflict between name and metadata",
+      "input": {
+        "dosageForm": "solution",
+        "ingredients": [
+          {
+            "name": "Sol. Furacilini 1:5000",
+            "presentationKind": "solid",
+            "massG": 1.0
+          }
+        ]
+      },
+      "expected": {
+        "warningsMustContain": [
+          "ingredient_form_conflict"
+        ]
+      }
+    },
+    {
+      "id": "SOL_045",
+      "title": "Missing target volume should warn",
+      "input": {
+        "dosageForm": "solution",
+        "ingredients": [
+          {
+            "name": "Natrii bromidi",
+            "presentationKind": "solid",
+            "massG": 2.0
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true
+          }
+        ]
+      },
+      "expected": {
+        "warningsMustContain": [
+          "target_volume_missing"
+        ]
+      }
+    },
+    {
+      "id": "SOL_046",
+      "title": "Unsupported concentration reference should warn unresolved",
+      "input": {
+        "dosageForm": "solution",
+        "targetVolumeMl": 100,
+        "ingredients": [
+          {
+            "name": "Substantia X",
+            "presentationKind": "solid",
+            "massG": 1.0
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 100
+          }
+        ]
+      },
+      "expected": {
+        "warningsMustContain": [
+          "unresolved_rule"
+        ]
+      }
+    },
+    {
+      "id": "SOL_047",
+      "title": "Water fixed plus alcohol fixed no ad",
+      "input": {
+        "dosageForm": "solution",
+        "route": "external",
+        "ingredients": [
+          {
+            "name": "Ethanol 70%",
+            "presentationKind": "nonAqueousSolvent",
+            "volumeMl": 30.0,
+            "phase": "alcoholic"
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "volumeMl": 70.0,
+            "phase": "aqueous"
+          }
+        ]
+      },
+      "expected": {
+        "finalAdjustmentMode": "fixed_liquid_components"
+      }
+    },
+    {
+      "id": "SOL_048",
+      "title": "Tincture as counted liquid in ad formula",
+      "input": {
+        "dosageForm": "solution",
+        "targetVolumeMl": 100,
+        "ingredients": [
+          {
+            "name": "Tinctura Leonuri",
+            "presentationKind": "tincture",
+            "volumeMl": 20.0
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 100
+          }
+        ]
+      },
+      "expected": {
+        "waterToAddMl": 80.0
+      }
+    },
+    {
+      "id": "SOL_049",
+      "title": "Liquid syrup counted in ad formula",
+      "input": {
+        "dosageForm": "solution",
+        "targetVolumeMl": 120,
+        "ingredients": [
+          {
+            "name": "Sirupus simplex",
+            "presentationKind": "liquid",
+            "volumeMl": 30.0
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 120
+          }
+        ]
+      },
+      "expected": {
+        "waterToAddMl": 90.0
+      }
+    },
+    {
+      "id": "SOL_050",
+      "title": "Golden burette PPC consistency",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 150,
+        "ingredients": [
+          {
+            "name": "Natrii bromidum",
+            "presentationKind": "targetSolution",
+            "targetConcentrationPercent": 2,
+            "targetVolumeMl": 150,
+            "referenceConcentratePercent": 20
+          },
+          {
+            "name": "Coffeini-natrii benzoas",
+            "presentationKind": "solid",
+            "massG": 1.0,
+            "referenceConcentratePercent": 10
+          },
+          {
+            "name": "Glucose",
+            "presentationKind": "solid",
+            "massG": 6.0,
+            "referenceConcentratePercent": 50
+          }
+        ],
+        "signa": "1 3"
+      },
+      "expected": {
+        "ppcMustContain": [
+          "Vtarget = 150 ml",
+          "Aqua purificata = 113 ml"
+        ],
+        "ppcMustNotContain": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,329 @@
+{
+  "id": "uran_density_liquids_normalized_v1",
+  "source": "фарма3.docx table 1",
+  "temperature_C": 20,
+  "unit": "g/ml",
+  "items": [
+    {
+      "name": "Бензилбензоат",
+      "density_raw": "1,048",
+      "density_min_g_ml_20C": 1.048,
+      "density_max_g_ml_20C": 1.048,
+      "density_ref_g_ml_20C": 1.048
+    },
+    {
+      "name": "Валидол",
+      "density_raw": "0,894 - 0,907",
+      "density_min_g_ml_20C": 0.894,
+      "density_max_g_ml_20C": 0.907,
+      "density_ref_g_ml_20C": 0.9005000000000001
+    },
+    {
+      "name": "Винилин (бальзам Шостаковского)",
+      "density_raw": "0,903 - 0,021",
+      "density_min_g_ml_20C": 0.903,
+      "density_max_g_ml_20C": 0.021,
+      "density_ref_g_ml_20C": 0.462
+    },
+    {
+      "name": "Глицерин",
+      "density_raw": "1,223 - 1,233",
+      "density_min_g_ml_20C": 1.223,
+      "density_max_g_ml_20C": 1.233,
+      "density_ref_g_ml_20C": 1.2280000000000002
+    },
+    {
+      "name": "Деготь березовый",
+      "density_raw": "0,925 - 0,950",
+      "density_min_g_ml_20C": 0.925,
+      "density_max_g_ml_20C": 0.95,
+      "density_ref_g_ml_20C": 0.9375
+    },
+    {
+      "name": "Димексид",
+      "density_raw": "1,101",
+      "density_min_g_ml_20C": 1.101,
+      "density_max_g_ml_20C": 1.101,
+      "density_ref_g_ml_20C": 1.101
+    },
+    {
+      "name": "Жидкость Бурова",
+      "density_raw": "1,036 - 1,040",
+      "density_min_g_ml_20C": 1.036,
+      "density_max_g_ml_20C": 1.04,
+      "density_ref_g_ml_20C": 1.038
+    },
+    {
+      "name": "Кислота хлористоводородная разведенная (8,2 - 8,4%)",
+      "density_raw": "1,038 - 1,039",
+      "density_min_g_ml_20C": 1.038,
+      "density_max_g_ml_20C": 1.039,
+      "density_ref_g_ml_20C": 1.0385
+    },
+    {
+      "name": "Кислота хлористоводородная (24,8 - 25,2%)",
+      "density_raw": "1,122 - 1,124",
+      "density_min_g_ml_20C": 1.122,
+      "density_max_g_ml_20C": 1.124,
+      "density_ref_g_ml_20C": 1.1230000000000002
+    },
+    {
+      "name": "Кислота уксусная разведенная (29,5 - 30,5%)",
+      "density_raw": "1,038 - 1,039",
+      "density_min_g_ml_20C": 1.038,
+      "density_max_g_ml_20C": 1.039,
+      "density_ref_g_ml_20C": 1.0385
+    },
+    {
+      "name": "Кислота уксусная (98%)",
+      "density_raw": "1,055",
+      "density_min_g_ml_20C": 1.055,
+      "density_max_g_ml_20C": 1.055,
+      "density_ref_g_ml_20C": 1.055
+    },
+    {
+      "name": "Масло вазелиновое",
+      "density_raw": "0,875 - 0,890",
+      "density_min_g_ml_20C": 0.875,
+      "density_max_g_ml_20C": 0.89,
+      "density_ref_g_ml_20C": 0.8825000000000001
+    },
+    {
+      "name": "Масло касторовое",
+      "density_raw": "0,948 - 0,968",
+      "density_min_g_ml_20C": 0.948,
+      "density_max_g_ml_20C": 0.968,
+      "density_ref_g_ml_20C": 0.958
+    },
+    {
+      "name": "Масло миндальное",
+      "density_raw": "0,913 - 0,918",
+      "density_min_g_ml_20C": 0.913,
+      "density_max_g_ml_20C": 0.918,
+      "density_ref_g_ml_20C": 0.9155
+    },
+    {
+      "name": "Масло мяты перечной",
+      "density_raw": "0,900 - 0,910",
+      "density_min_g_ml_20C": 0.9,
+      "density_max_g_ml_20C": 0.91,
+      "density_ref_g_ml_20C": 0.905
+    },
+    {
+      "name": "Масло персиковое",
+      "density_raw": "0,914 - 0,920",
+      "density_min_g_ml_20C": 0.914,
+      "density_max_g_ml_20C": 0.92,
+      "density_ref_g_ml_20C": 0.917
+    },
+    {
+      "name": "Масло подсолнечное",
+      "density_raw": "0,920 - 0,930",
+      "density_min_g_ml_20C": 0.92,
+      "density_max_g_ml_20C": 0.93,
+      "density_ref_g_ml_20C": 0.925
+    },
+    {
+      "name": "Масло терпентинное очищенное (скипидар)",
+      "density_raw": "0,855 - 0,863",
+      "density_min_g_ml_20C": 0.855,
+      "density_max_g_ml_20C": 0.863,
+      "density_ref_g_ml_20C": 0.859
+    },
+    {
+      "name": "Масло эвкалиптовое",
+      "density_raw": "0,910 - 0,930",
+      "density_min_g_ml_20C": 0.91,
+      "density_max_g_ml_20C": 0.93,
+      "density_ref_g_ml_20C": 0.92
+    },
+    {
+      "name": "Метилсалицилат",
+      "density_raw": "1,178 - 1,185",
+      "density_min_g_ml_20C": 1.178,
+      "density_max_g_ml_20C": 1.185,
+      "density_ref_g_ml_20C": 1.1815
+    },
+    {
+      "name": "Настойка валерианы",
+      "density_raw": "0,920",
+      "density_min_g_ml_20C": 0.92,
+      "density_max_g_ml_20C": 0.92,
+      "density_ref_g_ml_20C": 0.92
+    },
+    {
+      "name": "Настойка зверобоя",
+      "density_raw": "0,970",
+      "density_min_g_ml_20C": 0.97,
+      "density_max_g_ml_20C": 0.97,
+      "density_ref_g_ml_20C": 0.97
+    },
+    {
+      "name": "Настойка ландыша",
+      "density_raw": "0,910",
+      "density_min_g_ml_20C": 0.91,
+      "density_max_g_ml_20C": 0.91,
+      "density_ref_g_ml_20C": 0.91
+    },
+    {
+      "name": "Настойка мяты перечной",
+      "density_raw": "0,858",
+      "density_min_g_ml_20C": 0.858,
+      "density_max_g_ml_20C": 0.858,
+      "density_ref_g_ml_20C": 0.858
+    },
+    {
+      "name": "Настойка полыни",
+      "density_raw": "0,910",
+      "density_min_g_ml_20C": 0.91,
+      "density_max_g_ml_20C": 0.91,
+      "density_ref_g_ml_20C": 0.91
+    },
+    {
+      "name": "Настойка пустырника",
+      "density_raw": "0,910",
+      "density_min_g_ml_20C": 0.91,
+      "density_max_g_ml_20C": 0.91,
+      "density_ref_g_ml_20C": 0.91
+    },
+    {
+      "name": "Настойка эвкалипта",
+      "density_raw": "0,910",
+      "density_min_g_ml_20C": 0.91,
+      "density_max_g_ml_20C": 0.91,
+      "density_ref_g_ml_20C": 0.91
+    },
+    {
+      "name": "Нашатырно-анисовые капли",
+      "density_raw": "0,875",
+      "density_min_g_ml_20C": 0.875,
+      "density_max_g_ml_20C": 0.875,
+      "density_ref_g_ml_20C": 0.875
+    },
+    {
+      "name": "Пергидроль (27,5 - 30,0%)",
+      "density_raw": "1,098 - 1,105",
+      "density_min_g_ml_20C": 1.098,
+      "density_max_g_ml_20C": 1.105,
+      "density_ref_g_ml_20C": 1.1015000000000001
+    },
+    {
+      "name": "Полиэтиленгликоль - 400 (полиатиленоксид 400)",
+      "density_raw": "1,125",
+      "density_min_g_ml_20C": 1.125,
+      "density_max_g_ml_20C": 1.125,
+      "density_ref_g_ml_20C": 1.125
+    },
+    {
+      "name": "Раствор аммиака (9,5 - 10,5%)",
+      "density_raw": "0,956 - 0,959",
+      "density_min_g_ml_20C": 0.956,
+      "density_max_g_ml_20C": 0.959,
+      "density_ref_g_ml_20C": 0.9575
+    },
+    {
+      "name": "Раствор ацетата свинца основного",
+      "density_raw": "1,223 - 1,228",
+      "density_min_g_ml_20C": 1.223,
+      "density_max_g_ml_20C": 1.228,
+      "density_ref_g_ml_20C": 1.2255
+    },
+    {
+      "name": "Рыбий жир тресковый",
+      "density_raw": "0,917 - 0,927",
+      "density_min_g_ml_20C": 0.917,
+      "density_max_g_ml_20C": 0.927,
+      "density_ref_g_ml_20C": 0.922
+    },
+    {
+      "name": "Сироп сахарный",
+      "density_raw": "1,301 - 1,313",
+      "density_min_g_ml_20C": 1.301,
+      "density_max_g_ml_20C": 1.313,
+      "density_ref_g_ml_20C": 1.307
+    },
+    {
+      "name": "Сироп алтейный",
+      "density_raw": "1,322 - 1,327",
+      "density_min_g_ml_20C": 1.322,
+      "density_max_g_ml_20C": 1.327,
+      "density_ref_g_ml_20C": 1.3245
+    },
+    {
+      "name": "Спирт камфорный 10%",
+      "density_raw": "0,884 - 0,388",
+      "density_min_g_ml_20C": 0.884,
+      "density_max_g_ml_20C": 0.388,
+      "density_ref_g_ml_20C": 0.636
+    },
+    {
+      "name": "Спирт этиловый 40%",
+      "density_raw": "0,949 - 0,951",
+      "density_min_g_ml_20C": 0.949,
+      "density_max_g_ml_20C": 0.951,
+      "density_ref_g_ml_20C": 0.95
+    },
+    {
+      "name": "Спирт этиловый 70%",
+      "density_raw": "0,885 - 0,887",
+      "density_min_g_ml_20C": 0.885,
+      "density_max_g_ml_20C": 0.887,
+      "density_ref_g_ml_20C": 0.886
+    },
+    {
+      "name": "Спирт этиловый 80%",
+      "density_raw": "0,827 - 0,831",
+      "density_min_g_ml_20C": 0.827,
+      "density_max_g_ml_20C": 0.831,
+      "density_ref_g_ml_20C": 0.829
+    },
+    {
+      "name": "Спирт этиловый 95%",
+      "density_raw": "0,809 - 0,813",
+      "density_min_g_ml_20C": 0.809,
+      "density_max_g_ml_20C": 0.813,
+      "density_ref_g_ml_20C": 0.8109999999999999
+    },
+    {
+      "name": "Формалин (36,5 - 37,5%)",
+      "density_raw": "1,078 - 1,093",
+      "density_min_g_ml_20C": 1.078,
+      "density_max_g_ml_20C": 1.093,
+      "density_ref_g_ml_20C": 1.0855000000000001
+    },
+    {
+      "name": "Хлороформ",
+      "density_raw": "1,474 - 1,483",
+      "density_min_g_ml_20C": 1.474,
+      "density_max_g_ml_20C": 1.483,
+      "density_ref_g_ml_20C": 1.4785
+    },
+    {
+      "name": "Эфир медицинский",
+      "density_raw": "0,714 - 0,717",
+      "density_min_g_ml_20C": 0.714,
+      "density_max_g_ml_20C": 0.717,
+      "density_ref_g_ml_20C": 0.7155
+    }
+  ],
+  "parse_issues": [
+    {
+      "name": "Винилин (бальзам Шостаковского)",
+      "density_raw": "0,903 - 0,021",
+      "parsed": [
+        0.903,
+        0.021
+      ],
+      "reason": "suspicious"
+    },
+    {
+      "name": "Спирт камфорный 10%",
+      "density_raw": "0,884 - 0,388",
+      "parsed": [
+        0.884,
+        0.388
+      ],
+      "reason": "suspicious"
+    }
+  ]
+}

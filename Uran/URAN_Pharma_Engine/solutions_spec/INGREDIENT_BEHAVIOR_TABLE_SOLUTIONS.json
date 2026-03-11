@@ -1,0 +1,758 @@
+{
+  "version": "1.0",
+  "description": "Behavior table for solution ingredients in URAN Pharma",
+  "items": [
+    {
+      "key": "Aqua purificata",
+      "aliases": [
+        "Aq. purif.",
+        "Aqua purificata"
+      ],
+      "behaviorType": "purifiedWater",
+      "introductionMode": "unresolved",
+      "countsAsLiquid": true,
+      "countsAsSolid": false,
+      "affectsAd": true,
+      "affectsKvo": false,
+      "solubilityClass": "unknown",
+      "phaseType": "aqueous",
+      "requiresSeparateDissolution": false,
+      "addAtEnd": false,
+      "orderPriority": 100,
+      "heatPolicy": "allow_heating",
+      "volatilityPolicy": "none",
+      "filtrationPolicy": "normal_if_needed",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "default aqueous solvent",
+        "may be ad solvent"
+      ]
+    },
+    {
+      "key": "Tinctura Valerianae",
+      "aliases": [
+        "T-ra Valerianae",
+        "Tinctura Valerianae"
+      ],
+      "behaviorType": "tincture",
+      "introductionMode": "as_tincture",
+      "countsAsLiquid": true,
+      "countsAsSolid": false,
+      "affectsAd": true,
+      "affectsKvo": false,
+      "solubilityClass": "unknown",
+      "phaseType": "hydroalcoholic",
+      "requiresSeparateDissolution": false,
+      "addAtEnd": true,
+      "orderPriority": 800,
+      "heatPolicy": "no_heating",
+      "volatilityPolicy": "minimize_open_exposure",
+      "filtrationPolicy": "avoid_if_possible",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "counts in liquid sum",
+        "reduces ad water",
+        "late addition preferred"
+      ]
+    },
+    {
+      "key": "Tinctura Leonuri",
+      "aliases": [
+        "T-ra Leonuri",
+        "Tinctura Leonuri"
+      ],
+      "behaviorType": "tincture",
+      "introductionMode": "as_tincture",
+      "countsAsLiquid": true,
+      "countsAsSolid": false,
+      "affectsAd": true,
+      "affectsKvo": false,
+      "solubilityClass": "unknown",
+      "phaseType": "hydroalcoholic",
+      "requiresSeparateDissolution": false,
+      "addAtEnd": true,
+      "orderPriority": 800,
+      "heatPolicy": "no_heating",
+      "volatilityPolicy": "minimize_open_exposure",
+      "filtrationPolicy": "avoid_if_possible",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "counts in liquid sum",
+        "reduces ad water"
+      ]
+    },
+    {
+      "key": "Extractum Crataegi fluidum",
+      "aliases": [
+        "Extractum Crataegi fluidum"
+      ],
+      "behaviorType": "liquidExtract",
+      "introductionMode": "as_liquid_extract",
+      "countsAsLiquid": true,
+      "countsAsSolid": false,
+      "affectsAd": true,
+      "affectsKvo": false,
+      "solubilityClass": "unknown",
+      "phaseType": "mixed",
+      "requiresSeparateDissolution": false,
+      "addAtEnd": true,
+      "orderPriority": 780,
+      "heatPolicy": "no_heating",
+      "volatilityPolicy": "minimize_open_exposure",
+      "filtrationPolicy": "avoid_if_possible",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "counts in liquid sum",
+        "late addition preferred"
+      ]
+    },
+    {
+      "key": "Extractum Belladonnae fluidum",
+      "aliases": [
+        "Extractum Belladonnae fluidum"
+      ],
+      "behaviorType": "liquidExtract",
+      "introductionMode": "as_liquid_extract",
+      "countsAsLiquid": true,
+      "countsAsSolid": false,
+      "affectsAd": true,
+      "affectsKvo": false,
+      "solubilityClass": "unknown",
+      "phaseType": "mixed",
+      "requiresSeparateDissolution": false,
+      "addAtEnd": true,
+      "orderPriority": 780,
+      "heatPolicy": "no_heating",
+      "volatilityPolicy": "minimize_open_exposure",
+      "filtrationPolicy": "avoid_if_possible",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "counts in liquid sum",
+        "late addition preferred"
+      ]
+    },
+    {
+      "key": "Extractum Belladonnae siccum",
+      "aliases": [
+        "Extractum Belladonnae siccum"
+      ],
+      "behaviorType": "dryExtract",
+      "introductionMode": "direct_dissolve",
+      "countsAsLiquid": false,
+      "countsAsSolid": true,
+      "affectsAd": false,
+      "affectsKvo": true,
+      "solubilityClass": "soluble",
+      "phaseType": "unknown",
+      "requiresSeparateDissolution": false,
+      "requiredPreDissolutionSolvent": "aqueous",
+      "addAtEnd": false,
+      "orderPriority": 300,
+      "heatPolicy": "unknown",
+      "volatilityPolicy": "none",
+      "filtrationPolicy": "normal_if_needed",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "counts in solids",
+        "may enter KVO branch if applicable"
+      ]
+    },
+    {
+      "key": "Sirupus simplex",
+      "aliases": [
+        "Sirupus simplex"
+      ],
+      "behaviorType": "syrup",
+      "introductionMode": "as_syrup",
+      "countsAsLiquid": true,
+      "countsAsSolid": false,
+      "affectsAd": true,
+      "affectsKvo": false,
+      "solubilityClass": "unknown",
+      "phaseType": "aqueous",
+      "requiresSeparateDissolution": false,
+      "addAtEnd": true,
+      "orderPriority": 700,
+      "heatPolicy": "mild_heating_only",
+      "volatilityPolicy": "none",
+      "filtrationPolicy": "normal_if_needed",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "counts in liquid sum",
+        "not treated as solids"
+      ]
+    },
+    {
+      "key": "Aqua Menthae",
+      "aliases": [
+        "Aqua Menthae"
+      ],
+      "behaviorType": "aromaticWater",
+      "introductionMode": "as_aromatic_water",
+      "countsAsLiquid": true,
+      "countsAsSolid": false,
+      "affectsAd": true,
+      "affectsKvo": false,
+      "solubilityClass": "unknown",
+      "phaseType": "aqueous",
+      "requiresSeparateDissolution": false,
+      "addAtEnd": true,
+      "orderPriority": 820,
+      "heatPolicy": "no_heating",
+      "volatilityPolicy": "minimize_open_exposure",
+      "filtrationPolicy": "avoid_if_possible",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "counts in liquid sum",
+        "not the same as purified water"
+      ]
+    },
+    {
+      "key": "Aqua Foeniculi",
+      "aliases": [
+        "Aqua Foeniculi"
+      ],
+      "behaviorType": "aromaticWater",
+      "introductionMode": "as_aromatic_water",
+      "countsAsLiquid": true,
+      "countsAsSolid": false,
+      "affectsAd": true,
+      "affectsKvo": false,
+      "solubilityClass": "unknown",
+      "phaseType": "aqueous",
+      "requiresSeparateDissolution": false,
+      "addAtEnd": true,
+      "orderPriority": 820,
+      "heatPolicy": "no_heating",
+      "volatilityPolicy": "minimize_open_exposure",
+      "filtrationPolicy": "avoid_if_possible",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "counts in liquid sum",
+        "not merged with purified water logic"
+      ]
+    },
+    {
+      "key": "Sol. Furacilini 1:5000",
+      "aliases": [
+        "1:5000",
+        "Sol. Furacilini 1:5000"
+      ],
+      "behaviorType": "readySolution",
+      "introductionMode": "as_ready_solution",
+      "countsAsLiquid": true,
+      "countsAsSolid": false,
+      "affectsAd": true,
+      "affectsKvo": false,
+      "solubilityClass": "unknown",
+      "phaseType": "aqueous",
+      "requiresSeparateDissolution": false,
+      "addAtEnd": false,
+      "orderPriority": 500,
+      "heatPolicy": "allow_heating",
+      "volatilityPolicy": "none",
+      "filtrationPolicy": "no_default_filtration",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "never count as solid",
+        "reduces ad water"
+      ]
+    },
+    {
+      "key": "Liquor Burovi",
+      "aliases": [
+        "Liquor Burovi"
+      ],
+      "behaviorType": "standardSolution",
+      "introductionMode": "as_standard_solution",
+      "countsAsLiquid": true,
+      "countsAsSolid": false,
+      "affectsAd": true,
+      "affectsKvo": false,
+      "solubilityClass": "unknown",
+      "phaseType": "aqueous",
+      "requiresSeparateDissolution": false,
+      "addAtEnd": false,
+      "orderPriority": 500,
+      "heatPolicy": "allow_heating",
+      "volatilityPolicy": "none",
+      "filtrationPolicy": "no_default_filtration",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "treated as liquid object",
+        "do not recalculate as dry solid"
+      ]
+    },
+    {
+      "key": "Solutio Hydrogenii peroxydi diluta",
+      "aliases": [
+        "Solutio Hydrogenii peroxydi diluta"
+      ],
+      "behaviorType": "standardSolution",
+      "introductionMode": "as_standard_solution",
+      "countsAsLiquid": true,
+      "countsAsSolid": false,
+      "affectsAd": true,
+      "affectsKvo": false,
+      "solubilityClass": "unknown",
+      "phaseType": "aqueous",
+      "requiresSeparateDissolution": false,
+      "addAtEnd": false,
+      "orderPriority": 500,
+      "heatPolicy": "no_heating",
+      "volatilityPolicy": "none",
+      "filtrationPolicy": "no_default_filtration",
+      "lightSensitive": true,
+      "sterilitySensitive": false,
+      "routeRestrictions": [
+        "external"
+      ],
+      "compatibilityHints": [
+        "dark glass may be required",
+        "treated as standard solution"
+      ]
+    },
+    {
+      "key": "Ethanol 70%",
+      "aliases": [
+        "Spiritus aethylicus 70%",
+        "70%",
+        "Ethanol 70%"
+      ],
+      "behaviorType": "alcohol",
+      "introductionMode": "as_non_aqueous_solvent",
+      "countsAsLiquid": true,
+      "countsAsSolid": false,
+      "affectsAd": true,
+      "affectsKvo": false,
+      "solubilityClass": "unknown",
+      "phaseType": "alcoholic",
+      "requiresSeparateDissolution": false,
+      "addAtEnd": false,
+      "orderPriority": 200,
+      "heatPolicy": "no_heating",
+      "volatilityPolicy": "minimize_open_exposure",
+      "filtrationPolicy": "avoid_if_possible",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "main non-aqueous solvent",
+        "triggers non-aqueous branch"
+      ]
+    },
+    {
+      "key": "Glycerolum",
+      "aliases": [
+        "Glycerinum",
+        "Glycerolum"
+      ],
+      "behaviorType": "glycerin",
+      "introductionMode": "as_non_aqueous_solvent",
+      "countsAsLiquid": true,
+      "countsAsSolid": false,
+      "affectsAd": true,
+      "affectsKvo": false,
+      "solubilityClass": "unknown",
+      "phaseType": "glycerinic",
+      "requiresSeparateDissolution": false,
+      "addAtEnd": false,
+      "orderPriority": 220,
+      "heatPolicy": "mild_heating_only",
+      "volatilityPolicy": "none",
+      "filtrationPolicy": "normal_if_needed",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "density-aware calculations may be needed",
+        "non-aqueous branch"
+      ]
+    },
+    {
+      "key": "Dimexidum",
+      "aliases": [
+        "Dimexidum"
+      ],
+      "behaviorType": "mixedLiquid",
+      "introductionMode": "as_non_aqueous_solvent",
+      "countsAsLiquid": true,
+      "countsAsSolid": false,
+      "affectsAd": true,
+      "affectsKvo": false,
+      "solubilityClass": "unknown",
+      "phaseType": "mixed",
+      "requiresSeparateDissolution": false,
+      "addAtEnd": false,
+      "orderPriority": 220,
+      "heatPolicy": "no_heating",
+      "volatilityPolicy": "none",
+      "filtrationPolicy": "normal_if_needed",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [
+        "external"
+      ],
+      "compatibilityHints": [
+        "special non-aqueous branch",
+        "do not treat as plain water"
+      ]
+    },
+    {
+      "key": "Oleum Vaselini",
+      "aliases": [
+        "Oleum Vaselini"
+      ],
+      "behaviorType": "oil",
+      "introductionMode": "as_non_aqueous_solvent",
+      "countsAsLiquid": true,
+      "countsAsSolid": false,
+      "affectsAd": true,
+      "affectsKvo": false,
+      "solubilityClass": "unknown",
+      "phaseType": "oily",
+      "requiresSeparateDissolution": false,
+      "addAtEnd": false,
+      "orderPriority": 220,
+      "heatPolicy": "mild_heating_only",
+      "volatilityPolicy": "none",
+      "filtrationPolicy": "avoid_if_possible",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "requires compatibility check with water",
+        "oily branch"
+      ]
+    },
+    {
+      "key": "Aether",
+      "aliases": [
+        "Aether"
+      ],
+      "behaviorType": "volatileSolvent",
+      "introductionMode": "as_non_aqueous_solvent",
+      "countsAsLiquid": true,
+      "countsAsSolid": false,
+      "affectsAd": true,
+      "affectsKvo": false,
+      "solubilityClass": "unknown",
+      "phaseType": "volatileOrganic",
+      "requiresSeparateDissolution": false,
+      "addAtEnd": true,
+      "orderPriority": 900,
+      "heatPolicy": "no_heating",
+      "volatilityPolicy": "add_last",
+      "filtrationPolicy": "avoid_if_possible",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "volatile solvent",
+        "late addition preferred",
+        "avoid open exposure"
+      ]
+    },
+    {
+      "key": "Chloroformium",
+      "aliases": [
+        "Chloroformium"
+      ],
+      "behaviorType": "volatileSolvent",
+      "introductionMode": "as_non_aqueous_solvent",
+      "countsAsLiquid": true,
+      "countsAsSolid": false,
+      "affectsAd": true,
+      "affectsKvo": false,
+      "solubilityClass": "unknown",
+      "phaseType": "volatileOrganic",
+      "requiresSeparateDissolution": false,
+      "addAtEnd": true,
+      "orderPriority": 900,
+      "heatPolicy": "no_heating",
+      "volatilityPolicy": "add_last",
+      "filtrationPolicy": "avoid_if_possible",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "volatile solvent",
+        "avoid heating"
+      ]
+    },
+    {
+      "key": "Natrii bromidi",
+      "aliases": [
+        "Natrii bromidi"
+      ],
+      "behaviorType": "drySubstance",
+      "introductionMode": "direct_dissolve",
+      "countsAsLiquid": false,
+      "countsAsSolid": true,
+      "affectsAd": false,
+      "affectsKvo": true,
+      "solubilityClass": "freely_soluble",
+      "phaseType": "unknown",
+      "requiresSeparateDissolution": false,
+      "requiredPreDissolutionSolvent": "aqueous",
+      "addAtEnd": false,
+      "orderPriority": 300,
+      "heatPolicy": "no_heating",
+      "volatilityPolicy": "none",
+      "filtrationPolicy": "normal_if_needed",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "very soluble in water",
+        "direct dissolution in purified water",
+        "does not require light protection",
+        "may be calculated through stock concentrate",
+        "true solution path"
+      ]
+    },
+    {
+      "key": "Coffeini-natrii benzoas",
+      "aliases": [
+        "Coffeini-natrii benzoas"
+      ],
+      "behaviorType": "drySubstance",
+      "introductionMode": "direct_dissolve",
+      "countsAsLiquid": false,
+      "countsAsSolid": true,
+      "affectsAd": false,
+      "affectsKvo": true,
+      "solubilityClass": "soluble",
+      "phaseType": "unknown",
+      "requiresSeparateDissolution": false,
+      "requiredPreDissolutionSolvent": "aqueous",
+      "addAtEnd": false,
+      "orderPriority": 320,
+      "heatPolicy": "allow_heating",
+      "volatilityPolicy": "none",
+      "filtrationPolicy": "normal_if_needed",
+      "lightSensitive": true,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "dark glass may be required",
+        "often used via stock concentrate 10%"
+      ]
+    },
+    {
+      "key": "Glucose",
+      "aliases": [
+        "Glucose",
+        "Glucosum"
+      ],
+      "behaviorType": "drySubstance",
+      "introductionMode": "direct_dissolve",
+      "countsAsLiquid": false,
+      "countsAsSolid": true,
+      "affectsAd": false,
+      "affectsKvo": true,
+      "solubilityClass": "freely_soluble",
+      "phaseType": "unknown",
+      "requiresSeparateDissolution": false,
+      "requiredPreDissolutionSolvent": "aqueous",
+      "addAtEnd": false,
+      "orderPriority": 310,
+      "heatPolicy": "mild_heating_only",
+      "volatilityPolicy": "none",
+      "filtrationPolicy": "normal_if_needed",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "often used via stock concentrate 50%"
+      ]
+    },
+    {
+      "key": "Magnesii sulfas",
+      "aliases": [
+        "Magnesii sulfas"
+      ],
+      "behaviorType": "drySubstance",
+      "introductionMode": "direct_dissolve",
+      "countsAsLiquid": false,
+      "countsAsSolid": true,
+      "affectsAd": false,
+      "affectsKvo": true,
+      "solubilityClass": "freely_soluble",
+      "phaseType": "unknown",
+      "requiresSeparateDissolution": false,
+      "requiredPreDissolutionSolvent": "aqueous",
+      "addAtEnd": false,
+      "orderPriority": 300,
+      "heatPolicy": "allow_heating",
+      "volatilityPolicy": "none",
+      "filtrationPolicy": "normal_if_needed",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "KVO branch may be relevant at high concentrations"
+      ]
+    },
+    {
+      "key": "Kalii iodidi",
+      "aliases": [
+        "Kalii iodidi"
+      ],
+      "behaviorType": "drySubstance",
+      "introductionMode": "direct_dissolve",
+      "countsAsLiquid": false,
+      "countsAsSolid": true,
+      "affectsAd": false,
+      "affectsKvo": true,
+      "solubilityClass": "freely_soluble",
+      "phaseType": "unknown",
+      "requiresSeparateDissolution": false,
+      "requiredPreDissolutionSolvent": "aqueous",
+      "addAtEnd": false,
+      "orderPriority": 300,
+      "heatPolicy": "allow_heating",
+      "volatilityPolicy": "none",
+      "filtrationPolicy": "normal_if_needed",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "true solution path"
+      ]
+    },
+    {
+      "key": "Acidum boricum",
+      "aliases": [
+        "Acidum boricum"
+      ],
+      "behaviorType": "drySubstance",
+      "introductionMode": "requires_separate_dissolution",
+      "countsAsLiquid": false,
+      "countsAsSolid": true,
+      "affectsAd": false,
+      "affectsKvo": true,
+      "solubilityClass": "sparingly_soluble",
+      "phaseType": "unknown",
+      "requiresSeparateDissolution": true,
+      "requiredPreDissolutionSolvent": "aqueous_or_glycerinic",
+      "addAtEnd": false,
+      "orderPriority": 250,
+      "heatPolicy": "mild_heating_only",
+      "volatilityPolicy": "none",
+      "filtrationPolicy": "normal_if_needed",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "may require separate dissolution",
+        "watch solubility branch"
+      ]
+    },
+    {
+      "key": "Mentholum",
+      "aliases": [
+        "Mentholum"
+      ],
+      "behaviorType": "drySubstance",
+      "introductionMode": "requires_separate_dissolution",
+      "countsAsLiquid": false,
+      "countsAsSolid": true,
+      "affectsAd": false,
+      "affectsKvo": false,
+      "solubilityClass": "requires_co_solvent",
+      "phaseType": "unknown",
+      "requiresSeparateDissolution": true,
+      "requiredPreDissolutionSolvent": "alcoholic_or_oily",
+      "addAtEnd": false,
+      "orderPriority": 240,
+      "heatPolicy": "no_heating",
+      "volatilityPolicy": "minimize_open_exposure",
+      "filtrationPolicy": "avoid_if_possible",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "not for simple aqueous true-solution path",
+        "requires co-solvent"
+      ]
+    },
+    {
+      "key": "Novocainum",
+      "aliases": [
+        "Novocainum",
+        "Procainum"
+      ],
+      "behaviorType": "drySubstance",
+      "introductionMode": "direct_dissolve",
+      "countsAsLiquid": false,
+      "countsAsSolid": true,
+      "affectsAd": false,
+      "affectsKvo": true,
+      "solubilityClass": "soluble",
+      "phaseType": "unknown",
+      "requiresSeparateDissolution": false,
+      "requiredPreDissolutionSolvent": "aqueous_or_dimexide_reference_dependent",
+      "addAtEnd": false,
+      "orderPriority": 320,
+      "heatPolicy": "no_heating",
+      "volatilityPolicy": "none",
+      "filtrationPolicy": "normal_if_needed",
+      "lightSensitive": false,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "watch reference-specific solvent choice"
+      ]
+    },
+    {
+      "key": "Kalii permanganas",
+      "aliases": [
+        "Kalii permanganas"
+      ],
+      "behaviorType": "readySolution",
+      "introductionMode": "as_ready_solution",
+      "countsAsLiquid": true,
+      "countsAsSolid": false,
+      "affectsAd": true,
+      "affectsKvo": false,
+      "solubilityClass": "unknown",
+      "phaseType": "aqueous",
+      "requiresSeparateDissolution": false,
+      "addAtEnd": false,
+      "orderPriority": 500,
+      "heatPolicy": "no_heating",
+      "volatilityPolicy": "none",
+      "filtrationPolicy": "no_default_filtration",
+      "lightSensitive": true,
+      "sterilitySensitive": false,
+      "routeRestrictions": [],
+      "compatibilityHints": [
+        "colored solution",
+        "upper meniscus note may apply"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "package": "URAN Pharma Engine Clean Final",
+  "removed": [
+    "__MACOSX",
+    "*.DS_Store",
+    "._*",
+    "extemp_reference_200/",
+    "сказать.rtf"
+  ],
+  "kept_top_level": [
+    "CLEANUP_NOTES.md",
+    "CODEX_MASTER_PROMPT.md",
+    "CODEX_RUN_PROMPT.md",
+    "README.md",
+    "reference",
+    "solutions_spec",
+    "validation_report.json"
+  ]
+}
