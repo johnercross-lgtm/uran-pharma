@@ -42,6 +42,7 @@ jobs:
 
       - name: Toolchain info
         run: |
+          # No-op marker: keeps paths filter triggered when we need to retrigger PR checks.
           xcodebuild -version
           swift --version
 
