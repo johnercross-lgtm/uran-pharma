@@ -1,0 +1,743 @@
+{
+  "cases" : [
+    {
+      "branch" : "aqueous_burette_solution",
+      "concentrateVolumesMl" : {
+        "Sol. Coffeini-natrii benzoatis 10%" : 10,
+        "Sol. Glucosi 50%" : 12,
+        "Sol. Natrii bromidi 20%" : 15
+      },
+      "confidence" : "exact",
+      "id" : "RB_001",
+      "kvoApplied" : false,
+      "labels" : [
+        "internal_use"
+      ],
+      "packaging" : [
+        "glass_bottle",
+        "dark_glass"
+      ],
+      "ppkForbiddenHits" : [
+
+      ],
+      "ppkSectionKeys" : [
+        "calculations",
+        "control",
+        "input_data",
+        "math_justification",
+        "normalization",
+        "packaging",
+        "packaging_storage",
+        "technological_justification",
+        "technology",
+        "technology_order",
+        "validation"
+      ],
+      "ppkSectionLineCounts" : {
+        "calculations" : 9,
+        "control" : 0,
+        "input_data" : 9,
+        "math_justification" : 0,
+        "normalization" : 0,
+        "packaging" : 3,
+        "packaging_storage" : 0,
+        "technological_justification" : 0,
+        "technology" : 3,
+        "technology_order" : 0,
+        "validation" : 0
+      },
+      "requiredMassesG" : {
+        "Coffeini-natrii benzoas" : 1,
+        "Glucosum" : 6,
+        "Natrii bromidum" : 3
+      },
+      "route" : "oral",
+      "state" : "FINAL_RESULT_EMITTED",
+      "storage" : [
+        "protect_from_light"
+      ],
+      "sumSolidsG" : 0,
+      "technologyFlags" : [
+        "burette_concentrate_path",
+        "sequence_control",
+        "heating"
+      ],
+      "technologySteps" : [
+        "dissolve_in_part_water",
+        "stirring_dissolution",
+        "heating"
+      ],
+      "warnings" : [
+
+      ],
+      "waterToAddMl" : 113
+    },
+    {
+      "branch" : "ready_solution_mix",
+      "concentrateVolumesMl" : {
+
+      },
+      "confidence" : "exact",
+      "id" : "RB_002",
+      "kvoApplied" : false,
+      "labels" : [
+        "external_use"
+      ],
+      "packaging" : [
+        "glass_bottle"
+      ],
+      "ppkForbiddenHits" : [
+
+      ],
+      "ppkSectionKeys" : [
+        "calculations",
+        "control",
+        "input_data",
+        "math_justification",
+        "normalization",
+        "packaging",
+        "packaging_storage",
+        "technological_justification",
+        "technology",
+        "technology_order",
+        "validation"
+      ],
+      "ppkSectionLineCounts" : {
+        "calculations" : 8,
+        "control" : 0,
+        "input_data" : 9,
+        "math_justification" : 0,
+        "normalization" : 0,
+        "packaging" : 3,
+        "packaging_storage" : 0,
+        "technological_justification" : 0,
+        "technology" : 5,
+        "technology_order" : 0,
+        "validation" : 0
+      },
+      "requiredMassesG" : {
+
+      },
+      "route" : "external",
+      "state" : "FINAL_RESULT_EMITTED",
+      "storage" : [
+
+      ],
+      "sumSolidsG" : 0,
+      "technologyFlags" : [
+        "heating",
+        "cool_before_qs"
+      ],
+      "technologySteps" : [
+        "direct_dissolution",
+        "Для Solutio Furacilini 1:5000 использовать кипящую Aqua purificata (90-100°C), после растворения охладить до комнатной температуры",
+        "После полного растворения довести Aqua purificata до 100 ml (ad V)",
+        "heating",
+        "cool_before_qs"
+      ],
+      "warnings" : [
+
+      ],
+      "waterToAddMl" : 50
+    },
+    {
+      "branch" : "aqueous_true_solution",
+      "concentrateVolumesMl" : {
+
+      },
+      "confidence" : "exact",
+      "id" : "RB_020",
+      "kvoApplied" : false,
+      "labels" : [
+        "external_use"
+      ],
+      "packaging" : [
+        "glass_bottle"
+      ],
+      "ppkForbiddenHits" : [
+
+      ],
+      "ppkSectionKeys" : [
+        "calculations",
+        "control",
+        "input_data",
+        "math_justification",
+        "normalization",
+        "packaging",
+        "packaging_storage",
+        "technological_justification",
+        "technology",
+        "technology_order",
+        "validation"
+      ],
+      "ppkSectionLineCounts" : {
+        "calculations" : 7,
+        "control" : 0,
+        "input_data" : 9,
+        "math_justification" : 0,
+        "normalization" : 0,
+        "packaging" : 3,
+        "packaging_storage" : 0,
+        "technological_justification" : 0,
+        "technology" : 12,
+        "technology_order" : 0,
+        "validation" : 0
+      },
+      "requiredMassesG" : {
+        "Acidum boricum" : 2
+      },
+      "route" : "external",
+      "state" : "FINAL_RESULT_EMITTED",
+      "storage" : [
+
+      ],
+      "sumSolidsG" : 2,
+      "technologyFlags" : [
+        "separate_dissolution_stage",
+        "sequence_control",
+        "heating",
+        "cool_before_qs"
+      ],
+      "technologySteps" : [
+        "Measure part of the suitable solvent",
+        "Dissolve Acidum boricum separately",
+        "Use mild heating only if policy allows",
+        "Transfer solution into main vessel",
+        "Bring to final volume ad if applicable",
+        "dissolve_in_part_water",
+        "stirring_dissolution",
+        "Для Acidum boricum использовать кипящую Aqua purificata (90-100°C), после растворения охладить до комнатной температуры",
+        "После полного растворения довести Aqua purificata до 100 ml (ad V)",
+        "heating",
+        "separate_dissolution_stage",
+        "cool_before_qs"
+      ],
+      "warnings" : [
+
+      ],
+      "waterToAddMl" : 100
+    },
+    {
+      "branch" : "special_dissolution_path",
+      "concentrateVolumesMl" : {
+
+      },
+      "confidence" : "approximate",
+      "id" : "RB_021",
+      "kvoApplied" : false,
+      "labels" : [
+        "for_nose",
+        "external_use"
+      ],
+      "packaging" : [
+        "glass_bottle",
+        "dark_glass"
+      ],
+      "ppkForbiddenHits" : [
+
+      ],
+      "ppkSectionKeys" : [
+        "calculations",
+        "control",
+        "input_data",
+        "math_justification",
+        "normalization",
+        "packaging",
+        "packaging_storage",
+        "technological_justification",
+        "technology",
+        "technology_order",
+        "validation"
+      ],
+      "ppkSectionLineCounts" : {
+        "calculations" : 8,
+        "control" : 0,
+        "input_data" : 9,
+        "math_justification" : 0,
+        "normalization" : 0,
+        "packaging" : 3,
+        "packaging_storage" : 0,
+        "technological_justification" : 0,
+        "technology" : 7,
+        "technology_order" : 0,
+        "validation" : 2
+      },
+      "requiredMassesG" : {
+        "Protargolum" : 2
+      },
+      "route" : "nasal",
+      "state" : "PARTIAL_WITH_WARNINGS",
+      "storage" : [
+        "cool_storage",
+        "protect_from_light",
+        "store_in_cool_place"
+      ],
+      "sumSolidsG" : 2,
+      "technologyFlags" : [
+        "separate_dissolution_stage",
+        "colloid_system",
+        "sequence_control",
+        "filtration_if_needed"
+      ],
+      "technologySteps" : [
+        "Use special Protargolum dissolution path according to reference",
+        "Do not apply routine heating",
+        "Do not use generic dry-substance dissolve shortcut",
+        "Package according to stability policy",
+        "colloid_dissolution",
+        "separate_dissolution_stage",
+        "filtration_if_needed"
+      ],
+      "warnings" : [
+        "isotonicity_required_but_not_checked|SOLUTION_BRANCH_SELECTED|warning",
+        "ph_check_required_but_missing|SOLUTION_BRANCH_SELECTED|warning"
+      ],
+      "waterToAddMl" : 100
+    },
+    {
+      "branch" : "volatile_non_aqueous_solution",
+      "concentrateVolumesMl" : {
+
+      },
+      "confidence" : "exact",
+      "id" : "RB_026",
+      "kvoApplied" : false,
+      "labels" : [
+        "external_use"
+      ],
+      "packaging" : [
+        "glass_bottle",
+        "tight_closure"
+      ],
+      "ppkForbiddenHits" : [
+
+      ],
+      "ppkSectionKeys" : [
+        "calculations",
+        "control",
+        "input_data",
+        "math_justification",
+        "normalization",
+        "packaging",
+        "packaging_storage",
+        "technological_justification",
+        "technology",
+        "technology_order",
+        "validation"
+      ],
+      "ppkSectionLineCounts" : {
+        "calculations" : 4,
+        "control" : 0,
+        "input_data" : 9,
+        "math_justification" : 0,
+        "normalization" : 0,
+        "packaging" : 3,
+        "packaging_storage" : 0,
+        "technological_justification" : 0,
+        "technology" : 9,
+        "technology_order" : 0,
+        "validation" : 0
+      },
+      "requiredMassesG" : {
+        "Mentholum" : 0.5
+      },
+      "route" : "external",
+      "state" : "FINAL_RESULT_EMITTED",
+      "storage" : [
+        "cool_storage",
+        "keep_tightly_closed",
+        "store_in_cool_place"
+      ],
+      "sumSolidsG" : 0.5,
+      "technologyFlags" : [
+        "separate_dissolution_stage",
+        "late_addition",
+        "non_aqueous_rules",
+        "sequence_control",
+        "filtration_if_needed",
+        "no_heating"
+      ],
+      "technologySteps" : [
+        "Add volatile solvent at a late stage when possible",
+        "Minimize open exposure time",
+        "Select alcohol or oil according to formulation path",
+        "Dissolve Mentholum separately in the suitable co-solvent",
+        "Then combine with the remaining liquid phase if compatible",
+        "late_addition",
+        "separate_dissolution_stage",
+        "no_heating",
+        "filtration_if_needed"
+      ],
+      "warnings" : [
+
+      ]
+    },
+    {
+      "branch" : "volatile_non_aqueous_solution",
+      "concentrateVolumesMl" : {
+
+      },
+      "confidence" : "exact",
+      "id" : "RB_027",
+      "kvoApplied" : false,
+      "labels" : [
+        "external_use"
+      ],
+      "packaging" : [
+        "glass_bottle",
+        "dark_glass",
+        "tight_closure"
+      ],
+      "ppkForbiddenHits" : [
+
+      ],
+      "ppkSectionKeys" : [
+        "calculations",
+        "control",
+        "input_data",
+        "math_justification",
+        "normalization",
+        "packaging",
+        "packaging_storage",
+        "technological_justification",
+        "technology",
+        "technology_order",
+        "validation"
+      ],
+      "ppkSectionLineCounts" : {
+        "calculations" : 5,
+        "control" : 0,
+        "input_data" : 9,
+        "math_justification" : 0,
+        "normalization" : 0,
+        "packaging" : 3,
+        "packaging_storage" : 0,
+        "technological_justification" : 0,
+        "technology" : 5,
+        "technology_order" : 0,
+        "validation" : 0
+      },
+      "requiredMassesG" : {
+
+      },
+      "route" : "external",
+      "state" : "FINAL_RESULT_EMITTED",
+      "storage" : [
+        "cool_storage",
+        "keep_tightly_closed",
+        "store_in_cool_place",
+        "protect_from_light"
+      ],
+      "sumSolidsG" : 0,
+      "technologyFlags" : [
+        "late_addition",
+        "non_aqueous_rules",
+        "filtration_if_needed",
+        "no_heating"
+      ],
+      "technologySteps" : [
+        "Add volatile solvent at a late stage when possible",
+        "Minimize open exposure time",
+        "late_addition",
+        "no_heating",
+        "filtration_if_needed"
+      ],
+      "warnings" : [
+
+      ]
+    },
+    {
+      "branch" : "non_aqueous_solution",
+      "concentrateVolumesMl" : {
+
+      },
+      "confidence" : "blocked",
+      "id" : "RB_028",
+      "kvoApplied" : false,
+      "labels" : [
+        "external_use"
+      ],
+      "packaging" : [
+        "glass_bottle"
+      ],
+      "ppkForbiddenHits" : [
+
+      ],
+      "ppkSectionKeys" : [
+        "calculations",
+        "control",
+        "input_data",
+        "math_justification",
+        "normalization",
+        "packaging",
+        "packaging_storage",
+        "technological_justification",
+        "technology",
+        "technology_order",
+        "validation"
+      ],
+      "ppkSectionLineCounts" : {
+        "calculations" : 7,
+        "control" : 0,
+        "input_data" : 9,
+        "math_justification" : 0,
+        "normalization" : 0,
+        "packaging" : 3,
+        "packaging_storage" : 0,
+        "technological_justification" : 0,
+        "technology" : 1,
+        "technology_order" : 0,
+        "validation" : 1
+      },
+      "requiredMassesG" : {
+
+      },
+      "route" : "external",
+      "state" : "BLOCKED",
+      "storage" : [
+
+      ],
+      "sumSolidsG" : 0,
+      "technologyFlags" : [
+        "non_aqueous_rules",
+        "filtration_if_needed"
+      ],
+      "technologySteps" : [
+        "filtration_if_needed"
+      ],
+      "warnings" : [
+        "incompatible_solvent_phases|PRECALC_CHECKS_DONE|critical"
+      ],
+      "waterToAddMl" : 80
+    },
+    {
+      "branch" : "aqueous_burette_solution",
+      "concentrateVolumesMl" : {
+        "Sol. Coffeini-natrii benzoatis 10%" : 10,
+        "Sol. Glucosi 50%" : 12,
+        "Sol. Natrii bromidi 20%" : 15
+      },
+      "confidence" : "exact",
+      "id" : "RB_039",
+      "kvoApplied" : false,
+      "labels" : [
+        "internal_use"
+      ],
+      "packaging" : [
+        "glass_bottle",
+        "dark_glass"
+      ],
+      "ppkForbiddenHits" : [
+
+      ],
+      "ppkSectionKeys" : [
+        "calculations",
+        "control",
+        "input_data",
+        "math_justification",
+        "normalization",
+        "packaging",
+        "packaging_storage",
+        "technological_justification",
+        "technology",
+        "technology_order",
+        "validation"
+      ],
+      "ppkSectionLineCounts" : {
+        "calculations" : 9,
+        "control" : 0,
+        "input_data" : 9,
+        "math_justification" : 0,
+        "normalization" : 0,
+        "packaging" : 3,
+        "packaging_storage" : 0,
+        "technological_justification" : 0,
+        "technology" : 3,
+        "technology_order" : 0,
+        "validation" : 0
+      },
+      "requiredMassesG" : {
+        "Coffeini-natrii benzoas" : 1,
+        "Glucosum" : 6,
+        "Natrii bromidum" : 3
+      },
+      "route" : "oral",
+      "state" : "FINAL_RESULT_EMITTED",
+      "storage" : [
+        "protect_from_light"
+      ],
+      "sumSolidsG" : 0,
+      "technologyFlags" : [
+        "burette_concentrate_path",
+        "sequence_control",
+        "heating"
+      ],
+      "technologySteps" : [
+        "dissolve_in_part_water",
+        "stirring_dissolution",
+        "heating"
+      ],
+      "warnings" : [
+
+      ],
+      "waterToAddMl" : 113
+    },
+    {
+      "branch" : "aqueous_true_solution",
+      "concentrateVolumesMl" : {
+
+      },
+      "confidence" : "approximate",
+      "id" : "RB_042",
+      "kvoApplied" : false,
+      "labels" : [
+        "external_use"
+      ],
+      "packaging" : [
+        "glass_bottle"
+      ],
+      "ppkForbiddenHits" : [
+
+      ],
+      "ppkSectionKeys" : [
+        "calculations",
+        "control",
+        "input_data",
+        "math_justification",
+        "normalization",
+        "packaging",
+        "packaging_storage",
+        "technological_justification",
+        "technology",
+        "technology_order",
+        "validation"
+      ],
+      "ppkSectionLineCounts" : {
+        "calculations" : 4,
+        "control" : 0,
+        "input_data" : 9,
+        "math_justification" : 0,
+        "normalization" : 0,
+        "packaging" : 3,
+        "packaging_storage" : 0,
+        "technological_justification" : 0,
+        "technology" : 4,
+        "technology_order" : 0,
+        "validation" : 1
+      },
+      "requiredMassesG" : {
+
+      },
+      "route" : "external",
+      "state" : "PARTIAL_WITH_WARNINGS",
+      "storage" : [
+
+      ],
+      "sumSolidsG" : 0,
+      "technologyFlags" : [
+        "heating",
+        "cool_before_qs"
+      ],
+      "technologySteps" : [
+        "direct_dissolution",
+        "Для Solutio Furacilini 1:5000 использовать кипящую Aqua purificata (90-100°C), после растворения охладить до комнатной температуры",
+        "heating",
+        "cool_before_qs"
+      ],
+      "warnings" : [
+        "ingredient_form_conflict|BEHAVIOR_PROFILES_ATTACHED|warning"
+      ]
+    },
+    {
+      "branch" : "special_dissolution_path",
+      "concentrateVolumesMl" : {
+
+      },
+      "confidence" : "blocked",
+      "id" : "RB_045",
+      "kvoApplied" : false,
+      "labels" : [
+        "external_use",
+        "internal_use"
+      ],
+      "packaging" : [
+        "glass_bottle",
+        "dark_glass",
+        "tight_closure"
+      ],
+      "ppkForbiddenHits" : [
+
+      ],
+      "ppkSectionKeys" : [
+        "calculations",
+        "control",
+        "input_data",
+        "math_justification",
+        "normalization",
+        "packaging",
+        "packaging_storage",
+        "technological_justification",
+        "technology",
+        "technology_order",
+        "validation"
+      ],
+      "ppkSectionLineCounts" : {
+        "calculations" : 8,
+        "control" : 0,
+        "input_data" : 9,
+        "math_justification" : 0,
+        "normalization" : 0,
+        "packaging" : 3,
+        "packaging_storage" : 0,
+        "technological_justification" : 0,
+        "technology" : 11,
+        "technology_order" : 0,
+        "validation" : 6
+      },
+      "requiredMassesG" : {
+        "Iodum" : 1,
+        "Kalii iodidum" : 2
+      },
+      "route" : "external",
+      "state" : "BLOCKED",
+      "storage" : [
+        "protect_from_light",
+        "keep_tightly_closed"
+      ],
+      "sumSolidsG" : 3,
+      "technologyFlags" : [
+        "separate_dissolution_stage",
+        "late_addition",
+        "sequence_control",
+        "kuo_volume_correction",
+        "filtration_if_needed",
+        "heating",
+        "cool_before_qs"
+      ],
+      "technologySteps" : [
+        "Do not place Iodum into ordinary aqueous true-solution path",
+        "Use alcohol or special iodine-compatible system according to reference",
+        "Avoid routine heating",
+        "Use light-protective packaging if required",
+        "hot_water_dissolution",
+        "cool_before_qs",
+        "После полного растворения довести Aqua purificata до 20 ml (ad V)",
+        "heating",
+        "late_addition",
+        "separate_dissolution_stage",
+        "filtration_if_needed"
+      ],
+      "warnings" : [
+        "WATER.KUO.ADAPTIVE_SKIP|VALIDATION_DONE|warning",
+        "WATER.PACKAGING.UNSUPPORTED_STORAGE_REMOVED|VALIDATION_DONE|warning",
+        "no_heating_component_conflict|VALIDATION_DONE|critical",
+        "route_policy_conflict|SOLUTION_BRANCH_SELECTED|warning",
+        "route_policy_conflict|VALIDATION_DONE|warning",
+        "volatile_component_heating_conflict|VALIDATION_DONE|critical"
+      ],
+      "waterToAddMl" : 20
+    }
+  ],
+  "description" : "Strict snapshots for critical solution breaker cases",
+  "version" : "1.0"
+}

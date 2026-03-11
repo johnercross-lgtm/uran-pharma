@@ -1,0 +1,424 @@
+{
+  "version": "1.0",
+  "description": "Scenario test suite for deterministic pharmaceutical engine",
+  "cases": [
+    {
+      "id": "SOL_BURETTE_001",
+      "title": "Burette oral solution with three concentrates",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 150,
+        "ingredients": [
+          {
+            "name": "Natrii bromidum",
+            "presentationKind": "targetSolution",
+            "targetConcentrationPercent": 2,
+            "targetVolumeMl": 150,
+            "referenceConcentratePercent": 20
+          },
+          {
+            "name": "Coffeini-natrii benzoas",
+            "presentationKind": "solid",
+            "massG": 1.0,
+            "referenceConcentratePercent": 10
+          },
+          {
+            "name": "Glucose",
+            "presentationKind": "solid",
+            "massG": 6.0,
+            "referenceConcentratePercent": 50
+          }
+        ],
+        "signa": "1 3"
+      },
+      "expected": {
+        "classification": "aqueous_burette_solution",
+        "requiredMassesG": {
+          "Natrii bromidum": 3.0,
+          "Coffeini-natrii benzoas": 1.0,
+          "Glucose": 6.0
+        },
+        "concentrateVolumesMl": {
+          "Sol. Natrii bromidi 20%": 15.0,
+          "Sol. Coffeini-natrii benzoatis 10%": 10.0,
+          "Sol. Glucosi 50%": 12.0
+        },
+        "sumConcentratesMl": 37.0,
+        "waterToAddMl": 113.0,
+        "kvoApplied": false,
+        "singleDoseMl": 15.0,
+        "dosesPerContainer": 10.0,
+        "dailyFrequency": 3,
+        "perDoseG": {
+          "Coffeini-natrii benzoas": 0.1
+        },
+        "warningsMustNotContain": [
+          "solution_treated_as_solid",
+          "shake_label_unjustified",
+          "stock_qc_text_leak"
+        ]
+      }
+    },
+    {
+      "id": "SOL_AD_001",
+      "title": "Water ad after tincture",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 200,
+        "ingredients": [
+          {
+            "name": "Coffeini-natrii benzoatis",
+            "presentationKind": "solid",
+            "massG": 0.5,
+            "referenceConcentratePercent": 10
+          },
+          {
+            "name": "Natrii bromidi",
+            "presentationKind": "solid",
+            "massG": 2.0,
+            "referenceConcentratePercent": 20
+          },
+          {
+            "name": "Tinctura Valerianae",
+            "presentationKind": "liquid",
+            "volumeMl": 3.0,
+            "phase": "hydroalcoholic"
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 200
+          }
+        ]
+      },
+      "expected": {
+        "classification": "aqueous_solution_with_ad",
+        "concentrateVolumesMl": {
+          "Sol. Coffeini-natrii benzoatis 10%": 5.0,
+          "Sol. Natrii bromidi 20%": 10.0
+        },
+        "sumOtherLiquidsMl": 18.0,
+        "waterToAddMl": 182.0,
+        "warningsMustNotContain": [
+          "target_inferred_by_fallback"
+        ]
+      }
+    },
+    {
+      "id": "SOL_READY_001",
+      "title": "Ready solution must be treated as liquid not solid",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 100,
+        "ingredients": [
+          {
+            "name": "Sol. Furacilini 1:5000",
+            "presentationKind": "solution",
+            "volumeMl": 50.0,
+            "phase": "aqueous"
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 100
+          }
+        ]
+      },
+      "expected": {
+        "classification": "aqueous_ready_solution_mix",
+        "sumSolidsG": 0.0,
+        "waterToAddMl": 50.0,
+        "kvoApplied": false,
+        "warningsMustNotContain": [
+          "solution_treated_as_solid"
+        ]
+      }
+    },
+    {
+      "id": "SOL_DRY_001",
+      "title": "Dry aqueous solution below KVO threshold",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 100,
+        "ingredients": [
+          {
+            "name": "Natrii bromidi",
+            "presentationKind": "solid",
+            "massG": 2.0
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 100
+          }
+        ]
+      },
+      "expected": {
+        "classification": "aqueous_solution_from_dry_substance",
+        "solidPercent": 2.0,
+        "kvoApplied": false,
+        "waterAdjustmentMode": "simple_ad"
+      }
+    },
+    {
+      "id": "SOL_DRY_002",
+      "title": "Dry aqueous solution with KVO branch",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 100,
+        "ingredients": [
+          {
+            "name": "Magnesii sulfas",
+            "presentationKind": "solid",
+            "massG": 25.0,
+            "kvoMlPerG": 0.5
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 100
+          }
+        ]
+      },
+      "expected": {
+        "classification": "aqueous_solution_from_dry_substance",
+        "solidPercent": 25.0,
+        "kvoApplied": true,
+        "kvoContributionMl": 12.5,
+        "warningsMustNotContain": [
+          "kvo_applied_to_ready_solution"
+        ]
+      }
+    },
+    {
+      "id": "SOL_STD_001",
+      "title": "Standard solution as ingredient must stay a liquid object",
+      "input": {
+        "dosageForm": "solution",
+        "targetVolumeMl": 50,
+        "ingredients": [
+          {
+            "name": "Liquor Burovi",
+            "presentationKind": "standardSolution",
+            "volumeMl": 10.0
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 50
+          }
+        ]
+      },
+      "expected": {
+        "classification": "standard_solution_mix",
+        "sumSolidsG": 0.0,
+        "waterToAddMl": 40.0,
+        "warningsMustNotContain": [
+          "solution_treated_as_solid"
+        ]
+      }
+    },
+    {
+      "id": "SOL_STD_002",
+      "title": "Demyanovich should not activate by name only",
+      "input": {
+        "dosageForm": "solution",
+        "ingredients": [
+          {
+            "name": "Solutio Demyanovich",
+            "presentationKind": "standardSolution",
+            "volumeMl": 100.0,
+            "specialCaseText": "Mentioned in note only"
+          }
+        ]
+      },
+      "expected": {
+        "specialCaseActivated": false,
+        "warningsMustNotContain": [
+          "forced_demyanovich_special_case"
+        ]
+      }
+    },
+    {
+      "id": "SOL_NONAQ_001",
+      "title": "Alcoholic solution should avoid heating by default",
+      "input": {
+        "dosageForm": "solution",
+        "route": "external",
+        "ingredients": [
+          {
+            "name": "Mentholum",
+            "presentationKind": "solid",
+            "massG": 1.0
+          },
+          {
+            "name": "Ethanol 70%",
+            "presentationKind": "nonAqueousSolvent",
+            "volumeMl": 100.0,
+            "phase": "alcoholic"
+          }
+        ]
+      },
+      "expected": {
+        "classification": "non_aqueous_solution",
+        "technologyMustContain": [
+          "avoid_unnecessary_heating"
+        ]
+      }
+    },
+    {
+      "id": "DOSE_PARSER_001",
+      "title": "Signa parser tablespoon",
+      "input": {
+        "signa": "1 . . 3 /"
+      },
+      "expected": {
+        "singleDoseMl": 15.0,
+        "frequencyPerDay": 3,
+        "confidence": "exact"
+      }
+    },
+    {
+      "id": "DOSE_PARSER_002",
+      "title": "Signa parser ml form",
+      "input": {
+        "signa": "10 4"
+      },
+      "expected": {
+        "singleDoseMl": 10.0,
+        "frequencyPerDay": 4,
+        "confidence": "exact"
+      }
+    },
+    {
+      "id": "DOSE_PARSER_003",
+      "title": "Signa parser English spoon form",
+      "input": {
+        "signa": "1 tablespoon three times daily"
+      },
+      "expected": {
+        "singleDoseMl": 15.0,
+        "frequencyPerDay": 3
+      }
+    },
+    {
+      "id": "POW_TRIT_001",
+      "title": "Microdose powder requiring trituration",
+      "input": {
+        "dosageForm": "powder_divided",
+        "doses": 10,
+        "ingredients": [
+          {
+            "name": "Atropini sulfas",
+            "presentationKind": "solid",
+            "massPerDoseG": 0.0005,
+            "safetyFlags": {
+              "isListA": true
+            },
+            "referenceTriturationPercent": 1
+          },
+          {
+            "name": "Saccharum",
+            "presentationKind": "filler",
+            "massTotalG": 3.0
+          }
+        ]
+      },
+      "expected": {
+        "classification": "divided_powder_with_trituration",
+        "activeTotalG": 0.005,
+        "triturationMassRequiredG": 0.5,
+        "doseControlRequired": true
+      }
+    },
+    {
+      "id": "POW_MIN_MASS_001",
+      "title": "Minimum technological mass warning",
+      "input": {
+        "dosageForm": "powder_divided",
+        "doses": 20,
+        "ingredients": [
+          {
+            "name": "Codeini phosphas",
+            "presentationKind": "solid",
+            "massTotalG": 0.02,
+            "safetyFlags": {
+              "isPotent": true
+            }
+          }
+        ]
+      },
+      "expected": {
+        "warningsMustContain": [
+          "minimum_technological_mass_risk"
+        ]
+      }
+    },
+    {
+      "id": "SAFE_DOSE_001",
+      "title": "Potent substance without parseable signa",
+      "input": {
+        "dosageForm": "solution",
+        "route": "oral",
+        "targetVolumeMl": 100,
+        "ingredients": [
+          {
+            "name": "Phenobarbitalum",
+            "presentationKind": "solid",
+            "massG": 0.2,
+            "safetyFlags": {
+              "isPotent": true
+            }
+          },
+          {
+            "name": "Aqua purificata",
+            "presentationKind": "solvent",
+            "isAd": true,
+            "adTargetMl": 100
+          }
+        ],
+        "signa": "As directed"
+      },
+      "expected": {
+        "warningsMustContain": [
+          "dose_control_unresolved"
+        ]
+      }
+    },
+    {
+      "id": "PPC_001",
+      "title": "No duplicated technology section in PPC",
+      "input": {
+        "ppcSections": [
+          "technology",
+          "math",
+          "technology"
+        ]
+      },
+      "expected": {
+        "rendererMustDeduplicate": true
+      }
+    },
+    {
+      "id": "PPC_002",
+      "title": "Final mixture PPC should not speak about concentrate QC",
+      "input": {
+        "dosageForm": "solution",
+        "classification": "aqueous_burette_solution"
+      },
+      "expected": {
+        "qcMustNotContainPhrases": []
+      }
+    }
+  ]
+}

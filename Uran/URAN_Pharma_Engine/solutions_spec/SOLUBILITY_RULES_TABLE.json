@@ -1,0 +1,521 @@
+{
+  "version": "1.0",
+  "description": "Solubility and dissolution rules table for solution calculations in URAN Pharma",
+  "items": [
+    {
+      "substanceKey": "Natrii bromidi",
+      "aliases": [
+        "Natrii bromidi",
+        "Natrii bromidum"
+      ],
+      "solubilityInWater": "freely_soluble",
+      "solubilityInAlcohol": "poorly_soluble",
+      "solubilityInGlycerin": "unknown",
+      "solubilityInOil": "insoluble",
+      "preferredSolvent": "water",
+      "allowedSolutionBranches": [
+        "aqueous_true_solution",
+        "burette_concentrate_path"
+      ],
+      "requiresCoSolvent": false,
+      "requiresSeparateDissolution": false,
+      "recommendedPreDissolutionSolvent": "water",
+      "heatingHelpful": false,
+      "heatingAllowed": false,
+      "solutionGate": "allow_true_solution",
+      "notes": [
+        "Very soluble in water (about 1:1.5)",
+        "Prepared by direct dissolution without heating",
+        "Can be introduced via standard concentrate if available"
+      ]
+    },
+    {
+      "substanceKey": "Coffeini-natrii benzoas",
+      "aliases": [
+        "Coffeini-natrii benzoas"
+      ],
+      "solubilityInWater": "soluble",
+      "solubilityInAlcohol": "unknown",
+      "solubilityInGlycerin": "unknown",
+      "solubilityInOil": "insoluble",
+      "preferredSolvent": "water",
+      "allowedSolutionBranches": [
+        "aqueous_true_solution",
+        "burette_concentrate_path"
+      ],
+      "requiresCoSolvent": false,
+      "requiresSeparateDissolution": false,
+      "recommendedPreDissolutionSolvent": "water",
+      "heatingHelpful": false,
+      "heatingAllowed": true,
+      "solutionGate": "allow_true_solution",
+      "notes": [
+        "Can be used directly in aqueous solution",
+        "Often used via 10% stock concentrate"
+      ]
+    },
+    {
+      "substanceKey": "Glucose",
+      "aliases": [
+        "Glucose",
+        "Glucosum"
+      ],
+      "solubilityInWater": "freely_soluble",
+      "solubilityInAlcohol": "insoluble",
+      "solubilityInGlycerin": "sparingly_soluble",
+      "solubilityInOil": "insoluble",
+      "preferredSolvent": "water",
+      "allowedSolutionBranches": [
+        "aqueous_true_solution",
+        "burette_concentrate_path"
+      ],
+      "requiresCoSolvent": false,
+      "requiresSeparateDissolution": false,
+      "recommendedPreDissolutionSolvent": "water",
+      "heatingHelpful": true,
+      "heatingAllowed": true,
+      "solutionGate": "allow_true_solution",
+      "notes": [
+        "Mild heating may help dissolution if dry path is used",
+        "Often introduced via 50% concentrate"
+      ]
+    },
+    {
+      "substanceKey": "Magnesii sulfas",
+      "aliases": [
+        "Magnesii sulfas",
+        "Magnesii sulfatis"
+      ],
+      "solubilityInWater": "freely_soluble",
+      "solubilityInAlcohol": "poorly_soluble",
+      "solubilityInGlycerin": "unknown",
+      "solubilityInOil": "insoluble",
+      "preferredSolvent": "water",
+      "allowedSolutionBranches": [
+        "aqueous_true_solution",
+        "burette_concentrate_path"
+      ],
+      "requiresCoSolvent": false,
+      "requiresSeparateDissolution": false,
+      "recommendedPreDissolutionSolvent": "water",
+      "heatingHelpful": false,
+      "heatingAllowed": true,
+      "solutionGate": "allow_true_solution",
+      "notes": [
+        "At high concentrations KVO may be relevant in dry path",
+        "If introduced as concentrate, acts only as liquid"
+      ]
+    },
+    {
+      "substanceKey": "Kalii iodidi",
+      "aliases": [
+        "Kalii iodidi",
+        "Kalii iodidum"
+      ],
+      "solubilityInWater": "freely_soluble",
+      "solubilityInAlcohol": "poorly_soluble",
+      "solubilityInGlycerin": "unknown",
+      "solubilityInOil": "insoluble",
+      "preferredSolvent": "water",
+      "allowedSolutionBranches": [
+        "aqueous_true_solution",
+        "burette_concentrate_path"
+      ],
+      "requiresCoSolvent": false,
+      "requiresSeparateDissolution": false,
+      "recommendedPreDissolutionSolvent": "water",
+      "heatingHelpful": false,
+      "heatingAllowed": true,
+      "solutionGate": "allow_true_solution",
+      "notes": [
+        "Typical aqueous true solution substance"
+      ]
+    },
+    {
+      "substanceKey": "Natrii hydrocarbonatis",
+      "aliases": [
+        "Natrii hydrocarbonas",
+        "Natrii hydrocarbonatis"
+      ],
+      "solubilityInWater": "soluble",
+      "solubilityInAlcohol": "insoluble",
+      "solubilityInGlycerin": "unknown",
+      "solubilityInOil": "insoluble",
+      "preferredSolvent": "water",
+      "allowedSolutionBranches": [
+        "aqueous_true_solution",
+        "burette_concentrate_path"
+      ],
+      "requiresCoSolvent": false,
+      "requiresSeparateDissolution": false,
+      "recommendedPreDissolutionSolvent": "water",
+      "heatingHelpful": false,
+      "heatingAllowed": true,
+      "solutionGate": "allow_true_solution",
+      "notes": [
+        "Aqueous branch allowed"
+      ]
+    },
+    {
+      "substanceKey": "Natrii benzoas",
+      "aliases": [
+        "Natrii benzoas"
+      ],
+      "solubilityInWater": "soluble",
+      "solubilityInAlcohol": "poorly_soluble",
+      "solubilityInGlycerin": "unknown",
+      "solubilityInOil": "insoluble",
+      "preferredSolvent": "water",
+      "allowedSolutionBranches": [
+        "aqueous_true_solution",
+        "burette_concentrate_path"
+      ],
+      "requiresCoSolvent": false,
+      "requiresSeparateDissolution": false,
+      "recommendedPreDissolutionSolvent": "water",
+      "heatingHelpful": false,
+      "heatingAllowed": true,
+      "solutionGate": "allow_true_solution",
+      "notes": [
+        "Standard aqueous substance"
+      ]
+    },
+    {
+      "substanceKey": "Acidum boricum",
+      "aliases": [
+        "Acidum boricum"
+      ],
+      "solubilityInWater": "sparingly_soluble",
+      "solubilityInAlcohol": "poorly_soluble",
+      "solubilityInGlycerin": "soluble",
+      "solubilityInOil": "insoluble",
+      "preferredSolvent": "water_or_glycerin_reference_dependent",
+      "allowedSolutionBranches": [
+        "aqueous_true_solution_with_separate_dissolution",
+        "glycerinic_solution"
+      ],
+      "requiresCoSolvent": false,
+      "requiresSeparateDissolution": true,
+      "recommendedPreDissolutionSolvent": "water_or_glycerin",
+      "heatingHelpful": true,
+      "heatingAllowed": true,
+      "solutionGate": "allow_true_solution_with_conditions",
+      "notes": [
+        "Do not treat as simple instantly soluble aqueous substance",
+        "May require separate dissolution and/or mild heating"
+      ]
+    },
+    {
+      "substanceKey": "Mentholum",
+      "aliases": [
+        "Mentholum"
+      ],
+      "solubilityInWater": "practically_insoluble",
+      "solubilityInAlcohol": "freely_soluble",
+      "solubilityInGlycerin": "poorly_soluble",
+      "solubilityInOil": "soluble",
+      "preferredSolvent": "alcohol_or_oil",
+      "allowedSolutionBranches": [
+        "alcoholic_solution",
+        "oily_solution"
+      ],
+      "requiresCoSolvent": true,
+      "requiresSeparateDissolution": true,
+      "recommendedPreDissolutionSolvent": "alcohol_or_oil",
+      "heatingHelpful": false,
+      "heatingAllowed": false,
+      "solutionGate": "block_simple_aqueous_true_solution",
+      "notes": [
+        "Must not be automatically placed in simple aqueous solution branch",
+        "Requires co-solvent"
+      ]
+    },
+    {
+      "substanceKey": "Camphora",
+      "aliases": [
+        "Camphora"
+      ],
+      "solubilityInWater": "practically_insoluble",
+      "solubilityInAlcohol": "soluble",
+      "solubilityInGlycerin": "poorly_soluble",
+      "solubilityInOil": "soluble",
+      "preferredSolvent": "alcohol_or_oil",
+      "allowedSolutionBranches": [
+        "alcoholic_solution",
+        "oily_solution"
+      ],
+      "requiresCoSolvent": true,
+      "requiresSeparateDissolution": true,
+      "recommendedPreDissolutionSolvent": "alcohol_or_oil",
+      "heatingHelpful": false,
+      "heatingAllowed": false,
+      "solutionGate": "block_simple_aqueous_true_solution",
+      "notes": [
+        "Requires non-aqueous branch"
+      ]
+    },
+    {
+      "substanceKey": "Iodum",
+      "aliases": [
+        "Iodum"
+      ],
+      "solubilityInWater": "poorly_soluble",
+      "solubilityInAlcohol": "soluble",
+      "solubilityInGlycerin": "poorly_soluble",
+      "solubilityInOil": "sparingly_soluble",
+      "preferredSolvent": "alcohol_or_special_system",
+      "allowedSolutionBranches": [
+        "alcoholic_solution",
+        "special_iodine_system"
+      ],
+      "requiresCoSolvent": true,
+      "requiresSeparateDissolution": true,
+      "recommendedPreDissolutionSolvent": "alcohol_or_iodide_assisted_system",
+      "heatingHelpful": false,
+      "heatingAllowed": false,
+      "solutionGate": "block_simple_aqueous_true_solution",
+      "notes": [
+        "Do not classify as ordinary aqueous true solution by default"
+      ]
+    },
+    {
+      "substanceKey": "Novocainum",
+      "aliases": [
+        "Novocainum",
+        "Procainum"
+      ],
+      "solubilityInWater": "soluble",
+      "solubilityInAlcohol": "unknown",
+      "solubilityInGlycerin": "unknown",
+      "solubilityInOil": "insoluble",
+      "preferredSolvent": "water_reference_dependent",
+      "allowedSolutionBranches": [
+        "aqueous_true_solution",
+        "mixed_solution_reference_dependent"
+      ],
+      "requiresCoSolvent": false,
+      "requiresSeparateDissolution": false,
+      "recommendedPreDissolutionSolvent": "water",
+      "heatingHelpful": false,
+      "heatingAllowed": false,
+      "solutionGate": "allow_true_solution",
+      "notes": [
+        "Reference-specific branch may apply in dimexide-containing systems"
+      ]
+    },
+    {
+      "substanceKey": "Resorcinum",
+      "aliases": [
+        "Resorcinum"
+      ],
+      "solubilityInWater": "freely_soluble",
+      "solubilityInAlcohol": "soluble",
+      "solubilityInGlycerin": "soluble",
+      "solubilityInOil": "insoluble",
+      "preferredSolvent": "water",
+      "allowedSolutionBranches": [
+        "aqueous_true_solution",
+        "alcoholic_solution",
+        "glycerinic_solution"
+      ],
+      "requiresCoSolvent": false,
+      "requiresSeparateDissolution": false,
+      "recommendedPreDissolutionSolvent": "water",
+      "heatingHelpful": false,
+      "heatingAllowed": true,
+      "solutionGate": "allow_true_solution",
+      "notes": [
+        "Flexible solvent compatibility"
+      ]
+    },
+    {
+      "substanceKey": "Protargolum",
+      "aliases": [
+        "Protargolum"
+      ],
+      "solubilityInWater": "soluble_with_conditions",
+      "solubilityInAlcohol": "insoluble",
+      "solubilityInGlycerin": "unknown",
+      "solubilityInOil": "insoluble",
+      "preferredSolvent": "water",
+      "allowedSolutionBranches": [
+        "aqueous_special_dissolution_path"
+      ],
+      "requiresCoSolvent": false,
+      "requiresSeparateDissolution": true,
+      "recommendedPreDissolutionSolvent": "water",
+      "heatingHelpful": false,
+      "heatingAllowed": false,
+      "solutionGate": "allow_true_solution_with_conditions",
+      "notes": [
+        "Requires special dissolution handling",
+        "Do not treat as generic instantly soluble powder"
+      ]
+    },
+    {
+      "substanceKey": "Collargolum",
+      "aliases": [
+        "Collargolum"
+      ],
+      "solubilityInWater": "soluble_with_conditions",
+      "solubilityInAlcohol": "insoluble",
+      "solubilityInGlycerin": "unknown",
+      "solubilityInOil": "insoluble",
+      "preferredSolvent": "water",
+      "allowedSolutionBranches": [
+        "aqueous_special_dissolution_path"
+      ],
+      "requiresCoSolvent": false,
+      "requiresSeparateDissolution": true,
+      "recommendedPreDissolutionSolvent": "water",
+      "heatingHelpful": false,
+      "heatingAllowed": false,
+      "solutionGate": "allow_true_solution_with_conditions",
+      "notes": [
+        "Requires careful technological path",
+        "Do not treat as ordinary freely soluble solid"
+      ]
+    },
+    {
+      "substanceKey": "Argenti nitras",
+      "aliases": [
+        "Argenti nitras"
+      ],
+      "solubilityInWater": "freely_soluble",
+      "solubilityInAlcohol": "poorly_soluble",
+      "solubilityInGlycerin": "unknown",
+      "solubilityInOil": "insoluble",
+      "preferredSolvent": "water",
+      "allowedSolutionBranches": [
+        "aqueous_true_solution"
+      ],
+      "requiresCoSolvent": false,
+      "requiresSeparateDissolution": false,
+      "recommendedPreDissolutionSolvent": "water",
+      "heatingHelpful": false,
+      "heatingAllowed": false,
+      "solutionGate": "allow_true_solution",
+      "notes": [
+        "Light-sensitive branch may be relevant"
+      ]
+    },
+    {
+      "substanceKey": "Acidum salicylicum",
+      "aliases": [
+        "Acidum salicylicum"
+      ],
+      "solubilityInWater": "poorly_soluble",
+      "solubilityInAlcohol": "freely_soluble",
+      "solubilityInGlycerin": "sparingly_soluble",
+      "solubilityInOil": "poorly_soluble",
+      "preferredSolvent": "alcohol",
+      "allowedSolutionBranches": [
+        "alcoholic_solution",
+        "special_mixed_solution"
+      ],
+      "requiresCoSolvent": true,
+      "requiresSeparateDissolution": true,
+      "recommendedPreDissolutionSolvent": "alcohol",
+      "heatingHelpful": false,
+      "heatingAllowed": false,
+      "solutionGate": "block_simple_aqueous_true_solution",
+      "notes": [
+        "Do not place into plain aqueous true solution automatically"
+      ]
+    },
+    {
+      "substanceKey": "Phenolum",
+      "aliases": [
+        "Phenolum"
+      ],
+      "solubilityInWater": "soluble",
+      "solubilityInAlcohol": "freely_soluble",
+      "solubilityInGlycerin": "soluble",
+      "solubilityInOil": "sparingly_soluble",
+      "preferredSolvent": "water_or_alcohol_reference_dependent",
+      "allowedSolutionBranches": [
+        "aqueous_true_solution",
+        "alcoholic_solution",
+        "glycerinic_solution"
+      ],
+      "requiresCoSolvent": false,
+      "requiresSeparateDissolution": false,
+      "recommendedPreDissolutionSolvent": "water_or_alcohol",
+      "heatingHelpful": false,
+      "heatingAllowed": false,
+      "solutionGate": "allow_true_solution",
+      "notes": [
+        "Safety/toxicology validation may be required separately"
+      ]
+    },
+    {
+      "substanceKey": "Benzylpenicillinum",
+      "aliases": [
+        "Benzylpenicillinum"
+      ],
+      "solubilityInWater": "reference_dependent",
+      "solubilityInAlcohol": "unknown",
+      "solubilityInGlycerin": "unknown",
+      "solubilityInOil": "unknown",
+      "preferredSolvent": "special_reference_required",
+      "allowedSolutionBranches": [
+        "special_reference_required"
+      ],
+      "requiresCoSolvent": false,
+      "requiresSeparateDissolution": true,
+      "recommendedPreDissolutionSolvent": "special_reference_required",
+      "heatingHelpful": false,
+      "heatingAllowed": false,
+      "solutionGate": "block_without_reference",
+      "notes": [
+        "Do not invent technology without explicit reference"
+      ]
+    },
+    {
+      "substanceKey": "Aether",
+      "aliases": [
+        "Aether"
+      ],
+      "solubilityInWater": "practically_insoluble",
+      "solubilityInAlcohol": "miscible",
+      "solubilityInGlycerin": "unknown",
+      "solubilityInOil": "miscible_reference_dependent",
+      "preferredSolvent": "non_aqueous_volatile_branch",
+      "allowedSolutionBranches": [
+        "volatile_non_aqueous_solution"
+      ],
+      "requiresCoSolvent": false,
+      "requiresSeparateDissolution": false,
+      "recommendedPreDissolutionSolvent": "not_applicable",
+      "heatingHelpful": false,
+      "heatingAllowed": false,
+      "solutionGate": "block_aqueous_true_solution",
+      "notes": [
+        "Volatile solvent branch only"
+      ]
+    },
+    {
+      "substanceKey": "Chloroformium",
+      "aliases": [
+        "Chloroformium"
+      ],
+      "solubilityInWater": "poorly_soluble",
+      "solubilityInAlcohol": "miscible",
+      "solubilityInGlycerin": "unknown",
+      "solubilityInOil": "miscible_reference_dependent",
+      "preferredSolvent": "non_aqueous_volatile_branch",
+      "allowedSolutionBranches": [
+        "volatile_non_aqueous_solution"
+      ],
+      "requiresCoSolvent": false,
+      "requiresSeparateDissolution": false,
+      "recommendedPreDissolutionSolvent": "not_applicable",
+      "heatingHelpful": false,
+      "heatingAllowed": false,
+      "solutionGate": "block_aqueous_true_solution",
+      "notes": [
+        "Volatile solvent branch only"
+      ]
+    }
+  ]
+}

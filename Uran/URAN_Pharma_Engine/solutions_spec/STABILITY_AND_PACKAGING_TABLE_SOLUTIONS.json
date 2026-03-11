@@ -1,0 +1,718 @@
+{
+  "version": "1.0",
+  "description": "Stability, packaging, storage, and labeling table for pharmaceutical solutions in URAN Pharma",
+  "items": [
+    {
+      "substanceKey": "Natrii bromidi",
+      "aliases": [
+        "Natrii bromidi",
+        "Natrii bromidum",
+        "natrii_bromidum"
+      ],
+      "controlledClass": null,
+      "container": "standard_glass",
+      "lightSensitive": false,
+      "volatile": false,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": true,
+      "prefersAddAtEnd": false,
+      "filtrationCaution": false,
+      "defaultPackaging": "standard_glass_bottle",
+      "defaultLabels": [
+        "internal_use"
+      ],
+      "storageLabels": [],
+      "technologyWarnings": [],
+      "notes": [
+        "Chemically stable in aqueous solution under ordinary conditions",
+        "Light protection is not required",
+        "Standard packaging: bottle, internal-use label"
+      ]
+    },
+    {
+      "substanceKey": "Coffeini-natrii benzoas",
+      "aliases": [
+        "Coffeini-natrii benzoas"
+      ],
+      "lightSensitive": true,
+      "volatile": false,
+      "requiresDarkGlass": true,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": false,
+      "prefersAddAtEnd": false,
+      "filtrationCaution": false,
+      "defaultPackaging": "dark_glass_bottle",
+      "defaultLabels": [
+        "internal_use"
+      ],
+      "storageLabels": [
+        "protect_from_light"
+      ],
+      "technologyWarnings": [],
+      "notes": [
+        "If present, dark glass may be justified for the final solution"
+      ]
+    },
+    {
+      "substanceKey": "Glucose",
+      "aliases": [
+        "Glucose",
+        "Glucosum"
+      ],
+      "lightSensitive": false,
+      "volatile": false,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": false,
+      "prefersAddAtEnd": false,
+      "filtrationCaution": false,
+      "defaultPackaging": "standard_glass_bottle",
+      "defaultLabels": [
+        "internal_use"
+      ],
+      "storageLabels": [],
+      "technologyWarnings": [],
+      "notes": [
+        "No special packaging by itself"
+      ]
+    },
+    {
+      "substanceKey": "Magnesii sulfas",
+      "aliases": [
+        "Magnesii sulfas"
+      ],
+      "lightSensitive": false,
+      "volatile": false,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": false,
+      "prefersAddAtEnd": false,
+      "filtrationCaution": false,
+      "defaultPackaging": "standard_glass_bottle",
+      "defaultLabels": [
+        "internal_use"
+      ],
+      "storageLabels": [],
+      "technologyWarnings": [],
+      "notes": []
+    },
+    {
+      "substanceKey": "Kalii iodidi",
+      "aliases": [
+        "Kalii iodidi"
+      ],
+      "lightSensitive": false,
+      "volatile": false,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": false,
+      "prefersAddAtEnd": false,
+      "filtrationCaution": false,
+      "defaultPackaging": "standard_glass_bottle",
+      "defaultLabels": [
+        "internal_use"
+      ],
+      "storageLabels": [],
+      "technologyWarnings": [],
+      "notes": []
+    },
+    {
+      "substanceKey": "Tinctura Valerianae",
+      "aliases": [
+        "T-ra Valerianae",
+        "Tinctura Valerianae"
+      ],
+      "lightSensitive": false,
+      "volatile": true,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": true,
+      "prefersAddAtEnd": true,
+      "filtrationCaution": true,
+      "defaultPackaging": "standard_glass_bottle",
+      "defaultLabels": [
+        "internal_use"
+      ],
+      "storageLabels": [],
+      "technologyWarnings": [
+        "no_heating",
+        "late_addition_preferred",
+        "avoid_unnecessary_filtration"
+      ],
+      "notes": [
+        "Counts as late-stage hydroalcoholic component"
+      ]
+    },
+    {
+      "substanceKey": "Tinctura Leonuri",
+      "aliases": [
+        "T-ra Leonuri",
+        "Tinctura Leonuri"
+      ],
+      "lightSensitive": false,
+      "volatile": true,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": true,
+      "prefersAddAtEnd": true,
+      "filtrationCaution": true,
+      "defaultPackaging": "standard_glass_bottle",
+      "defaultLabels": [
+        "internal_use"
+      ],
+      "storageLabels": [],
+      "technologyWarnings": [
+        "no_heating",
+        "late_addition_preferred",
+        "avoid_unnecessary_filtration"
+      ],
+      "notes": []
+    },
+    {
+      "substanceKey": "Extractum Crataegi fluidum",
+      "aliases": [
+        "Extractum Crataegi fluidum"
+      ],
+      "lightSensitive": false,
+      "volatile": false,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": true,
+      "prefersAddAtEnd": true,
+      "filtrationCaution": true,
+      "defaultPackaging": "standard_glass_bottle",
+      "defaultLabels": [
+        "internal_use"
+      ],
+      "storageLabels": [],
+      "technologyWarnings": [
+        "late_addition_preferred",
+        "avoid_unnecessary_filtration"
+      ],
+      "notes": [
+        "Liquid extract should not be assigned early heating by default"
+      ]
+    },
+    {
+      "substanceKey": "Extractum Belladonnae fluidum",
+      "aliases": [
+        "Extractum Belladonnae fluidum"
+      ],
+      "lightSensitive": false,
+      "volatile": false,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": true,
+      "prefersAddAtEnd": true,
+      "filtrationCaution": true,
+      "defaultPackaging": "standard_glass_bottle",
+      "defaultLabels": [
+        "internal_use"
+      ],
+      "storageLabels": [],
+      "technologyWarnings": [
+        "late_addition_preferred",
+        "avoid_unnecessary_filtration"
+      ],
+      "notes": []
+    },
+    {
+      "substanceKey": "Sirupus simplex",
+      "aliases": [
+        "Sirupus simplex"
+      ],
+      "lightSensitive": false,
+      "volatile": false,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": false,
+      "prefersAddAtEnd": true,
+      "filtrationCaution": false,
+      "defaultPackaging": "standard_glass_bottle",
+      "defaultLabels": [
+        "internal_use"
+      ],
+      "storageLabels": [],
+      "technologyWarnings": [
+        "late_addition_preferred"
+      ],
+      "notes": [
+        "Counts as liquid; no shake label by default"
+      ]
+    },
+    {
+      "substanceKey": "Aqua Menthae",
+      "aliases": [
+        "Aqua Menthae"
+      ],
+      "lightSensitive": false,
+      "volatile": true,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": true,
+      "prefersAddAtEnd": true,
+      "filtrationCaution": true,
+      "defaultPackaging": "standard_glass_bottle",
+      "defaultLabels": [
+        "internal_use"
+      ],
+      "storageLabels": [],
+      "technologyWarnings": [
+        "no_heating",
+        "late_addition_preferred",
+        "avoid_unnecessary_filtration"
+      ],
+      "notes": [
+        "Aromatic water should not be treated as ordinary purified water in technology"
+      ]
+    },
+    {
+      "substanceKey": "Aqua Foeniculi",
+      "aliases": [
+        "Aqua Foeniculi"
+      ],
+      "lightSensitive": false,
+      "volatile": true,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": true,
+      "prefersAddAtEnd": true,
+      "filtrationCaution": true,
+      "defaultPackaging": "standard_glass_bottle",
+      "defaultLabels": [
+        "internal_use"
+      ],
+      "storageLabels": [],
+      "technologyWarnings": [
+        "no_heating",
+        "late_addition_preferred",
+        "avoid_unnecessary_filtration"
+      ],
+      "notes": []
+    },
+    {
+      "substanceKey": "Sol. Furacilini 1:5000",
+      "aliases": [
+        "1:5000",
+        "Sol. Furacilini 1:5000"
+      ],
+      "lightSensitive": false,
+      "volatile": false,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": false,
+      "prefersAddAtEnd": false,
+      "filtrationCaution": false,
+      "defaultPackaging": "standard_glass_bottle",
+      "defaultLabels": [
+        "external_use"
+      ],
+      "storageLabels": [],
+      "technologyWarnings": [],
+      "notes": [
+        "Ready solution should not trigger solids/KVO path"
+      ]
+    },
+    {
+      "substanceKey": "Liquor Burovi",
+      "aliases": [
+        "Liquor Burovi"
+      ],
+      "lightSensitive": false,
+      "volatile": false,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": false,
+      "prefersAddAtEnd": false,
+      "filtrationCaution": false,
+      "defaultPackaging": "standard_glass_bottle",
+      "defaultLabels": [
+        "external_use"
+      ],
+      "storageLabels": [],
+      "technologyWarnings": [],
+      "notes": [
+        "Standard solution object"
+      ]
+    },
+    {
+      "substanceKey": "Solutio Hydrogenii peroxydi diluta",
+      "aliases": [
+        "Solutio Hydrogenii peroxydi diluta"
+      ],
+      "lightSensitive": true,
+      "volatile": false,
+      "requiresDarkGlass": true,
+      "requiresCoolStorage": true,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": true,
+      "prefersAddAtEnd": false,
+      "filtrationCaution": false,
+      "defaultPackaging": "dark_glass_bottle",
+      "defaultLabels": [
+        "external_use"
+      ],
+      "storageLabels": [
+        "protect_from_light",
+        "store_in_cool_place"
+      ],
+      "technologyWarnings": [
+        "no_heating"
+      ],
+      "notes": [
+        "Storage and stability should be more restrictive than ordinary aqueous solutions"
+      ]
+    },
+    {
+      "substanceKey": "Argenti nitras",
+      "aliases": [
+        "Argenti nitras"
+      ],
+      "lightSensitive": true,
+      "volatile": false,
+      "requiresDarkGlass": true,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": true,
+      "prefersAddAtEnd": false,
+      "filtrationCaution": false,
+      "defaultPackaging": "dark_glass_bottle",
+      "defaultLabels": [
+        "external_use"
+      ],
+      "storageLabels": [
+        "protect_from_light"
+      ],
+      "technologyWarnings": [
+        "no_heating"
+      ],
+      "notes": [
+        "Light-sensitive solution branch"
+      ]
+    },
+    {
+      "substanceKey": "Protargolum",
+      "aliases": [
+        "Protargolum"
+      ],
+      "lightSensitive": true,
+      "volatile": false,
+      "requiresDarkGlass": true,
+      "requiresCoolStorage": true,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": true,
+      "prefersAddAtEnd": false,
+      "filtrationCaution": true,
+      "defaultPackaging": "dark_glass_bottle",
+      "defaultLabels": [
+        "external_use"
+      ],
+      "storageLabels": [
+        "protect_from_light",
+        "store_in_cool_place"
+      ],
+      "technologyWarnings": [
+        "no_heating",
+        "special_dissolution_path"
+      ],
+      "notes": [
+        "Special dissolution and stability branch"
+      ]
+    },
+    {
+      "substanceKey": "Collargolum",
+      "aliases": [
+        "Collargolum"
+      ],
+      "lightSensitive": true,
+      "volatile": false,
+      "requiresDarkGlass": true,
+      "requiresCoolStorage": true,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": true,
+      "prefersAddAtEnd": false,
+      "filtrationCaution": true,
+      "defaultPackaging": "dark_glass_bottle",
+      "defaultLabels": [
+        "external_use"
+      ],
+      "storageLabels": [
+        "protect_from_light",
+        "store_in_cool_place"
+      ],
+      "technologyWarnings": [
+        "no_heating",
+        "special_dissolution_path"
+      ],
+      "notes": []
+    },
+    {
+      "substanceKey": "Ethanol 70%",
+      "aliases": [
+        "Spiritus aethylicus 70%",
+        "70%",
+        "Ethanol 70%"
+      ],
+      "lightSensitive": false,
+      "volatile": true,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": true,
+      "prefersAddAtEnd": false,
+      "filtrationCaution": true,
+      "defaultPackaging": "tight_closure_glass_bottle",
+      "defaultLabels": [
+        "external_use"
+      ],
+      "storageLabels": [
+        "keep_tightly_closed"
+      ],
+      "technologyWarnings": [
+        "no_heating",
+        "minimize_open_exposure",
+        "avoid_unnecessary_filtration"
+      ],
+      "notes": [
+        "Alcohol-containing systems should not be heated by default"
+      ]
+    },
+    {
+      "substanceKey": "Glycerolum",
+      "aliases": [
+        "Glycerinum",
+        "Glycerolum"
+      ],
+      "lightSensitive": false,
+      "volatile": false,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": false,
+      "prefersAddAtEnd": false,
+      "filtrationCaution": false,
+      "defaultPackaging": "standard_glass_bottle",
+      "defaultLabels": [
+        "external_use"
+      ],
+      "storageLabels": [],
+      "technologyWarnings": [
+        "density_aware_branch_possible"
+      ],
+      "notes": [
+        "Non-aqueous/glycerinic solution branch"
+      ]
+    },
+    {
+      "substanceKey": "Dimexidum",
+      "aliases": [
+        "Dimexidum"
+      ],
+      "lightSensitive": false,
+      "volatile": false,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": true,
+      "prefersAddAtEnd": false,
+      "filtrationCaution": false,
+      "defaultPackaging": "standard_glass_bottle",
+      "defaultLabels": [
+        "external_use"
+      ],
+      "storageLabels": [],
+      "technologyWarnings": [
+        "no_heating",
+        "special_non_aqueous_branch"
+      ],
+      "notes": []
+    },
+    {
+      "substanceKey": "Oleum Vaselini",
+      "aliases": [
+        "Oleum Vaselini"
+      ],
+      "lightSensitive": false,
+      "volatile": false,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": false,
+      "prefersAddAtEnd": false,
+      "filtrationCaution": true,
+      "defaultPackaging": "standard_glass_bottle",
+      "defaultLabels": [
+        "external_use"
+      ],
+      "storageLabels": [],
+      "technologyWarnings": [
+        "compatibility_check_with_water",
+        "avoid_unnecessary_filtration"
+      ],
+      "notes": [
+        "Oil branch; compatibility check is important"
+      ]
+    },
+    {
+      "substanceKey": "Aether",
+      "aliases": [
+        "Aether"
+      ],
+      "lightSensitive": false,
+      "volatile": true,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": true,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": true,
+      "prefersAddAtEnd": true,
+      "filtrationCaution": true,
+      "defaultPackaging": "tight_closure_glass_bottle",
+      "defaultLabels": [
+        "external_use"
+      ],
+      "storageLabels": [
+        "keep_tightly_closed",
+        "store_in_cool_place"
+      ],
+      "technologyWarnings": [
+        "no_heating",
+        "add_last",
+        "minimize_open_exposure",
+        "avoid_unnecessary_filtration"
+      ],
+      "notes": [
+        "Highly volatile solvent branch"
+      ]
+    },
+    {
+      "substanceKey": "Chloroformium",
+      "aliases": [
+        "Chloroformium"
+      ],
+      "lightSensitive": false,
+      "volatile": true,
+      "requiresDarkGlass": true,
+      "requiresCoolStorage": true,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": true,
+      "prefersAddAtEnd": true,
+      "filtrationCaution": true,
+      "defaultPackaging": "dark_tight_closure_glass_bottle",
+      "defaultLabels": [
+        "external_use"
+      ],
+      "storageLabels": [
+        "keep_tightly_closed",
+        "store_in_cool_place",
+        "protect_from_light"
+      ],
+      "technologyWarnings": [
+        "no_heating",
+        "add_last",
+        "minimize_open_exposure",
+        "avoid_unnecessary_filtration"
+      ],
+      "notes": [
+        "Volatile and light-protected branch"
+      ]
+    },
+    {
+      "substanceKey": "Mentholum",
+      "aliases": [
+        "Mentholum"
+      ],
+      "lightSensitive": false,
+      "volatile": true,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": true,
+      "prefersAddAtEnd": false,
+      "filtrationCaution": true,
+      "defaultPackaging": "standard_glass_bottle",
+      "defaultLabels": [
+        "external_use"
+      ],
+      "storageLabels": [],
+      "technologyWarnings": [
+        "requires_co_solvent",
+        "no_heating",
+        "avoid_unnecessary_filtration"
+      ],
+      "notes": [
+        "Not for ordinary simple aqueous true solution"
+      ]
+    },
+    {
+      "substanceKey": "Camphora",
+      "aliases": [
+        "Camphora"
+      ],
+      "lightSensitive": false,
+      "volatile": true,
+      "requiresDarkGlass": false,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": true,
+      "prefersAddAtEnd": false,
+      "filtrationCaution": true,
+      "defaultPackaging": "standard_glass_bottle",
+      "defaultLabels": [
+        "external_use"
+      ],
+      "storageLabels": [],
+      "technologyWarnings": [
+        "requires_co_solvent",
+        "no_heating",
+        "avoid_unnecessary_filtration"
+      ],
+      "notes": []
+    },
+    {
+      "substanceKey": "Iodum",
+      "aliases": [
+        "Iodum"
+      ],
+      "lightSensitive": true,
+      "volatile": true,
+      "requiresDarkGlass": true,
+      "requiresCoolStorage": false,
+      "requiresShakeLabel": false,
+      "requiresNoHeating": true,
+      "prefersAddAtEnd": true,
+      "filtrationCaution": true,
+      "defaultPackaging": "dark_glass_bottle",
+      "defaultLabels": [
+        "external_use"
+      ],
+      "storageLabels": [
+        "protect_from_light",
+        "keep_tightly_closed"
+      ],
+      "technologyWarnings": [
+        "requires_co_solvent",
+        "no_heating",
+        "add_last",
+        "avoid_unnecessary_filtration"
+      ],
+      "notes": [
+        "Special iodine/alcohol branch"
+      ]
+    }
+  ]
+}

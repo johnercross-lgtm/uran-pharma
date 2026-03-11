@@ -1,0 +1,24 @@
+{
+  "roleColors": {
+    "active_ingredient": "#2F6F9F",
+    "solvent": "#4AA3B5",
+    "excipient": "#7B8A97",
+    "flavoring_corrective": "#6FA87A",
+    "stabilizer_preservative": "#8A78B0"
+  },
+  "solubilityColors": {
+    "high": "#4F9E77",
+    "medium": "#E1B95A",
+    "low": "#C98B5C",
+    "insoluble": "#A86A6A"
+  },
+  "riskColors": {
+    "normal": "#5F7F96",
+    "potent": "#D08A3C",
+    "toxic_controlled": "#B44F4F"
+  },
+  "statusColors": {
+    "unknown_substance": "#9AA6B2",
+    "data_error": "#C23D3D"
+  }
+}

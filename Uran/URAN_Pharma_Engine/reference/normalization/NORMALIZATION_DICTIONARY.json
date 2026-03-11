@@ -1,0 +1,289 @@
+{
+  "version": "1.0",
+  "description": "Normalization dictionary for pharmaceutical prescription parsing in URAN Pharma",
+  "decimalSeparators": {
+    "accepted": [
+      ",",
+      "."
+    ],
+    "normalizeTo": "."
+  },
+  "whitespaceRules": {
+    "trim": true,
+    "collapseMultipleSpaces": true,
+    "normalizeLineBreaks": true
+  },
+  "units": {
+    "mass": {
+      "g": [
+        "g",
+        "gr",
+        "гр",
+        "г",
+        "gram",
+        "grams"
+      ],
+      "mg": [
+        "mg",
+        "мг",
+        "milligram",
+        "milligrams"
+      ],
+      "mcg": [
+        "mcg",
+        "μg",
+        "мкг",
+        "microgram",
+        "micrograms"
+      ]
+    },
+    "volume": {
+      "ml": [
+        "ml",
+        "mL",
+        "мл",
+        "milliliter",
+        "milliliters"
+      ],
+      "l": [
+        "l",
+        "L",
+        "л",
+        "liter",
+        "liters"
+      ]
+    },
+    "count": {
+      "drops": [
+        "gtt",
+        "gtts",
+        "кап",
+        "кап.",
+        "крап",
+        "крап.",
+        "drops"
+      ],
+      "pieces": [
+        "№",
+        "no",
+        "pcs",
+        "pieces",
+        "штук",
+        "шт"
+      ]
+    }
+  },
+  "concentrationPatterns": {
+    "percent": [
+      "%",
+      "percent",
+      "проц",
+      "процент",
+      "проц.",
+      "відсоток",
+      "відс."
+    ],
+    "ratioSeparators": [
+      ":",
+      "/"
+    ],
+    "adMarkers": [
+      "ad",
+      "q.s.",
+      "q.s",
+      "quantum satis",
+      "до",
+      "ad usum"
+    ],
+    "aaMarkers": [
+      "aa",
+      "ana",
+      "ana partes aequales"
+    ]
+  },
+  "dosageForms": {
+    "solution": [
+      "sol.",
+      "sol",
+      "solutio",
+      "solution",
+      "раствор",
+      "розчин"
+    ],
+    "drops": [
+      "guttae",
+      "gtt.",
+      "gtts.",
+      "капли",
+      "краплі"
+    ],
+    "powder": [
+      "pulv.",
+      "pulv",
+      "pulvis",
+      "pulveres",
+      "порошок",
+      "порошки"
+    ],
+    "ointment": [
+      "ung.",
+      "ung",
+      "unguentum",
+      "мазь",
+      "unguenti"
+    ],
+    "paste": [
+      "pasta",
+      "paste",
+      "паста"
+    ],
+    "liniment": [
+      "linim.",
+      "linimentum",
+      "линимент"
+    ],
+    "mixture": [
+      "mist.",
+      "mistura",
+      "микстура",
+      "мікстура"
+    ],
+    "emulsion": [
+      "emuls.",
+      "emulsum",
+      "эмульсия",
+      "емульсія"
+    ],
+    "suspension": [
+      "susp.",
+      "suspensio",
+      "суспензия",
+      "суспензія"
+    ]
+  },
+  "routeHints": {
+    "oral": [
+      "внутрь",
+      "внутреннее",
+      "внутрішнє",
+      "per os",
+      "oral",
+      "internally"
+    ],
+    "external": [
+      "наружно",
+      "наружное",
+      "зовнішнє",
+      "external",
+      "for external use"
+    ],
+    "ophthalmic": [
+      "для глаз",
+      "в глаза",
+      "очні",
+      "для очей",
+      "ophthalmic",
+      "eye drops",
+      "pro oculis"
+    ],
+    "nasal": [
+      "в нос",
+      "для носа",
+      "в ніс",
+      "nasal",
+      "guttae nasales"
+    ],
+    "otic": [
+      "в ухо",
+      "для уха",
+      "в вухо",
+      "для вуха",
+      "otic",
+      "ear drops",
+      "guttae auriculares"
+    ],
+    "inhalation": [
+      "для ингаляций",
+      "для інгаляцій",
+      "inhalation",
+      "for inhalation"
+    ],
+    "injection": [
+      "для инъекций",
+      "для ін'єкцій",
+      "pro injectionibus",
+      "injection",
+      "parenteral"
+    ]
+  },
+  "spoonDoseVocabulary": {
+    "teaspoon": [
+      "1 чайная ложка",
+      "по 1 чайной ложке",
+      "1 ч. л.",
+      "по 1 ч. л.",
+      "1 teaspoon",
+      "one teaspoon"
+    ],
+    "dessertspoon": [
+      "1 десертная ложка",
+      "по 1 десертной ложке",
+      "1 дес. л.",
+      "по 1 дес. л."
+    ],
+    "tablespoon": [
+      "1 столовая ложка",
+      "по 1 столовой ложке",
+      "1 ст. л.",
+      "по 1 ст. л.",
+      "1 стол. л.",
+      "по 1 стол. л.",
+      "1 tablespoon",
+      "one tablespoon"
+    ]
+  },
+  "spoonConversionsMl": {
+    "teaspoon": 5.0,
+    "dessertspoon": 10.0,
+    "tablespoon": 15.0
+  },
+  "frequencyVocabulary": {
+    "once_daily": [
+      "1 раз в день",
+      "1 р/д",
+      "один раз в день",
+      "1 time daily",
+      "once daily",
+      "qd"
+    ],
+    "twice_daily": [
+      "2 раза в день",
+      "2 р/д",
+      "двічі на добу",
+      "twice daily",
+      "bid"
+    ],
+    "three_times_daily": [
+      "3 раза в день",
+      "3 р/д",
+      "3 р. в день",
+      "тричі на добу",
+      "three times daily",
+      "tid"
+    ],
+    "four_times_daily": [
+      "4 раза в день",
+      "4 р/д",
+      "чотири рази на добу",
+      "four times daily",
+      "qid"
+    ]
+  },
+  "normalizationPolicies": {
+    "normalizeLatinCaseEndings": true,
+    "normalizeUnicodeDashes": true,
+    "stripTrailingPunctuation": true,
+    "preserveOriginalTokenForTrace": true,
+    "convertCommaDecimalsToDot": true
+  }
+}

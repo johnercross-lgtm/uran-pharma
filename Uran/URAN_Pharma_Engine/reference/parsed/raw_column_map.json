@@ -1,0 +1,299 @@
+{
+  "version": "1.0",
+  "sourceFile": "extemp_reference_200.csv",
+  "columnCount": 73,
+  "columns": [
+    {
+      "position": 1,
+      "name": "NameLatNom"
+    },
+    {
+      "position": 2,
+      "name": "NameLatGen"
+    },
+    {
+      "position": 3,
+      "name": "Type"
+    },
+    {
+      "position": 4,
+      "name": "VrdG"
+    },
+    {
+      "position": 5,
+      "name": "VsdG"
+    },
+    {
+      "position": 6,
+      "name": "GttsPerMl"
+    },
+    {
+      "position": 7,
+      "name": "Density"
+    },
+    {
+      "position": 8,
+      "name": "E_Factor"
+    },
+    {
+      "position": 9,
+      "name": "KUO"
+    },
+    {
+      "position": 10,
+      "name": "KV"
+    },
+    {
+      "position": 11,
+      "name": "Solubility"
+    },
+    {
+      "position": 12,
+      "name": "Storage"
+    },
+    {
+      "position": 13,
+      "name": "InteractionNotes"
+    },
+    {
+      "position": 14,
+      "name": "ointment_entry_type"
+    },
+    {
+      "position": 15,
+      "name": "ointment_solvent_inn_key"
+    },
+    {
+      "position": 16,
+      "name": "ointment_ratio_solute_to_solvent"
+    },
+    {
+      "position": 17,
+      "name": "ointment_note"
+    },
+    {
+      "position": 18,
+      "name": "PedsVrdG"
+    },
+    {
+      "position": 19,
+      "name": "PedsRdG"
+    },
+    {
+      "position": 20,
+      "name": "VrdChild_0_1"
+    },
+    {
+      "position": 21,
+      "name": "VrdChild_1_6"
+    },
+    {
+      "position": 22,
+      "name": "VrdChild_7_14"
+    },
+    {
+      "position": 23,
+      "name": "NeedsTrituration"
+    },
+    {
+      "position": 24,
+      "name": "ByComposition"
+    },
+    {
+      "position": 25,
+      "name": "PharmActivity"
+    },
+    {
+      "position": 26,
+      "name": "ByNature"
+    },
+    {
+      "position": 27,
+      "name": "PhysicalState"
+    },
+    {
+      "position": 28,
+      "name": "IsListA_Poison"
+    },
+    {
+      "position": 29,
+      "name": "NaturalGroup"
+    },
+    {
+      "position": 30,
+      "name": "IsNarcotic"
+    },
+    {
+      "position": 31,
+      "name": "List_A"
+    },
+    {
+      "position": 32,
+      "name": "List_B"
+    },
+    {
+      "position": 33,
+      "name": "HerbalPart"
+    },
+    {
+      "position": 34,
+      "name": "PrepMethod"
+    },
+    {
+      "position": 35,
+      "name": "HerbalRatio"
+    },
+    {
+      "position": 36,
+      "name": "WaterTempC"
+    },
+    {
+      "position": 37,
+      "name": "HeatBathMin"
+    },
+    {
+      "position": 38,
+      "name": "StandMin"
+    },
+    {
+      "position": 39,
+      "name": "CoolMin"
+    },
+    {
+      "position": 40,
+      "name": "Strain"
+    },
+    {
+      "position": 41,
+      "name": "PressMarc"
+    },
+    {
+      "position": 42,
+      "name": "BringToVolume"
+    },
+    {
+      "position": 43,
+      "name": "ShelfLifeHours"
+    },
+    {
+      "position": 44,
+      "name": "StoragePrepared"
+    },
+    {
+      "position": 45,
+      "name": "NotesHerbal"
+    },
+    {
+      "position": 46,
+      "name": "IsHerbalMix"
+    },
+    {
+      "position": 47,
+      "name": "MixComponents"
+    },
+    {
+      "position": 48,
+      "name": "MixUse"
+    },
+    {
+      "position": 49,
+      "name": "ExtractionSolvent"
+    },
+    {
+      "position": 50,
+      "name": "TinctureRatio"
+    },
+    {
+      "position": 51,
+      "name": "MacerationDays"
+    },
+    {
+      "position": 52,
+      "name": "ShakeDaily"
+    },
+    {
+      "position": 53,
+      "name": "Filter"
+    },
+    {
+      "position": 54,
+      "name": "StorageTincture"
+    },
+    {
+      "position": 55,
+      "name": "ExtractType"
+    },
+    {
+      "position": 56,
+      "name": "ExtractSolvent"
+    },
+    {
+      "position": 57,
+      "name": "ExtractRatio"
+    },
+    {
+      "position": 58,
+      "name": "ExtractStd"
+    },
+    {
+      "position": 59,
+      "name": "IsOintmentFitocomp"
+    },
+    {
+      "position": 60,
+      "name": "OintmentBase"
+    },
+    {
+      "position": 61,
+      "name": "OintmentStrength"
+    },
+    {
+      "position": 62,
+      "name": "UseRoute"
+    },
+    {
+      "position": 63,
+      "name": "Process"
+    },
+    {
+      "position": 64,
+      "name": "BufferType"
+    },
+    {
+      "position": 65,
+      "name": "BufferPH"
+    },
+    {
+      "position": 66,
+      "name": "BufferMolarity"
+    },
+    {
+      "position": 67,
+      "name": "BufferComponents"
+    },
+    {
+      "position": 68,
+      "name": "SolventType"
+    },
+    {
+      "position": 69,
+      "name": "Sterile"
+    },
+    {
+      "position": 70,
+      "name": "NotesSolvent"
+    },
+    {
+      "position": 71,
+      "name": "BaseType"
+    },
+    {
+      "position": 72,
+      "name": "NotesBase"
+    },
+    {
+      "position": 73,
+      "name": "dissolution_type"
+    }
+  ]
+}

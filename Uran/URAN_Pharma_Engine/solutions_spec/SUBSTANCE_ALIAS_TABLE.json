@@ -1,0 +1,386 @@
+{
+  "version": "1.0",
+  "description": "Alias and normalization table for pharmaceutical substances in URAN Pharma",
+  "items": [
+    {
+      "substanceKey": "natrii_bromidum",
+      "canonical": {
+        "latNom": "Natrii bromidum",
+        "latGen": "Natrii bromidi"
+      },
+      "aliases": [
+        "Natrii bromidum",
+        "Natrii bromidi",
+        "Natrii brom.",
+        "Natrii brom"
+      ]
+    },
+    {
+      "substanceKey": "coffeini_natrii_benzoas",
+      "canonical": {
+        "latNom": "Coffeini-natrii benzoas",
+        "latGen": "Coffeini-natrii benzoatis",
+        "ru": "-",
+        "uk": "-"
+      },
+      "aliases": [
+        "Coffeini-natrii benzoas",
+        "Coffeini-natrii benzoatis",
+        "Coffeinum-natrii benzoas",
+        "Coffein-natrii benzoas",
+        "Coff. natrii benzoas"
+      ]
+    },
+    {
+      "substanceKey": "glucosum",
+      "canonical": {
+        "latNom": "Glucosum",
+        "latGen": "Glucosi"
+      },
+      "aliases": [
+        "Glucosum",
+        "Glucosi",
+        "Glucose"
+      ]
+    },
+    {
+      "substanceKey": "magnesii_sulfas",
+      "canonical": {
+        "latNom": "Magnesii sulfas",
+        "latGen": "Magnesii sulfatis"
+      },
+      "aliases": [
+        "Magnesii sulfas",
+        "Magnesii sulfatis",
+        "Magnesii sulf."
+      ]
+    },
+    {
+      "substanceKey": "kalii_iodidum",
+      "canonical": {
+        "latNom": "Kalii iodidum",
+        "latGen": "Kalii iodidi"
+      },
+      "aliases": [
+        "Kalii iodidum",
+        "Kalii iodidi",
+        "Kalii iod."
+      ]
+    },
+    {
+      "substanceKey": "acidum_boricum",
+      "canonical": {
+        "latNom": "Acidum boricum",
+        "latGen": "Acidi borici"
+      },
+      "aliases": [
+        "Acidum boricum",
+        "Acidi borici",
+        "Ac. borici",
+        "Ac. boric."
+      ]
+    },
+    {
+      "substanceKey": "mentholum",
+      "canonical": {
+        "latNom": "Mentholum",
+        "latGen": "Mentholi"
+      },
+      "aliases": [
+        "Mentholum",
+        "Mentholi",
+        "Menthol"
+      ]
+    },
+    {
+      "substanceKey": "camphora",
+      "canonical": {
+        "latNom": "Camphora",
+        "latGen": "Camphorae"
+      },
+      "aliases": [
+        "Camphora",
+        "Camphorae"
+      ]
+    },
+    {
+      "substanceKey": "iodum",
+      "canonical": {
+        "latNom": "Iodum",
+        "latGen": "Iodi"
+      },
+      "aliases": [
+        "Iodum",
+        "Iodi",
+        "iod"
+      ]
+    },
+    {
+      "substanceKey": "protargolum",
+      "canonical": {
+        "latNom": "Protargolum",
+        "latGen": "Protargoli"
+      },
+      "aliases": [
+        "Protargolum",
+        "Protargoli"
+      ]
+    },
+    {
+      "substanceKey": "collargolum",
+      "canonical": {
+        "latNom": "Collargolum",
+        "latGen": "Collargoli"
+      },
+      "aliases": [
+        "Collargolum",
+        "Collargoli"
+      ]
+    },
+    {
+      "substanceKey": "argenti_nitras",
+      "canonical": {
+        "latNom": "Argenti nitras",
+        "latGen": "Argenti nitratis"
+      },
+      "aliases": [
+        "Argenti nitras",
+        "Argenti nitratis"
+      ]
+    },
+    {
+      "substanceKey": "acidum_salicylicum",
+      "canonical": {
+        "latNom": "Acidum salicylicum",
+        "latGen": "Acidi salicylici"
+      },
+      "aliases": [
+        "Acidum salicylicum",
+        "Acidi salicylici",
+        "Ac. salicyl."
+      ]
+    },
+    {
+      "substanceKey": "phenolum",
+      "canonical": {
+        "latNom": "Phenolum",
+        "latGen": "Phenoli"
+      },
+      "aliases": [
+        "Phenolum",
+        "Phenoli"
+      ]
+    },
+    {
+      "substanceKey": "aqua_purificata",
+      "canonical": {
+        "latNom": "Aqua purificata",
+        "latGen": "Aquae purificatae"
+      },
+      "aliases": [
+        "Aqua purificata",
+        "Aquae purificatae",
+        "Aq. purif.",
+        "Aq. purific."
+      ]
+    },
+    {
+      "substanceKey": "tinctura_valerianae",
+      "canonical": {
+        "latNom": "Tinctura Valerianae",
+        "latGen": "Tincturae Valerianae"
+      },
+      "aliases": [
+        "Tinctura Valerianae",
+        "Tincturae Valerianae",
+        "T-ra Valerianae",
+        "Tr. Valerianae"
+      ]
+    },
+    {
+      "substanceKey": "tinctura_leonuri",
+      "canonical": {
+        "latNom": "Tinctura Leonuri",
+        "latGen": "Tincturae Leonuri"
+      },
+      "aliases": [
+        "Tinctura Leonuri",
+        "Tincturae Leonuri",
+        "T-ra Leonuri",
+        "Tr. Leonuri"
+      ]
+    },
+    {
+      "substanceKey": "extractum_crataegi_fluidum",
+      "canonical": {
+        "latNom": "Extractum Crataegi fluidum",
+        "latGen": "Extracti Crataegi fluidi"
+      },
+      "aliases": [
+        "Extractum Crataegi fluidum",
+        "Extracti Crataegi fluidi",
+        "Extr. Crataegi fluid."
+      ]
+    },
+    {
+      "substanceKey": "extractum_belladonnae_siccum",
+      "canonical": {
+        "latNom": "Extractum Belladonnae siccum",
+        "latGen": "Extracti Belladonnae sicci"
+      },
+      "aliases": [
+        "Extractum Belladonnae siccum",
+        "Extracti Belladonnae sicci",
+        "Extr. Belladonnae sicc."
+      ]
+    },
+    {
+      "substanceKey": "sirupus_simplex",
+      "canonical": {
+        "latNom": "Sirupus simplex",
+        "latGen": "Sirupi simplicis"
+      },
+      "aliases": [
+        "Sirupus simplex",
+        "Sirupi simplicis",
+        "Syrupus simplex"
+      ]
+    },
+    {
+      "substanceKey": "aqua_menthae",
+      "canonical": {
+        "latNom": "Aqua Menthae",
+        "latGen": "Aquae Menthae",
+        "uk": "'"
+      },
+      "aliases": [
+        "Aqua Menthae",
+        "Aquae Menthae"
+      ]
+    },
+    {
+      "substanceKey": "aqua_foeniculi",
+      "canonical": {
+        "latNom": "Aqua Foeniculi",
+        "latGen": "Aquae Foeniculi"
+      },
+      "aliases": [
+        "Aqua Foeniculi",
+        "Aquae Foeniculi"
+      ]
+    },
+    {
+      "substanceKey": "ethanol_70",
+      "canonical": {
+        "latNom": "Ethanolum 70%",
+        "latGen": "Ethanoli 70%",
+        "ru": "70%",
+        "uk": "70%"
+      },
+      "aliases": [
+        "Ethanol 70%",
+        "Ethanolum 70%",
+        "Spiritus aethylicus 70%",
+        "70%",
+        "70%",
+        "70%",
+        "spiritus 70%"
+      ]
+    },
+    {
+      "substanceKey": "glycerolum",
+      "canonical": {
+        "latNom": "Glycerolum",
+        "latGen": "Glyceroli"
+      },
+      "aliases": [
+        "Glycerolum",
+        "Glycerinum",
+        "Glyceroli"
+      ]
+    },
+    {
+      "substanceKey": "dimexidum",
+      "canonical": {
+        "latNom": "Dimexidum",
+        "latGen": "Dimexidi"
+      },
+      "aliases": [
+        "Dimexidum",
+        "Dimexidi"
+      ]
+    },
+    {
+      "substanceKey": "oleum_vaselini",
+      "canonical": {
+        "latNom": "Oleum Vaselini",
+        "latGen": "Olei Vaselini"
+      },
+      "aliases": [
+        "Oleum Vaselini",
+        "Olei Vaselini"
+      ]
+    },
+    {
+      "substanceKey": "aether",
+      "canonical": {
+        "latNom": "Aether",
+        "latGen": "Aetheris"
+      },
+      "aliases": [
+        "Aether",
+        "Aetheris"
+      ]
+    },
+    {
+      "substanceKey": "chloroformium",
+      "canonical": {
+        "latNom": "Chloroformium",
+        "latGen": "Chloroformii"
+      },
+      "aliases": [
+        "Chloroformium",
+        "Chloroformii"
+      ]
+    },
+    {
+      "substanceKey": "solutio_hydrogenii_peroxydi_diluta",
+      "canonical": {
+        "latNom": "Solutio Hydrogenii peroxydi diluta",
+        "latGen": "Solutionis Hydrogenii peroxydi dilutae"
+      },
+      "aliases": [
+        "Solutio Hydrogenii peroxydi diluta",
+        "Hydrogenii peroxydi diluta",
+        "3%"
+      ]
+    },
+    {
+      "substanceKey": "liquor_burovi",
+      "canonical": {
+        "latNom": "Liquor Burovi",
+        "latGen": "Liquoris Burovi"
+      },
+      "aliases": [
+        "Liquor Burovi",
+        "Liquoris Burovi"
+      ]
+    },
+    {
+      "substanceKey": "sol_furacilini_1_5000",
+      "canonical": {
+        "latNom": "Solutio Furacilini 1:5000",
+        "latGen": "Solutionis Furacilini 1:5000",
+        "ru": "1:5000",
+        "uk": "1:5000"
+      },
+      "aliases": [
+        "Sol. Furacilini 1:5000",
+        "Solutio Furacilini 1:5000",
+        "1:5000",
+        "1:5000",
+        "1:5000"
+      ]
+    }
+  ]
+}

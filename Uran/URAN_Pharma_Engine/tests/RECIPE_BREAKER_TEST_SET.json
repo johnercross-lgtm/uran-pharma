@@ -1,0 +1,788 @@
+{
+  "version": "1.0",
+  "description": "Recipe breaker test set for URAN Pharma solution engine. These cases are intentionally selected to break weak parsers, weak branch selection, ad logic, special dissolution logic, route policy, rendering, and validation.",
+  "cases": [
+    {
+      "id": "RB_001",
+      "title": "Target solution via concentrate must not be treated as ready concentrate volume",
+      "whyBreaksEngines": "Engines confuse target concentration with stock concentration and take 150 ml of concentrate instead of converting through required mass.",
+      "input": {
+        "recipeText": "Rp.: Sol. Natrii bromidi 2% — 150 ml\nCoffeini-natrii benzoatis 1,0\nGlucosi 6,0\nM.D.S. По 1 столовой ложке 3 раза в день",
+        "route": "oral"
+      },
+      "expected": {
+        "branch": "aqueous_burette_solution",
+        "requiredMassesG": {
+          "Natrii bromidum": 3.0,
+          "Coffeini-natrii benzoas": 1.0,
+          "Glucosum": 6.0
+        },
+        "concentrateVolumesMl": {
+          "Sol. Natrii bromidi 20%": 15.0,
+          "Sol. Coffeini-natrii benzoatis 10%": 10.0,
+          "Sol. Glucosi 50%": 12.0
+        },
+        "waterToAddMl": 113.0,
+        "confidence": "exact"
+      }
+    },
+    {
+      "id": "RB_002",
+      "title": "Ready solution must stay liquid and reduce ad water",
+      "whyBreaksEngines": "Weak engines push ready solutions into solids or try to recompute them as dry substances.",
+      "input": {
+        "recipeText": "Rp.: Sol. Furacilini 1:5000 50 ml\nAquae purificatae ad 100 ml\nM.D.S. Наружно",
+        "route": "external"
+      },
+      "expected": {
+        "branch": "ready_solution_mix",
+        "sumSolidsG": 0.0,
+        "waterToAddMl": 50.0,
+        "warningsMustNotContain": [
+          "solution_treated_as_solid",
+          "kvo_applied_to_ready_solution"
+        ]
+      }
+    },
+    {
+      "id": "RB_003",
+      "title": "Standard solution must stay liquid object",
+      "whyBreaksEngines": "Standard solutions often get recalculated as if they were dry substances.",
+      "input": {
+        "recipeText": "Rp.: Liquoris Burovi 10 ml\nAquae purificatae ad 50 ml\nM.D.S. Наружно",
+        "route": "external"
+      },
+      "expected": {
+        "branch": "standard_solution_mix",
+        "waterToAddMl": 40.0
+      }
+    },
+    {
+      "id": "RB_004",
+      "title": "Fixed water plus ad conflict",
+      "whyBreaksEngines": "Many systems silently double count water.",
+      "input": {
+        "recipeText": "Rp.: Natrii bromidi 2,0\nAquae purificatae 100 ml\nAquae purificatae ad 200 ml\nM.D.S. Внутрь",
+        "route": "oral"
+      },
+      "expected": {
+        "confidence": "blocked",
+        "warningsMustContain": [
+          "fixed_water_vs_ad_conflict"
+        ]
+      }
+    },
+    {
+      "id": "RB_005",
+      "title": "Multiple ad conflict",
+      "whyBreaksEngines": "Two ad markers force contradictory target resolution.",
+      "input": {
+        "recipeText": "Rp.: Aquae purificatae ad 100 ml\nAquae Menthae ad 100 ml\nM.D.S. Внутрь",
+        "route": "oral"
+      },
+      "expected": {
+        "confidence": "blocked",
+        "warningsMustContain": [
+          "multiple_ad_conflict"
+        ]
+      }
+    },
+    {
+      "id": "RB_006",
+      "title": "Largest liquid must not override explicit ad",
+      "whyBreaksEngines": "Heuristics grab the biggest liquid as target and ignore explicit ad.",
+      "input": {
+        "recipeText": "Rp.: Aquae Menthae 100 ml\nT-ra Valerianae 5 ml\nAquae purificatae ad 120 ml\nM.D.S. Внутрь",
+        "route": "oral"
+      },
+      "expected": {
+        "waterToAddMl": 15.0,
+        "warningsMustNotContain": [
+          "target_inferred_by_fallback"
+        ]
+      }
+    },
+    {
+      "id": "RB_007",
+      "title": "Impossible liquid sum over target volume",
+      "whyBreaksEngines": "Some engines still calculate negative water.",
+      "input": {
+        "recipeText": "Rp.: T-ra Valerianae 60 ml\nSirupi simplicis 50 ml\nAquae purificatae ad 100 ml\nM.D.S. Внутрь",
+        "route": "oral"
+      },
+      "expected": {
+        "confidence": "blocked",
+        "warningsMustContain": [
+          "impossible_formulation",
+          "negative_water_result"
+        ]
+      }
+    },
+    {
+      "id": "RB_008",
+      "title": "Dry branch below KVO threshold",
+      "whyBreaksEngines": "Weak engines apply KVO to every solid automatically.",
+      "input": {
+        "recipeText": "Rp.: Natrii bromidi 2,0\nAquae purificatae ad 100 ml\nM.D.S. Внутрь",
+        "route": "oral"
+      },
+      "expected": {
+        "branch": "aqueous_true_solution",
+        "kvoApplied": false
+      }
+    },
+    {
+      "id": "RB_009",
+      "title": "Dry branch at or above KVO threshold",
+      "whyBreaksEngines": "Weak engines either never apply KVO or apply it to the wrong branch.",
+      "input": {
+        "recipeText": "Rp.: Magnesii sulfatis 25,0\nAquae purificatae ad 100 ml\nM.D.S. Внутрь",
+        "route": "oral"
+      },
+      "expected": {
+        "branch": "aqueous_true_solution",
+        "kvoApplied": true
+      }
+    },
+    {
+      "id": "RB_010",
+      "title": "Concentrate path must not apply KVO even for big masses",
+      "whyBreaksEngines": "Engines see a large mass and apply KVO even though the ingredient is introduced via stock solution.",
+      "input": {
+        "recipeText": "Rp.: Glucosi 20,0\nAquae purificatae ad 150 ml\nM.D.S. Внутрь",
+        "route": "oral",
+        "forceReferenceConcentrate": {
+          "Glucosum": "Sol. Glucosi 50%"
+        }
+      },
+      "expected": {
+        "branch": "aqueous_burette_solution",
+        "kvoApplied": false
+      }
+    },
+    {
+      "id": "RB_011",
+      "title": "Tincture must count as liquid and be added late",
+      "whyBreaksEngines": "Tinctures are often treated like generic solvent or inserted too early with heating.",
+      "input": {
+        "recipeText": "Rp.: T-ra Leonuri 10 ml\nAquae purificatae ad 100 ml\nM.D.S. Внутрь",
+        "route": "oral"
+      },
+      "expected": {
+        "waterToAddMl": 90.0,
+        "technologyMustContain": [
+          "late_addition"
+        ],
+        "technologyMustNotContain": [
+          "heating"
+        ]
+      }
+    },
+    {
+      "id": "RB_012",
+      "title": "Aromatic water is not ordinary purified water",
+      "whyBreaksEngines": "Aromatic waters get merged into plain water identity.",
+      "input": {
+        "recipeText": "Rp.: Aquae Menthae 40 ml\nAquae purificatae ad 100 ml\nM.D.S. Внутрь",
+        "route": "oral"
+      },
+      "expected": {
+        "waterToAddMl": 60.0,
+        "warningsMustNotContain": [
+          "fixed_water_vs_ad_conflict"
+        ]
+      }
+    },
+    {
+      "id": "RB_013",
+      "title": "Syrup counts as liquid not solids",
+      "whyBreaksEngines": "Some systems incorrectly treat syrup as sugar mass branch.",
+      "input": {
+        "recipeText": "Rp.: Sirupi simplicis 20 ml\nAquae purificatae ad 100 ml\nM.D.S. Внутрь",
+        "route": "oral"
+      },
+      "expected": {
+        "waterToAddMl": 80.0,
+        "sumSolidsG": 0.0
+      }
+    },
+    {
+      "id": "RB_014",
+      "title": "Liquid extract counts as liquid and late addition",
+      "whyBreaksEngines": "Liquid extracts are confused with dry extracts.",
+      "input": {
+        "recipeText": "Rp.: Extracti Crataegi fluidi 10 ml\nAquae purificatae ad 100 ml\nM.D.S. Внутрь",
+        "route": "oral"
+      },
+      "expected": {
+        "waterToAddMl": 90.0,
+        "technologyMustContain": [
+          "late_addition"
+        ]
+      }
+    },
+    {
+      "id": "RB_015",
+      "title": "Dry extract must stay in solids branch",
+      "whyBreaksEngines": "Engine confuses siccum and fluidum.",
+      "input": {
+        "recipeText": "Rp.: Extracti Belladonnae sicci 0,2\nAquae purificatae ad 100 ml\nM.D.S. Внутрь",
+        "route": "oral"
+      },
+      "expected": {
+        "sumSolidsG": 0.2
+      }
+    },
+    {
+      "id": "RB_016",
+      "title": "Menthol blocks simple aqueous true solution",
+      "whyBreaksEngines": "Weak engines dissolve everything in water.",
+      "input": {
+        "recipeText": "Rp.: Mentholi 0,5\nAquae purificatae ad 100 ml\nM.D.S. Наружно",
+        "route": "external"
+      },
+      "expected": {
+        "confidence": "blocked",
+        "warningsMustContain": [
+          "co_solvent_required_but_missing",
+          "blocked_aqueous_true_solution_used"
+        ]
+      }
+    },
+    {
+      "id": "RB_017",
+      "title": "Menthol in alcohol should choose alcoholic branch",
+      "whyBreaksEngines": "Branch selector stays in aqueous branch because dosage form is solution.",
+      "input": {
+        "recipeText": "Rp.: Mentholi 0,5\nSpiritus aethylici 70% 100 ml\nM.D.S. Наружно",
+        "route": "external"
+      },
+      "expected": {
+        "branch": "non_aqueous_solution",
+        "technologyMustNotContain": [
+          "heating"
+        ]
+      }
+    },
+    {
+      "id": "RB_018",
+      "title": "Camphor in water must be blocked",
+      "whyBreaksEngines": "Camphor is classically mishandled by simple dissolvers.",
+      "input": {
+        "recipeText": "Rp.: Camphorae 1,0\nAquae purificatae ad 100 ml\nM.D.S. Наружно",
+        "route": "external"
+      },
+      "expected": {
+        "confidence": "blocked",
+        "warningsMustContain": [
+          "co_solvent_required_but_missing"
+        ]
+      }
+    },
+    {
+      "id": "RB_019",
+      "title": "Salicylic acid in water must not auto-pass as true aqueous solution",
+      "whyBreaksEngines": "Engines trust the word solution and ignore solubility gate.",
+      "input": {
+        "recipeText": "Rp.: Acidi salicylici 2,0\nAquae purificatae ad 100 ml\nM.D.S. Наружно",
+        "route": "external"
+      },
+      "expected": {
+        "confidence": "blocked",
+        "warningsMustContain": [
+          "blocked_aqueous_true_solution_used"
+        ]
+      }
+    },
+    {
+      "id": "RB_020",
+      "title": "Acidum boricum requires separate dissolution path",
+      "whyBreaksEngines": "A simple dissolve shortcut ignores special handling.",
+      "input": {
+        "recipeText": "Rp.: Acidi borici 2,0\nAquae purificatae ad 100 ml\nM.D.S. Для промывания",
+        "route": "external"
+      },
+      "expected": {
+        "technologyMustContain": [
+          "separate_dissolution_stage"
+        ]
+      }
+    },
+    {
+      "id": "RB_021",
+      "title": "Protargol special dissolution must override generic path",
+      "whyBreaksEngines": "Generic aqueous path is incorrectly used.",
+      "input": {
+        "recipeText": "Rp.: Protargoli 2,0\nAquae purificatae ad 100 ml\nM.D.S. Для носа",
+        "route": "nasal"
+      },
+      "expected": {
+        "branch": "special_dissolution_path",
+        "warningsMustNotContain": [
+          "special_dissolution_case_ignored"
+        ]
+      }
+    },
+    {
+      "id": "RB_022",
+      "title": "Collargol ophthalmic without sterile support must not be marked complete",
+      "whyBreaksEngines": "Strict routes get falsely processed by ordinary logic.",
+      "input": {
+        "recipeText": "Rp.: Collargoli 1,0\nAquae purificatae ad 10 ml\nM.D.S. Для глаз",
+        "route": "ophthalmic"
+      },
+      "expected": {
+        "confidence": "blocked",
+        "warningsMustContain": [
+          "sterility_required_but_not_supported"
+        ]
+      }
+    },
+    {
+      "id": "RB_023",
+      "title": "Argenti nitras requires dark glass, not shake label",
+      "whyBreaksEngines": "Packaging rules often mix up dark glass and shake behavior.",
+      "input": {
+        "recipeText": "Rp.: Argenti nitratis 0,1\nAquae purificatae ad 10 ml\nM.D.S. Наружно",
+        "route": "external"
+      },
+      "expected": {
+        "packagingMustContain": [
+          "dark_glass"
+        ],
+        "labelsMustNotContain": [
+          "shake_before_use"
+        ]
+      }
+    },
+    {
+      "id": "RB_024",
+      "title": "Hydrogen peroxide route-specific external policy",
+      "whyBreaksEngines": "Stock-like solution gets rendered as oral or ordinary mixture.",
+      "input": {
+        "recipeText": "Rp.: Sol. Hydrogenii peroxydi dilutae 50 ml\nD.S. Наружно",
+        "route": "external"
+      },
+      "expected": {
+        "route": "external",
+        "packagingMustContain": [
+          "dark_glass"
+        ],
+        "storageMustContain": [
+          "cool_storage"
+        ]
+      }
+    },
+    {
+      "id": "RB_025",
+      "title": "Alcoholic solution must not include routine heating",
+      "whyBreaksEngines": "Templates insert heating generically for dissolution.",
+      "input": {
+        "recipeText": "Rp.: Acidi salicylici 2,0\nSpiritus aethylici 70% 100 ml\nM.D.S. Наружно",
+        "route": "external"
+      },
+      "expected": {
+        "technologyMustNotContain": [
+          "heating"
+        ]
+      }
+    },
+    {
+      "id": "RB_026",
+      "title": "Volatile solvent should prefer late addition and tight closure",
+      "whyBreaksEngines": "Volatile systems get treated as ordinary liquid systems.",
+      "input": {
+        "recipeText": "Rp.: Aetheris 20 ml\nMentholi 0,5\nM.D.S. Наружно",
+        "route": "external"
+      },
+      "expected": {
+        "branch": "volatile_non_aqueous_solution",
+        "technologyMustContain": [
+          "late_addition",
+          "no_heating"
+        ],
+        "packagingMustContain": [
+          "tight_closure"
+        ]
+      }
+    },
+    {
+      "id": "RB_027",
+      "title": "Chloroform should raise volatile and light-protection packaging logic",
+      "whyBreaksEngines": "Packaging policy is often too generic.",
+      "input": {
+        "recipeText": "Rp.: Chloroformii 10 ml\nOleum Vaselini 20 ml\nM.D.S. Наружно",
+        "route": "external"
+      },
+      "expected": {
+        "packagingMustContain": [
+          "tight_closure",
+          "dark_glass"
+        ]
+      }
+    },
+    {
+      "id": "RB_028",
+      "title": "Water plus oil without special branch must not be called true solution",
+      "whyBreaksEngines": "Engines calculate ad but ignore phase incompatibility.",
+      "input": {
+        "recipeText": "Rp.: Olei Vaselini 20 ml\nAquae purificatae ad 100 ml\nM.D.S. Наружно",
+        "route": "external"
+      },
+      "expected": {
+        "confidence": "blocked",
+        "warningsMustContain": [
+          "incompatible_solvent_phases"
+        ]
+      }
+    },
+    {
+      "id": "RB_029",
+      "title": "Nasal route should not silently accept exotic non-aqueous branch",
+      "whyBreaksEngines": "Route restrictions are ignored.",
+      "input": {
+        "recipeText": "Rp.: Mentholi 0,2\nSpiritus aethylici 70% 10 ml\nD.S. Капли в нос",
+        "route": "nasal"
+      },
+      "expected": {
+        "confidence": "approximate",
+        "warningsMustContain": [
+          "route_policy_conflict"
+        ]
+      }
+    },
+    {
+      "id": "RB_030",
+      "title": "Ophthalmic route requires sterility and isotonicity awareness",
+      "whyBreaksEngines": "Engines overclaim complete support for eye drops.",
+      "input": {
+        "recipeText": "Rp.: Natrii chloridi 0,9\nAquae purificatae ad 10 ml\nD.S. Для глаз",
+        "route": "ophthalmic"
+      },
+      "expected": {
+        "warningsMustContain": [
+          "sterility_required_but_not_supported",
+          "isotonicity_required_but_not_checked",
+          "ph_check_required_but_missing"
+        ]
+      }
+    },
+    {
+      "id": "RB_031",
+      "title": "Injection route must be blocked by normal solution engine",
+      "whyBreaksEngines": "Ordinary solution logic leaks into parenteral paths.",
+      "input": {
+        "recipeText": "Rp.: Natrii chloridi 0,9\nAquae pro injectionibus ad 100 ml\nD.S. Для инъекций",
+        "route": "injection"
+      },
+      "expected": {
+        "confidence": "blocked",
+        "warningsMustContain": [
+          "sterility_required_but_not_supported",
+          "unsupported_route_claimed_complete"
+        ]
+      }
+    },
+    {
+      "id": "RB_032",
+      "title": "Inhalation route must not reuse oral solution templates",
+      "whyBreaksEngines": "Engines reuse labels and oral wording for inhalation.",
+      "input": {
+        "recipeText": "Rp.: Dimexidi 10 ml\nAquae purificatae ad 100 ml\nD.S. Для ингаляций",
+        "route": "inhalation"
+      },
+      "expected": {
+        "confidence": "blocked",
+        "warningsMustContain": [
+          "branch_not_allowed_for_route"
+        ]
+      }
+    },
+    {
+      "id": "RB_033",
+      "title": "Dose parser tablespoon variant",
+      "whyBreaksEngines": "Parser only understands one phrase variant.",
+      "input": {
+        "recipeText": "Rp.: Coffeini-natrii benzoatis 1,0\nAquae purificatae ad 150 ml\nD.S. По 1 стол. л. 3 р/д",
+        "route": "oral"
+      },
+      "expected": {
+        "doseControl": {
+          "singleDoseMl": 15.0,
+          "frequencyPerDay": 3
+        }
+      }
+    },
+    {
+      "id": "RB_034",
+      "title": "Dose parser teaspoon variant",
+      "whyBreaksEngines": "Parser misses teaspoon shorthand.",
+      "input": {
+        "recipeText": "Rp.: Natrii bromidi 2,0\nAquae purificatae ad 100 ml\nD.S. По 1 ч. л. 4 раза в день",
+        "route": "oral"
+      },
+      "expected": {
+        "doseControl": {
+          "singleDoseMl": 5.0,
+          "frequencyPerDay": 4
+        }
+      }
+    },
+    {
+      "id": "RB_035",
+      "title": "Dose parser ml variant",
+      "whyBreaksEngines": "Parser only works with spoons.",
+      "input": {
+        "recipeText": "Rp.: Natrii bromidi 2,0\nAquae purificatae ad 100 ml\nD.S. По 10 мл 3 раза в день",
+        "route": "oral"
+      },
+      "expected": {
+        "doseControl": {
+          "singleDoseMl": 10.0,
+          "frequencyPerDay": 3
+        }
+      }
+    },
+    {
+      "id": "RB_036",
+      "title": "Dose parser English variant",
+      "whyBreaksEngines": "Mixed-language instructions break simplistic regex.",
+      "input": {
+        "recipeText": "Rp.: Coffeini-natrii benzoatis 1,0\nAquae purificatae ad 150 ml\nD.S. 1 tablespoon three times daily",
+        "route": "oral"
+      },
+      "expected": {
+        "doseControl": {
+          "singleDoseMl": 15.0,
+          "frequencyPerDay": 3
+        }
+      }
+    },
+    {
+      "id": "RB_037",
+      "title": "Potent substance with vague signa must keep unresolved warning",
+      "whyBreaksEngines": "Some systems mark dose control as passed even when it was not parsed.",
+      "input": {
+        "recipeText": "Rp.: Phenobarbitali 0,2\nAquae purificatae ad 100 ml\nD.S. As directed",
+        "route": "oral"
+      },
+      "expected": {
+        "warningsMustContain": [
+          "dose_control_required_but_unresolved"
+        ],
+        "confidence": "approximate"
+      }
+    },
+    {
+      "id": "RB_038",
+      "title": "Non-integer dose count must be marked approximate",
+      "whyBreaksEngines": "Engines silently round number of doses.",
+      "input": {
+        "recipeText": "Rp.: Natrii bromidi 2,0\nAquae purificatae ad 100 ml\nD.S. По 1 столовой ложке 3 раза в день",
+        "route": "oral"
+      },
+      "expected": {
+        "warningsMustContain": [
+          "dose_count_non_integer_unacknowledged"
+        ]
+      }
+    },
+    {
+      "id": "RB_039",
+      "title": "Stock QC text must not leak into final burette PPC",
+      "whyBreaksEngines": "Renderer copies concentrate quality-control template into final mixture PPC.",
+      "input": {
+        "recipeText": "Rp.: Sol. Natrii bromidi 2% — 150 ml\nCoffeini-natrii benzoatis 1,0\nGlucosi 6,0\nM.D.S. По 1 столовой ложке 3 раза в день",
+        "route": "oral"
+      },
+      "expected": {
+        "ppcMustNotContain": [
+          "Після виготовлення концентрат підлягає",
+          "титруванням або рефрактометрією"
+        ],
+        "warningsMustNotContain": [
+          "stock_qc_text_leak"
+        ]
+      }
+    },
+    {
+      "id": "RB_040",
+      "title": "True solution must not receive shake label by default",
+      "whyBreaksEngines": "Generic label templates add shake everywhere.",
+      "input": {
+        "recipeText": "Rp.: Natrii bromidi 2,0\nAquae purificatae ad 100 ml\nM.D.S. Внутрь",
+        "route": "oral"
+      },
+      "expected": {
+        "labelsMustNotContain": [
+          "Перед вживанням збовтувати",
+          "Перед застосуванням збовтувати"
+        ]
+      }
+    },
+    {
+      "id": "RB_041",
+      "title": "Duplicate technology section must be prevented",
+      "whyBreaksEngines": "Renderer merges multiple templates and repeats blocks.",
+      "input": {
+        "recipeText": "Rp.: Coffeini-natrii benzoatis 1,0\nAquae purificatae ad 100 ml\nM.D.S. Внутрь",
+        "route": "oral"
+      },
+      "expected": {
+        "ppcSectionCounts": {
+          "technology": 1
+        }
+      }
+    },
+    {
+      "id": "RB_042",
+      "title": "Name and metadata conflict must raise ingredient_form_conflict",
+      "whyBreaksEngines": "Conflicting metadata silently passes through.",
+      "input": {
+        "structuredInput": {
+          "dosageForm": "solution",
+          "route": "external",
+          "ingredients": [
+            {
+              "name": "Sol. Furacilini 1:5000",
+              "presentationKind": "solid",
+              "massG": 1.0
+            }
+          ]
+        }
+      },
+      "expected": {
+        "warningsMustContain": [
+          "ingredient_form_conflict"
+        ]
+      }
+    },
+    {
+      "id": "RB_043",
+      "title": "Missing behavior profile must downgrade confidence",
+      "whyBreaksEngines": "Unknown ingredient behavior gets guessed as ordinary water-soluble solid.",
+      "input": {
+        "recipeText": "Rp.: Substantiae X 1,0\nAquae purificatae ad 100 ml\nM.D.S. Внутрь",
+        "route": "oral"
+      },
+      "expected": {
+        "warningsMustContain": [
+          "missing_behavior_profile",
+          "unresolved_rule_hidden"
+        ],
+        "confidence": "heuristic"
+      }
+    },
+    {
+      "id": "RB_044",
+      "title": "Branch not allowed for substance",
+      "whyBreaksEngines": "Solubility table says one thing, branch selector picks another.",
+      "input": {
+        "recipeText": "Rp.: Iodi 1,0\nAquae purificatae ad 100 ml\nM.D.S. Наружно",
+        "route": "external"
+      },
+      "expected": {
+        "warningsMustContain": [
+          "branch_not_allowed_for_substance"
+        ]
+      }
+    },
+    {
+      "id": "RB_045",
+      "title": "Iodum plus Kalii iodidi should trigger special assisted system",
+      "whyBreaksEngines": "Two-component special cases are missed by simple one-substance tables.",
+      "input": {
+        "recipeText": "Rp.: Iodi 1,0\nKalii iodidi 2,0\nAquae purificatae ad 20 ml\nM.D.S. Наружно",
+        "route": "external"
+      },
+      "expected": {
+        "branch": "special_dissolution_path",
+        "warningsMustNotContain": [
+          "special_dissolution_case_ignored"
+        ]
+      }
+    },
+    {
+      "id": "RB_046",
+      "title": "Combined menthol plus camphor should choose combined co-solvent case",
+      "whyBreaksEngines": "Separate single-substance handling misses combination behavior.",
+      "input": {
+        "recipeText": "Rp.: Mentholi 0,5\nCamphorae 0,5\nSpiritus aethylici 70% 20 ml\nM.D.S. Наружно",
+        "route": "external"
+      },
+      "expected": {
+        "branch": "non_aqueous_solution",
+        "technologyMustContain": [
+          "prepare_combined_subsolution_first"
+        ]
+      }
+    },
+    {
+      "id": "RB_047",
+      "title": "Tincture plus aromatic water plus syrup must all reduce ad water separately",
+      "whyBreaksEngines": "Weak liquid accounting only subtracts one liquid class.",
+      "input": {
+        "recipeText": "Rp.: T-ra Valerianae 5 ml\nAquae Menthae 20 ml\nSirupi simplicis 10 ml\nAquae purificatae ad 100 ml\nM.D.S. Внутрь",
+        "route": "oral"
+      },
+      "expected": {
+        "waterToAddMl": 65.0
+      }
+    },
+    {
+      "id": "RB_048",
+      "title": "Pepsinum style malformed metadata row should not crash engine",
+      "whyBreaksEngines": "Reference anomalies can poison parsing and resolution.",
+      "input": {
+        "structuredInput": {
+          "dosageForm": "solution",
+          "route": "oral",
+          "ingredients": [
+            {
+              "name": "Pepsinum",
+              "massG": 1.0
+            },
+            {
+              "name": "Aqua purificata",
+              "isAd": true,
+              "adTargetMl": 100
+            }
+          ]
+        }
+      },
+      "expected": {
+        "engineMustNotCrash": true,
+        "confidence": "heuristic"
+      }
+    },
+    {
+      "id": "RB_049",
+      "title": "Alias resolution genitive vs nominative must be stable",
+      "whyBreaksEngines": "Parser sees Natrii bromidi and resolver expects Natrii bromidum.",
+      "input": {
+        "recipeText": "Rp.: Natrii bromidi 2,0\nAquae purificatae ad 100 ml\nM.D.S. Внутрь",
+        "route": "oral"
+      },
+      "expected": {
+        "resolvedSubstanceKeys": [
+          "natrii_bromidum"
+        ]
+      }
+    },
+    {
+      "id": "RB_050",
+      "title": "Renderer must not mark result exact if unresolved rule exists",
+      "whyBreaksEngines": "LLM-style renderers sound too confident.",
+      "input": {
+        "recipeText": "Rp.: Substantiae specialis 1,0\nAquae purificatae ad 100 ml\nM.D.S. Внутрь",
+        "route": "oral"
+      },
+      "expected": {
+        "warningsMustContain": [
+          "unresolved_rule_hidden"
+        ],
+        "confidenceMustNotBe": "exact"
+      }
+    }
+  ]
+}

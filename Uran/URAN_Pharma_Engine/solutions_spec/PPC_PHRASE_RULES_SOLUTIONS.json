@@ -1,0 +1,378 @@
+{
+  "version": "1.0",
+  "description": "Phrase and rendering rules for solution PPC generation in URAN Pharma",
+  "globalRules": [
+    {
+      "ruleKey": "ppc_no_duplicate_sections",
+      "appliesTo": [
+        "all_solution_ppc"
+      ],
+      "condition": "same_section_generated_more_than_once",
+      "action": "deduplicate_section",
+      "severity": "critical",
+      "notes": [
+        "Technology section must not appear twice",
+        "Math section must not appear twice unless explicitly requested in different format"
+      ]
+    },
+    {
+      "ruleKey": "ppc_use_final_object_consistently",
+      "appliesTo": [
+        "all_solution_ppc"
+      ],
+      "condition": "final_object_is_solution_or_mixture",
+      "action": "use_consistent_final_object_naming",
+      "severity": "critical",
+      "notes": [
+        "Do not call the final preparation a concentrate if the concentrate is only an intermediate stock liquid"
+      ]
+    },
+    {
+      "ruleKey": "ppc_show_explainable_math",
+      "appliesTo": [
+        "all_solution_ppc"
+      ],
+      "condition": "calculation_steps_available",
+      "action": "render_formula_plus_substitution_plus_result",
+      "severity": "important",
+      "notes": [
+        "Each important solution calculation should be renderable as formula + substitution + result"
+      ]
+    },
+    {
+      "ruleKey": "ppc_keep_warnings_visible",
+      "appliesTo": [
+        "all_solution_ppc"
+      ],
+      "condition": "warnings_exist",
+      "action": "render_warnings_in_final_section",
+      "severity": "critical",
+      "notes": [
+        "Warnings must not disappear in concise or pretty rendering mode"
+      ]
+    }
+  ],
+  "phrasePolicies": [
+    {
+      "policyKey": "classification_phrase_true_solution",
+      "classification": "aqueous_true_solution",
+      "allowedPhrases": [],
+      "forbiddenPhrases": []
+    },
+    {
+      "policyKey": "classification_phrase_burette_solution",
+      "classification": "aqueous_burette_solution",
+      "allowedPhrases": [],
+      "forbiddenPhrases": []
+    },
+    {
+      "policyKey": "classification_phrase_non_aqueous_solution",
+      "classification": "non_aqueous_solution",
+      "allowedPhrases": [],
+      "forbiddenPhrases": [
+        "ad"
+      ]
+    },
+    {
+      "policyKey": "classification_phrase_standard_solution_object",
+      "classification": "standard_solution_object",
+      "allowedPhrases": [],
+      "forbiddenPhrases": []
+    }
+  ],
+  "normalizationRules": [
+    {
+      "ruleKey": "normalization_target_solution_via_concentrate",
+      "condition": "ingredient_is_target_solution_with_reference_concentrate",
+      "preferredPhrases": [
+        "{targetPercent}% {targetVolumeMl} ml {requiredMassG} g {substanceName}.",
+        "{concentrateName}."
+      ],
+      "forbiddenPhrases": [
+        "{targetVolumeMl} ml"
+      ],
+      "notes": [
+        "This avoids confusing target concentration with concentrate volume"
+      ]
+    },
+    {
+      "ruleKey": "normalization_ready_solution_is_liquid",
+      "condition": "ingredient_presentationKind_is_solution",
+      "preferredPhrases": [
+        "{ingredientName} .",
+        "{ingredientName} ' ad."
+      ],
+      "forbiddenPhrases": [
+        "{ingredientName}",
+        "{ingredientName}"
+      ]
+    },
+    {
+      "ruleKey": "normalization_standard_solution_is_liquid",
+      "condition": "ingredient_presentationKind_is_standardSolution",
+      "preferredPhrases": [
+        "{ingredientName} .",
+        "{ingredientName} ."
+      ],
+      "forbiddenPhrases": []
+    }
+  ],
+  "mathPhraseRules": [
+    {
+      "ruleKey": "math_concentrate_volume_by_percent",
+      "condition": "concentrate_volume_calculated_by_percent",
+      "preferredPhrases": [
+        "{concentrateName}: V = {massG} / {decimalConcentration} = {volumeMl} ml",
+        "{concentrateName}: V = m / C = {volumeMl} ml"
+      ],
+      "forbiddenPhrases": []
+    },
+    {
+      "ruleKey": "math_concentrate_volume_by_ratio",
+      "condition": "concentrate_volume_calculated_by_ratio",
+      "preferredPhrases": [
+        "{concentrateName}: V = {massG} × {ratioFactor} = {volumeMl} ml",
+        "{concentrateName}: {ratioNotation} ' {volumeMl} ml"
+      ],
+      "forbiddenPhrases": []
+    },
+    {
+      "ruleKey": "math_water_ad_formula",
+      "condition": "water_ad_used",
+      "preferredPhrases": [
+        ": V_H2O = V_total - V_ - V_.",
+        "Aqua purificata = {targetVolumeMl} - {sumOtherLiquidsMl} = {waterToAddMl} ml"
+      ],
+      "forbiddenPhrases": []
+    },
+    {
+      "ruleKey": "math_kvo_disabled_for_concentrates",
+      "condition": "burette_or_concentrate_path",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    },
+    {
+      "ruleKey": "math_kvo_enabled_for_dry_branch",
+      "condition": "dry_solids_branch_with_kvo",
+      "preferredPhrases": [
+        "' : V_ = (m × )."
+      ],
+      "forbiddenPhrases": []
+    }
+  ],
+  "technologyPhraseRules": [
+    {
+      "ruleKey": "technology_burette_order",
+      "condition": "classification_is_aqueous_burette_solution",
+      "preferredPhrases": [
+        "1. .",
+        "2. ' .",
+        "3. '.",
+        "4. .",
+        "5. ."
+      ],
+      "forbiddenPhrases": [
+        "' , ad"
+      ]
+    },
+    {
+      "ruleKey": "technology_true_solution_order",
+      "condition": "classification_is_aqueous_true_solution_from_dry_substance",
+      "preferredPhrases": [
+        "1. .",
+        "2. .",
+        "3. '.",
+        "4. .",
+        "5. ."
+      ],
+      "forbiddenPhrases": []
+    },
+    {
+      "ruleKey": "technology_late_addition_component",
+      "condition": "component_has_addAtEnd_or_prefersAddAtEnd",
+      "preferredPhrases": [
+        "{ingredientName} .",
+        "{ingredientName} ."
+      ],
+      "forbiddenPhrases": [
+        "{ingredientName}"
+      ]
+    },
+    {
+      "ruleKey": "technology_no_heating_component",
+      "condition": "component_requires_no_heating",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    },
+    {
+      "ruleKey": "technology_special_dissolution_case",
+      "condition": "special_dissolution_case_active",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    }
+  ],
+  "filtrationPhraseRules": [
+    {
+      "ruleKey": "filtration_not_default_for_true_clear_solution",
+      "condition": "true_solution_clear_and_no_filtration_trigger",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    },
+    {
+      "ruleKey": "filtration_if_indicated",
+      "condition": "filtration_trigger_present",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    },
+    {
+      "ruleKey": "filtration_avoid_for_volatile_system",
+      "condition": "volatile_or_filtration_caution_component_present",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    }
+  ],
+  "qcPhraseRules": [
+    {
+      "ruleKey": "qc_final_preparation_not_stock_concentrate",
+      "condition": "final_object_is_not_stock_concentrate",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    },
+    {
+      "ruleKey": "qc_true_solution_description",
+      "condition": "classification_is_true_solution",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    },
+    {
+      "ruleKey": "qc_route_specific_ophthalmic",
+      "condition": "route_is_ophthalmic",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    }
+  ],
+  "labelPhraseRules": [
+    {
+      "ruleKey": "label_internal_use",
+      "condition": "route_is_oral",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    },
+    {
+      "ruleKey": "label_external_use",
+      "condition": "route_is_external",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    },
+    {
+      "ruleKey": "label_for_eyes",
+      "condition": "route_is_ophthalmic",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    },
+    {
+      "ruleKey": "label_shake_only_if_needed",
+      "condition": "no_shake_trigger_present",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    },
+    {
+      "ruleKey": "label_shake_if_required",
+      "condition": "shake_trigger_present",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    },
+    {
+      "ruleKey": "label_light_protection",
+      "condition": "requires_dark_glass_or_light_sensitive_component_present",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    },
+    {
+      "ruleKey": "label_cool_storage",
+      "condition": "requires_cool_storage",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    }
+  ],
+  "warningPhraseRules": [
+    {
+      "ruleKey": "warning_missing_patient_name",
+      "condition": "patient_name_missing",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    },
+    {
+      "ruleKey": "warning_missing_recipe_number",
+      "condition": "recipe_number_missing",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    },
+    {
+      "ruleKey": "warning_unresolved_rule",
+      "condition": "unresolved_rule_present",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    },
+    {
+      "ruleKey": "warning_route_policy_conflict",
+      "condition": "route_policy_conflict_present",
+      "preferredPhrases": [],
+      "forbiddenPhrases": []
+    }
+  ],
+  "sectionTemplates": [
+    {
+      "sectionKey": "input_data",
+      "required": true
+    },
+    {
+      "sectionKey": "normalization",
+      "required": true
+    },
+    {
+      "sectionKey": "math_justification",
+      "required": true
+    },
+    {
+      "sectionKey": "auxiliary_safety",
+      "title": "/",
+      "required": false
+    },
+    {
+      "sectionKey": "technological_justification",
+      "required": true
+    },
+    {
+      "sectionKey": "technology_order",
+      "required": true
+    },
+    {
+      "sectionKey": "control",
+      "required": true
+    },
+    {
+      "sectionKey": "packaging_storage",
+      "required": true
+    },
+    {
+      "sectionKey": "warnings",
+      "required": false
+    }
+  ],
+  "forbiddenUniversalPhrases": [],
+  "goldenExamples": [
+    {
+      "exampleKey": "burette_solution_core_phrase_set",
+      "when": "classification_is_aqueous_burette_solution",
+      "mustContain": [],
+      "mustNotContain": []
+    },
+    {
+      "exampleKey": "true_solution_dry_branch_core_phrase_set",
+      "when": "classification_is_aqueous_true_solution_from_dry_substance",
+      "mustContain": [],
+      "mustNotContain": []
+    }
+  ]
+}

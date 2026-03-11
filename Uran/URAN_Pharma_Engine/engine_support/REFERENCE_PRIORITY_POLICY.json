@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "description": "Priority policy for resolving conflicts between pharmaceutical reference layers in URAN Pharma",
+  "globalPriorityOrder": [
+    "manual_override",
+    "special_dissolution_cases",
+    "route_policy",
+    "validation_conflict_rules",
+    "ingredient_behavior_table",
+    "ingredient_behavior_rules",
+    "concentrate_reference_table",
+    "solubility_rules_table",
+    "stability_and_packaging_table",
+    "substances_master",
+    "physchem_reference",
+    "solution_reference",
+    "dose_limits",
+    "substance_alias_table",
+    "normalization_dictionary",
+    "regex_normalization_patterns",
+    "raw_extemp_reference"
+  ]
+}

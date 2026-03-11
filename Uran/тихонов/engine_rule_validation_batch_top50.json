@@ -1,0 +1,2717 @@
+{
+  "metadata": {
+    "generated_at_utc": "2026-03-07T16:16:49.608743+00:00",
+    "source_file": "engine_rule_candidates.json",
+    "selection_rule": "severity asc (blocking/warning first), then score desc, then occurrences desc",
+    "selected_count": 50,
+    "priority_counts": {
+      "P0": 9,
+      "P1": 5,
+      "P2": 30,
+      "P3": 6
+    },
+    "severity_counts": {
+      "blocking_candidate": 9,
+      "warning_candidate": 5,
+      "info_candidate": 36
+    },
+    "category_counts": {
+      "safety_incompatibility": 11,
+      "dissolution": 11,
+      "mixing_order": 8,
+      "heating": 3,
+      "sterility": 16,
+      "filtration": 1
+    }
+  },
+  "records": [
+    {
+      "batch_rank": 1,
+      "candidate_id": "cand_00048",
+      "review_priority": "P0",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "SubstancePropertyCatalog",
+        "NonAqueousSolutionsBlock",
+        "WaterSolutionsBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Запрещается также выходить за пределы асептического блока в стерильной санитарной одежде.",
+        "normalized_rule_text": "запрещается также выходить за пределы асептического блока в стерильной санитарной одежде",
+        "category_primary": "safety_incompatibility",
+        "categories": [
+          "safety_incompatibility",
+          "sterility"
+        ],
+        "score": 8,
+        "matched_cues": [
+          "запрет",
+          "стерильность"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "blocking_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 25"
+            ]
+          },
+          "conflict_policy": "prefer_existing_engine_rule_until_validated"
+        },
+        "sources": [
+          {
+            "section_id": "s0030",
+            "section_title": "Глава 25",
+            "chunk_id": "c00841",
+            "chunk_index": 28
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00048"
+      }
+    },
+    {
+      "batch_rank": 2,
+      "candidate_id": "cand_00049",
+      "review_priority": "P0",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "SubstancePropertyCatalog",
+        "NonAqueousSolutionsBlock",
+        "WaterSolutionsBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Стерилизация растворов объемом более 1 л запрещается.",
+        "normalized_rule_text": "стерилизация растворов объемом более 1 л запрещается",
+        "category_primary": "safety_incompatibility",
+        "categories": [
+          "safety_incompatibility",
+          "sterility"
+        ],
+        "score": 8,
+        "matched_cues": [
+          "запрет",
+          "стерильность"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "blocking_candidate",
+          "applies_to": {
+            "forms": [
+              "solutions"
+            ],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 25"
+            ]
+          },
+          "conflict_policy": "prefer_existing_engine_rule_until_validated"
+        },
+        "sources": [
+          {
+            "section_id": "s0030",
+            "section_title": "Глава 25",
+            "chunk_id": "c00863",
+            "chunk_index": 50
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00049"
+      }
+    },
+    {
+      "batch_rank": 3,
+      "candidate_id": "cand_00088",
+      "review_priority": "P0",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "SubstancePropertyCatalog",
+        "NonAqueousSolutionsBlock",
+        "WaterSolutionsBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Запрещается включать аппарат в сеть при незаполненной водяной бане.",
+        "normalized_rule_text": "запрещается включать аппарат в сеть при незаполненной водяной бане",
+        "category_primary": "safety_incompatibility",
+        "categories": [
+          "heating",
+          "safety_incompatibility"
+        ],
+        "score": 7,
+        "matched_cues": [
+          "водяная баня",
+          "запрет"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "blocking_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 10"
+            ]
+          },
+          "conflict_policy": "prefer_existing_engine_rule_until_validated"
+        },
+        "sources": [
+          {
+            "section_id": "s0010",
+            "section_title": "Глава 10",
+            "chunk_id": "c00278",
+            "chunk_index": 44
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00088"
+      }
+    },
+    {
+      "batch_rank": 4,
+      "candidate_id": "cand_00170",
+      "review_priority": "P0",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "SubstancePropertyCatalog",
+        "NonAqueousSolutionsBlock",
+        "WaterSolutionsBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Следует учитывать, что твины и спены несовместимы с салицилатами, производными параокси-бензойной кислоты, фенолами и т.",
+        "normalized_rule_text": "следует учитывать что твины и спены несовместимы с салицилатами производными параокси бензойной кислоты фенолами и т",
+        "category_primary": "safety_incompatibility",
+        "categories": [
+          "safety_incompatibility"
+        ],
+        "score": 6,
+        "matched_cues": [
+          "несовместимость",
+          "нормативный модал"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "blocking_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 18"
+            ]
+          },
+          "conflict_policy": "prefer_existing_engine_rule_until_validated"
+        },
+        "sources": [
+          {
+            "section_id": "s0021",
+            "section_title": "Глава 18",
+            "chunk_id": "c00565",
+            "chunk_index": 12
+          },
+          {
+            "section_id": "s0021",
+            "section_title": "Глава 18",
+            "chunk_id": "c00566",
+            "chunk_index": 13
+          }
+        ],
+        "occurrences": 2,
+        "id": "cand_00170"
+      }
+    },
+    {
+      "batch_rank": 5,
+      "candidate_id": "cand_00166",
+      "review_priority": "P0",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "SubstancePropertyCatalog",
+        "NonAqueousSolutionsBlock",
+        "WaterSolutionsBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Брать их необходимо только пинцетом, чистить гири разными полирующими средствами категорически запрещается.",
+        "normalized_rule_text": "брать их необходимо только пинцетом чистить гири разными полирующими средствами категорически запрещается",
+        "category_primary": "safety_incompatibility",
+        "categories": [
+          "safety_incompatibility"
+        ],
+        "score": 6,
+        "matched_cues": [
+          "запрет",
+          "нормативный модал"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "blocking_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 9"
+            ]
+          },
+          "conflict_policy": "prefer_existing_engine_rule_until_validated"
+        },
+        "sources": [
+          {
+            "section_id": "s0009",
+            "section_title": "Глава 9",
+            "chunk_id": "c00216",
+            "chunk_index": 18
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00166"
+      }
+    },
+    {
+      "batch_rank": 6,
+      "candidate_id": "cand_00167",
+      "review_priority": "P0",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "SubstancePropertyCatalog",
+        "NonAqueousSolutionsBlock",
+        "WaterSolutionsBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "В этих помещениях запрещается производить другие работы — мыть грязную посуду, стирать белье, хранить посторонние предметы.",
+        "normalized_rule_text": "в этих помещениях запрещается производить другие работы мыть грязную посуду стирать белье хранить посторонние предметы",
+        "category_primary": "safety_incompatibility",
+        "categories": [
+          "quality_storage",
+          "safety_incompatibility"
+        ],
+        "score": 6,
+        "matched_cues": [
+          "запрет",
+          "хранение"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "blocking_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 13"
+            ]
+          },
+          "conflict_policy": "prefer_existing_engine_rule_until_validated"
+        },
+        "sources": [
+          {
+            "section_id": "s0016",
+            "section_title": "Глава 13",
+            "chunk_id": "c00399",
+            "chunk_index": 5
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00167"
+      }
+    },
+    {
+      "batch_rank": 7,
+      "candidate_id": "cand_00169",
+      "review_priority": "P0",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "SubstancePropertyCatalog",
+        "NonAqueousSolutionsBlock",
+        "WaterSolutionsBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Следует также учитывать, что медицинское мыло несовместимо с кислотами.",
+        "normalized_rule_text": "следует также учитывать что медицинское мыло несовместимо с кислотами",
+        "category_primary": "safety_incompatibility",
+        "categories": [
+          "safety_incompatibility"
+        ],
+        "score": 6,
+        "matched_cues": [
+          "несовместимость",
+          "нормативный модал"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "blocking_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 18"
+            ]
+          },
+          "conflict_policy": "prefer_existing_engine_rule_until_validated"
+        },
+        "sources": [
+          {
+            "section_id": "s0021",
+            "section_title": "Глава 18",
+            "chunk_id": "c00572",
+            "chunk_index": 19
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00169"
+      }
+    },
+    {
+      "batch_rank": 8,
+      "candidate_id": "cand_00171",
+      "review_priority": "P0",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "SubstancePropertyCatalog",
+        "NonAqueousSolutionsBlock",
+        "WaterSolutionsBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Хранение в асептическом блоке неиспользуемого оборудования категорически запрещается.",
+        "normalized_rule_text": "хранение в асептическом блоке неиспользуемого оборудования категорически запрещается",
+        "category_primary": "safety_incompatibility",
+        "categories": [
+          "quality_storage",
+          "safety_incompatibility"
+        ],
+        "score": 6,
+        "matched_cues": [
+          "запрет",
+          "хранение"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "blocking_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 25"
+            ]
+          },
+          "conflict_policy": "prefer_existing_engine_rule_until_validated"
+        },
+        "sources": [
+          {
+            "section_id": "s0030",
+            "section_title": "Глава 25",
+            "chunk_id": "c00840",
+            "chunk_index": 27
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00171"
+      }
+    },
+    {
+      "batch_rank": 9,
+      "candidate_id": "cand_00172",
+      "review_priority": "P0",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "SubstancePropertyCatalog",
+        "NonAqueousSolutionsBlock",
+        "WaterSolutionsBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Хранение вскрытых флаконов с остатками питьевых растворов и лекарственных форм наружного применения категорически запрещается.",
+        "normalized_rule_text": "хранение вскрытых флаконов с остатками питьевых растворов и лекарственных форм наружного применения категорически запрещается",
+        "category_primary": "safety_incompatibility",
+        "categories": [
+          "quality_storage",
+          "safety_incompatibility"
+        ],
+        "score": 6,
+        "matched_cues": [
+          "запрет",
+          "хранение"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "blocking_candidate",
+          "applies_to": {
+            "forms": [
+              "solutions"
+            ],
+            "solvents": [],
+            "routes": [
+              "external"
+            ],
+            "substances": [],
+            "section_hints": [
+              "Глава 28"
+            ]
+          },
+          "conflict_policy": "prefer_existing_engine_rule_until_validated"
+        },
+        "sources": [
+          {
+            "section_id": "s0031",
+            "section_title": "Глава 28",
+            "chunk_id": "c00916",
+            "chunk_index": 26
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00172"
+      }
+    },
+    {
+      "batch_rank": 10,
+      "candidate_id": "cand_00036",
+      "review_priority": "P1",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Серу осторожно, но тщательно растирают в подогретой ступке, добавляют часть (50,0—60,0 г) основы и диспергируют.",
+        "normalized_rule_text": "серу осторожно но тщательно растирают в подогретой ступке добавляют часть 50 0 60 0 г основы и диспергируют",
+        "category_primary": "dissolution",
+        "categories": [
+          "dissolution",
+          "mixing_order",
+          "trituration"
+        ],
+        "score": 8,
+        "matched_cues": [
+          "дисперг",
+          "добавление",
+          "растирание",
+          "ступка"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "warning_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 22"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0026",
+            "section_title": "Глава 22",
+            "chunk_id": "c00727",
+            "chunk_index": 67
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00036"
+      }
+    },
+    {
+      "batch_rank": 11,
+      "candidate_id": "cand_00079",
+      "review_priority": "P1",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "WaterSolutionsBlock",
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Если калия перманганат прописан в виде концентрированного раствора (3, 4, 5 %), то для ускорения растворения его осторожно растирают в ступке с частью теплой процеженной очищенной воды, а затем добавляют остальное количество растворителя.",
+        "normalized_rule_text": "если калия перманганат прописан в виде концентрированного раствора 3 4 5 то для ускорения растворения его осторожно растирают в ступке с частью теплой процеженной очищенной воды а затем добавляют остальное количество растворителя",
+        "category_primary": "mixing_order",
+        "categories": [
+          "mixing_order",
+          "trituration"
+        ],
+        "score": 7,
+        "matched_cues": [
+          "добавление",
+          "порядок внесения",
+          "растирание",
+          "ступка"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "warning_candidate",
+          "applies_to": {
+            "forms": [
+              "solutions"
+            ],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 14"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0017",
+            "section_title": "Глава 14",
+            "chunk_id": "c00449",
+            "chunk_index": 17
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00079"
+      }
+    },
+    {
+      "batch_rank": 12,
+      "candidate_id": "cand_00276",
+      "review_priority": "P1",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "SubstancePropertyCatalog",
+        "NonAqueousSolutionsBlock",
+        "WaterSolutionsBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "При выборе эмульгаторов для стабилизации эмульсий необходимо учитывать механизм их стабилизации, токсичность, величину рН, химическую совместимость с лекарственными веществами.",
+        "normalized_rule_text": "при выборе эмульгаторов для стабилизации эмульсий необходимо учитывать механизм их стабилизации токсичность величину рн химическую совместимость с лекарственными веществами",
+        "category_primary": "safety_incompatibility",
+        "categories": [
+          "safety_incompatibility"
+        ],
+        "score": 5,
+        "matched_cues": [
+          "нормативный модал",
+          "токсичность"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "warning_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 19"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0022",
+            "section_title": "Глава 19",
+            "chunk_id": "c00583",
+            "chunk_index": 6
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00276"
+      }
+    },
+    {
+      "batch_rank": 13,
+      "candidate_id": "cand_00222",
+      "review_priority": "P1",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Массу следует нагревать осторожно, не допуская повышения температуры выше 38—40°С.",
+        "normalized_rule_text": "массу следует нагревать осторожно не допуская повышения температуры выше 38 40 с",
+        "category_primary": "heating",
+        "categories": [
+          "heating"
+        ],
+        "score": 5,
+        "matched_cues": [
+          "нагрев",
+          "нормативный модал"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "warning_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 23"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0027",
+            "section_title": "Глава 23",
+            "chunk_id": "c00767",
+            "chunk_index": 31
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00222"
+      }
+    },
+    {
+      "batch_rank": 14,
+      "candidate_id": "cand_00223",
+      "review_priority": "P1",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "NonAqueousSolutionsBlock",
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Нагревать хлороформ при растворении парафина необходимо очень осторожно, неплотно прикрыв склянку, чтобы не произошло разрыва флакона.",
+        "normalized_rule_text": "нагревать хлороформ при растворении парафина необходимо очень осторожно неплотно прикрыв склянку чтобы не произошло разрыва флакона",
+        "category_primary": "heating",
+        "categories": [
+          "heating"
+        ],
+        "score": 5,
+        "matched_cues": [
+          "нагрев",
+          "нормативный модал"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "warning_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [
+              "chloroform"
+            ],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 21"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0025",
+            "section_title": "Глава 21",
+            "chunk_id": "c00652",
+            "chunk_index": 8
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00223"
+      }
+    },
+    {
+      "batch_rank": 15,
+      "candidate_id": "cand_00001",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock",
+        "PpkRenderer"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Затем в асептических условиях натриевую соль бен-зилпенициллина растирают в стерильной ступке с небольшим количеством стерильного масла, постепенно добавляя все масло.",
+        "normalized_rule_text": "затем в асептических условиях натриевую соль бен зилпенициллина растирают в стерильной ступке с небольшим количеством стерильного масла постепенно добавляя все масло",
+        "category_primary": "sterility",
+        "categories": [
+          "mixing_order",
+          "sterility",
+          "trituration"
+        ],
+        "score": 13,
+        "matched_cues": [
+          "асептика",
+          "порядок внесения",
+          "растирание",
+          "стерильность",
+          "ступка"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [
+              "oil"
+            ],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 25"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0030",
+            "section_title": "Глава 25",
+            "chunk_id": "c00880",
+            "chunk_index": 67
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00001"
+      }
+    },
+    {
+      "batch_rank": 16,
+      "candidate_id": "cand_00003",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock",
+        "PpkRenderer"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "По данному рецепту 0,3 г неомицина сульфата (100000 ЕД = 0,15) растворяют в 20 мл стерильного изотонического раствора натрия хлорида, жидкость фильтруют и добавляют 10 капель раствора адреналина гидрохлорида (стандартным каплемером).",
+        "normalized_rule_text": "по данному рецепту 0 3 г неомицина сульфата 100000 ед 0 15 растворяют в 20 мл стерильного изотонического раствора натрия хлорида жидкость фильтруют и добавляют 10 капель раствора адреналина гидрохлорида стандартным каплемером",
+        "category_primary": "sterility",
+        "categories": [
+          "dissolution",
+          "filtration",
+          "mixing_order",
+          "sterility"
+        ],
+        "score": 12,
+        "matched_cues": [
+          "добавление",
+          "раствор",
+          "стерильность",
+          "фильтрация"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [
+              "solutions"
+            ],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 25"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0030",
+            "section_title": "Глава 25",
+            "chunk_id": "c00878",
+            "chunk_index": 65
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00003"
+      }
+    },
+    {
+      "batch_rank": 17,
+      "candidate_id": "cand_00002",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "в 60,0 г глицерина растворяют при нагревании на водяной бане 2,6 г натрия карбоната, затем небольшими порциями добавляют 5,0 г стеариновой кислоты.",
+        "normalized_rule_text": "в 60 0 г глицерина растворяют при нагревании на водяной бане 2 6 г натрия карбоната затем небольшими порциями добавляют 5 0 г стеариновой кислоты",
+        "category_primary": "dissolution",
+        "categories": [
+          "dissolution",
+          "heating",
+          "mixing_order"
+        ],
+        "score": 12,
+        "matched_cues": [
+          "водяная баня",
+          "добавление",
+          "нагрев",
+          "порядок внесения",
+          "раствор"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 23"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0027",
+            "section_title": "Глава 23",
+            "chunk_id": "c00752",
+            "chunk_index": 16
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00002"
+      }
+    },
+    {
+      "batch_rank": 18,
+      "candidate_id": "cand_00006",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock",
+        "PpkRenderer"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Для вдувания в полость носа каждые 2 часа В стерильной ступке растирают 2,0 г стрептоцида с 20 каплями спирта, затем добавляют 2,0 г сульфадимезина.",
+        "normalized_rule_text": "для вдувания в полость носа каждые 2 часа в стерильной ступке растирают 2 0 г стрептоцида с 20 каплями спирта затем добавляют 2 0 г сульфадимезина",
+        "category_primary": "sterility",
+        "categories": [
+          "mixing_order",
+          "sterility",
+          "trituration"
+        ],
+        "score": 11,
+        "matched_cues": [
+          "добавление",
+          "порядок внесения",
+          "растирание",
+          "стерильность",
+          "ступка"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 25"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0030",
+            "section_title": "Глава 25",
+            "chunk_id": "c00872",
+            "chunk_index": 59
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00006"
+      }
+    },
+    {
+      "batch_rank": 19,
+      "candidate_id": "cand_00007",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock",
+        "PpkRenderer"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "По данному рецепту в стерильном изотоническом растворе натрия хлорида в асептических условиях растворяют 0,25 г антибиотика (2000000 ЕД).",
+        "normalized_rule_text": "по данному рецепту в стерильном изотоническом растворе натрия хлорида в асептических условиях растворяют 0 25 г антибиотика 2000000 ед",
+        "category_primary": "sterility",
+        "categories": [
+          "dissolution",
+          "sterility"
+        ],
+        "score": 11,
+        "matched_cues": [
+          "асептика",
+          "раствор",
+          "стерильность"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 25"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0030",
+            "section_title": "Глава 25",
+            "chunk_id": "c00874",
+            "chunk_index": 61
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00007"
+      }
+    },
+    {
+      "batch_rank": 20,
+      "candidate_id": "cand_00008",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock",
+        "PpkRenderer"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "требования к помещению, производственному оборудованию, персоналу, лекарственным и вспомогательным веществам, растворителям, укупорочным материалам, организации и проведению технологических процессов (растворение, стабилизация, фильтрация, стерилизация, упаковка, маркировка).",
+        "normalized_rule_text": "требования к помещению производственному оборудованию персоналу лекарственным и вспомогательным веществам растворителям укупорочным материалам организации и проведению технологических процессов растворение стабилизация фильтрация стерилизация упаковка маркировка",
+        "category_primary": "sterility",
+        "categories": [
+          "dissolution",
+          "filtration",
+          "quality_storage",
+          "sterility"
+        ],
+        "score": 11,
+        "matched_cues": [
+          "маркировка",
+          "раствор",
+          "стерильность",
+          "фильтрация"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 25"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0030",
+            "section_title": "Глава 25",
+            "chunk_id": "c00820",
+            "chunk_index": 7
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00008"
+      }
+    },
+    {
+      "batch_rank": 21,
+      "candidate_id": "cand_00004",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Вследствие большой вязкости растворение в нем лекарственных веществ при комнатной температуре происходит медленно, поэтому его следует производить при нагревании на водяной бане до температуры 40—60 °С.",
+        "normalized_rule_text": "вследствие большой вязкости растворение в нем лекарственных веществ при комнатной температуре происходит медленно поэтому его следует производить при нагревании на водяной бане до температуры 40 60 с",
+        "category_primary": "dissolution",
+        "categories": [
+          "dissolution",
+          "heating"
+        ],
+        "score": 11,
+        "matched_cues": [
+          "водяная баня",
+          "нагрев",
+          "нормативный модал",
+          "раствор"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 13"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0016",
+            "section_title": "Глава 13",
+            "chunk_id": "c00416",
+            "chunk_index": 22
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00004"
+      }
+    },
+    {
+      "batch_rank": 22,
+      "candidate_id": "cand_00005",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Растворение лекарственных веществ в них, как и в глицерине, следует производить при нагревании на водяной бане.",
+        "normalized_rule_text": "растворение лекарственных веществ в них как и в глицерине следует производить при нагревании на водяной бане",
+        "category_primary": "dissolution",
+        "categories": [
+          "dissolution",
+          "heating"
+        ],
+        "score": 11,
+        "matched_cues": [
+          "водяная баня",
+          "нагрев",
+          "нормативный модал",
+          "раствор"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 13"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0016",
+            "section_title": "Глава 13",
+            "chunk_id": "c00417",
+            "chunk_index": 23
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00005"
+      }
+    },
+    {
+      "batch_rank": 23,
+      "candidate_id": "cand_00011",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock",
+        "PpkRenderer"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "В асептических условиях 0,12 г стрептомицина сульфата растирают с небольшим количеством предварительно простерилизованно-го касторового масла (несколько капель для обеспечения расклинивающего эффекта), после чего в несколько приемов добавляют остальное количество масла.",
+        "normalized_rule_text": "в асептических условиях 0 12 г стрептомицина сульфата растирают с небольшим количеством предварительно простерилизованно го касторового масла несколько капель для обеспечения расклинивающего эффекта после чего в несколько приемов добавляют остальное количество масла",
+        "category_primary": "sterility",
+        "categories": [
+          "mixing_order",
+          "sterility",
+          "trituration"
+        ],
+        "score": 10,
+        "matched_cues": [
+          "асептика",
+          "добавление",
+          "порядок внесения",
+          "растирание"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [
+              "oil"
+            ],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 25"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0030",
+            "section_title": "Глава 25",
+            "chunk_id": "c00881",
+            "chunk_index": 68
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00011"
+      }
+    },
+    {
+      "batch_rank": 24,
+      "candidate_id": "cand_00012",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock",
+        "PpkRenderer"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Вскрытие и разлив растворов в отделениях лечебно-профилактических учреждений должны осуществляться в стерильные флаконы в асептических условиях и использоваться немедленно.",
+        "normalized_rule_text": "вскрытие и разлив растворов в отделениях лечебно профилактических учреждений должны осуществляться в стерильные флаконы в асептических условиях и использоваться немедленно",
+        "category_primary": "sterility",
+        "categories": [
+          "sterility"
+        ],
+        "score": 10,
+        "matched_cues": [
+          "асептика",
+          "нормативный модал",
+          "стерильность"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [
+              "solutions"
+            ],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 28"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0031",
+            "section_title": "Глава 28",
+            "chunk_id": "c00916",
+            "chunk_index": 26
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00012"
+      }
+    },
+    {
+      "batch_rank": 25,
+      "candidate_id": "cand_00013",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock",
+        "PpkRenderer"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Лекарства с антибиотиками отпускают в стерильной посуде, максимально исключающей попадание микрофлоры, оформляют этикетками «Приготовлено асептически», «Хранить в прохладном месте».",
+        "normalized_rule_text": "лекарства с антибиотиками отпускают в стерильной посуде максимально исключающей попадание микрофлоры оформляют этикетками приготовлено асептически хранить в прохладном месте",
+        "category_primary": "sterility",
+        "categories": [
+          "quality_storage",
+          "sterility"
+        ],
+        "score": 10,
+        "matched_cues": [
+          "асептика",
+          "стерильность",
+          "хранение"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 25"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0030",
+            "section_title": "Глава 25",
+            "chunk_id": "c00889",
+            "chunk_index": 76
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00013"
+      }
+    },
+    {
+      "batch_rank": 26,
+      "candidate_id": "cand_00014",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock",
+        "PpkRenderer"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Присыпки, применяемые для нанесения на раны, поврежденную кожу или слизистые оболочки, а также порошки для новорожденных должны готовиться в асептических условиях, а если они выдерживают воздействие высокой температуры — должны подвергаться стерилизации.",
+        "normalized_rule_text": "присыпки применяемые для нанесения на раны поврежденную кожу или слизистые оболочки а также порошки для новорожденных должны готовиться в асептических условиях а если они выдерживают воздействие высокой температуры должны подвергаться стерилизации",
+        "category_primary": "sterility",
+        "categories": [
+          "sterility"
+        ],
+        "score": 10,
+        "matched_cues": [
+          "асептика",
+          "нормативный модал",
+          "стерильность"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [
+              "powders"
+            ],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 11"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0013",
+            "section_title": "Глава 11",
+            "chunk_id": "c00335",
+            "chunk_index": 4
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00014"
+      }
+    },
+    {
+      "batch_rank": 27,
+      "candidate_id": "cand_00009",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "В ступку помещают лекарственные вещества (по правилу приготовления порошков), измельчают их вначале в сухом виде, а затем прибавляют примерно 1 мл (20 кап.) воды очищенной (исходя из растворимости лекарственных веществ) и растирают до растворения.",
+        "normalized_rule_text": "в ступку помещают лекарственные вещества по правилу приготовления порошков измельчают их вначале в сухом виде а затем прибавляют примерно 1 мл 20 кап воды очищенной исходя из растворимости лекарственных веществ и растирают до растворения",
+        "category_primary": "dissolution",
+        "categories": [
+          "dissolution",
+          "mixing_order",
+          "trituration"
+        ],
+        "score": 10,
+        "matched_cues": [
+          "измельчение",
+          "порядок внесения",
+          "раствор",
+          "растирание"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [
+              "powders"
+            ],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 23"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0027",
+            "section_title": "Глава 23",
+            "chunk_id": "c00764",
+            "chunk_index": 28
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00009"
+      }
+    },
+    {
+      "batch_rank": 28,
+      "candidate_id": "cand_00010",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Далее помещают в ступку 0,2 г тритурации платифиллина гидротартрата, тщательно растирают, затем добавляют 0,2 г папаверина гидрохлорида, смешивают и добавляют остальное количество натрия гидрокарбоната.",
+        "normalized_rule_text": "далее помещают в ступку 0 2 г тритурации платифиллина гидротартрата тщательно растирают затем добавляют 0 2 г папаверина гидрохлорида смешивают и добавляют остальное количество натрия гидрокарбоната",
+        "category_primary": "mixing_order",
+        "categories": [
+          "mixing_order",
+          "trituration"
+        ],
+        "score": 10,
+        "matched_cues": [
+          "добавление",
+          "порядок внесения",
+          "растирание",
+          "тритурация"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 11"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0013",
+            "section_title": "Глава 11",
+            "chunk_id": "c00368",
+            "chunk_index": 37
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00010"
+      }
+    },
+    {
+      "batch_rank": 29,
+      "candidate_id": "cand_00027",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "SubstancePropertyCatalog",
+        "NonAqueousSolutionsBlock",
+        "WaterSolutionsBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Отвары из данной группы сырья немедленно процеживают после снятия инфундирки с водяной бани, так как дубильные вещества хорошо растворимы в горячей воде, а при охлаждении выпадают в виде хлопьевидного осадка.",
+        "normalized_rule_text": "отвары из данной группы сырья немедленно процеживают после снятия инфундирки с водяной бани так как дубильные вещества хорошо растворимы в горячей воде а при охлаждении выпадают в виде хлопьевидного осадка",
+        "category_primary": "safety_incompatibility",
+        "categories": [
+          "filtration",
+          "heating",
+          "mixing_order",
+          "safety_incompatibility"
+        ],
+        "score": 9,
+        "matched_cues": [
+          "водяная баня",
+          "осадок",
+          "порядок внесения",
+          "процеживание"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [
+              "infusions_decoctions"
+            ],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 20"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0023",
+            "section_title": "Глава 20",
+            "chunk_id": "c00626",
+            "chunk_index": 24
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00027"
+      }
+    },
+    {
+      "batch_rank": 30,
+      "candidate_id": "cand_00028",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock",
+        "PpkRenderer"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "В порядке исключения простерилизованную посуду можно закрывать пробками в асептических условиях сразу же после стерилизации, пока флаконы и колбы горячие.",
+        "normalized_rule_text": "в порядке исключения простерилизованную посуду можно закрывать пробками в асептических условиях сразу же после стерилизации пока флаконы и колбы горячие",
+        "category_primary": "sterility",
+        "categories": [
+          "mixing_order",
+          "sterility"
+        ],
+        "score": 9,
+        "matched_cues": [
+          "асептика",
+          "порядок внесения",
+          "стерильность"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 25"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0030",
+            "section_title": "Глава 25",
+            "chunk_id": "c00850",
+            "chunk_index": 37
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00028"
+      }
+    },
+    {
+      "batch_rank": 31,
+      "candidate_id": "cand_00029",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "OphthalmicDropsBlock",
+        "DropsBlock",
+        "BaseTechnologyBlock",
+        "PpkRenderer"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Натрия метабисульфит растворяют в нескольких каплях воды стерильной, эмульгируют охлажденным сплавом ланолина с вазелином и полученную эмульсию в несколько приемов при тщательном растирании добавляют к суспензии эритромицина.",
+        "normalized_rule_text": "натрия метабисульфит растворяют в нескольких каплях воды стерильной эмульгируют охлажденным сплавом ланолина с вазелином и полученную эмульсию в несколько приемов при тщательном растирании добавляют к суспензии эритромицина",
+        "category_primary": "sterility",
+        "categories": [
+          "dissolution",
+          "mixing_order",
+          "sterility"
+        ],
+        "score": 9,
+        "matched_cues": [
+          "добавление",
+          "раствор",
+          "стерильность"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [
+              "drops"
+            ],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 25"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0030",
+            "section_title": "Глава 25",
+            "chunk_id": "c00886",
+            "chunk_index": 73
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00029"
+      }
+    },
+    {
+      "batch_rank": 32,
+      "candidate_id": "cand_00030",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock",
+        "PpkRenderer"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "По 1 свече З раза в день В стерильную ступку помещают 1,8 г тетрациклина гидрохлорида, тщательно растирают (без растворения в воде) и при перемешивании по частям добавляют 16,2 г измельченного масла какао.",
+        "normalized_rule_text": "по 1 свече з раза в день в стерильную ступку помещают 1 8 г тетрациклина гидрохлорида тщательно растирают без растворения в воде и при перемешивании по частям добавляют 16 2 г измельченного масла какао",
+        "category_primary": "sterility",
+        "categories": [
+          "mixing_order",
+          "sterility",
+          "trituration"
+        ],
+        "score": 9,
+        "matched_cues": [
+          "добавление",
+          "растирание",
+          "стерильность"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [
+              "suppositories"
+            ],
+            "solvents": [
+              "oil"
+            ],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 25"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0030",
+            "section_title": "Глава 25",
+            "chunk_id": "c00888",
+            "chunk_index": 75
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00030"
+      }
+    },
+    {
+      "batch_rank": 33,
+      "candidate_id": "cand_00015",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "1 весовую часть тритурации лекарственного вещества в третьем сотенном разведении растворяют в 79 весовых частях воды, добавляют 20 весовых частей 90 % этилового спирта и взбалтывают 10 раз в сосуде, наполненном на две трети.",
+        "normalized_rule_text": "1 весовую часть тритурации лекарственного вещества в третьем сотенном разведении растворяют в 79 весовых частях воды добавляют 20 весовых частей 90 этилового спирта и взбалтывают 10 раз в сосуде наполненном на две трети",
+        "category_primary": "dissolution",
+        "categories": [
+          "dissolution",
+          "mixing_order",
+          "trituration"
+        ],
+        "score": 9,
+        "matched_cues": [
+          "добавление",
+          "раствор",
+          "тритурация"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 31"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0033",
+            "section_title": "Глава 31",
+            "chunk_id": "c00983",
+            "chunk_index": 28
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00015"
+      }
+    },
+    {
+      "batch_rank": 34,
+      "candidate_id": "cand_00016",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "NonAqueousSolutionsBlock",
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "В сухую склянку для отпуска из темного стекла помещают 2,0 г ментола, тарируют и отвешивают 80,0 г подсолнечного масла, растворяют (можно при нагревании на теплой водяной бане).",
+        "normalized_rule_text": "в сухую склянку для отпуска из темного стекла помещают 2 0 г ментола тарируют и отвешивают 80 0 г подсолнечного масла растворяют можно при нагревании на теплой водяной бане",
+        "category_primary": "dissolution",
+        "categories": [
+          "dissolution",
+          "heating"
+        ],
+        "score": 9,
+        "matched_cues": [
+          "водяная баня",
+          "нагрев",
+          "раствор"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [
+              "oil"
+            ],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 21"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0025",
+            "section_title": "Глава 21",
+            "chunk_id": "c00651",
+            "chunk_index": 7
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00016"
+      }
+    },
+    {
+      "batch_rank": 35,
+      "candidate_id": "cand_00017",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "WaterSolutionsBlock",
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "В таком случае в склянке для отпуска в хлороформе растворяют парафин (при нагревании), а затем, после охлаждения, добавляют 7 мл 95 % спирта этилового и 3 мл 10 % -ного раствора йода.",
+        "normalized_rule_text": "в таком случае в склянке для отпуска в хлороформе растворяют парафин при нагревании а затем после охлаждения добавляют 7 мл 95 спирта этилового и 3 мл 10 ного раствора йода",
+        "category_primary": "dissolution",
+        "categories": [
+          "dissolution",
+          "heating",
+          "mixing_order"
+        ],
+        "score": 9,
+        "matched_cues": [
+          "добавление",
+          "нагрев",
+          "порядок внесения",
+          "раствор"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [
+              "solutions"
+            ],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 21"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0025",
+            "section_title": "Глава 21",
+            "chunk_id": "c00652",
+            "chunk_index": 8
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00017"
+      }
+    },
+    {
+      "batch_rank": 36,
+      "candidate_id": "cand_00018",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "NonAqueousSolutionsBlock",
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "В фарфоровую чашку отвешивают 20,0 г касторового масла и растворяют в нем 1,0 г камфоры, можно при нагревании (до 40 °С) на водяной бане.",
+        "normalized_rule_text": "в фарфоровую чашку отвешивают 20 0 г касторового масла и растворяют в нем 1 0 г камфоры можно при нагревании до 40 с на водяной бане",
+        "category_primary": "dissolution",
+        "categories": [
+          "dissolution",
+          "heating"
+        ],
+        "score": 9,
+        "matched_cues": [
+          "водяная баня",
+          "нагрев",
+          "раствор"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [
+              "oil"
+            ],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 19"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0022",
+            "section_title": "Глава 19",
+            "chunk_id": "c00598",
+            "chunk_index": 21
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00018"
+      }
+    },
+    {
+      "batch_rank": 37,
+      "candidate_id": "cand_00019",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Лекарственные вещества растворяют в расплавленной основе в фарфоровой чашке при осторожном нагревании на водяной бане.",
+        "normalized_rule_text": "лекарственные вещества растворяют в расплавленной основе в фарфоровой чашке при осторожном нагревании на водяной бане",
+        "category_primary": "dissolution",
+        "categories": [
+          "dissolution",
+          "heating"
+        ],
+        "score": 9,
+        "matched_cues": [
+          "водяная баня",
+          "нагрев",
+          "раствор"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 22"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0026",
+            "section_title": "Глава 22",
+            "chunk_id": "c00707",
+            "chunk_index": 47
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00019"
+      }
+    },
+    {
+      "batch_rank": 38,
+      "candidate_id": "cand_00021",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "WaterSolutionsBlock",
+        "InfusionDecoctionBlock",
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "По истечении указанного выше времени инфундирку снимают с водяной бани и охлаждают при комнатной температуре ( настои – 45, отвары – 10 минут ), после чего процеживают в мерный цилиндр ( при помощи пресс-цидилки ) через двойной слой марли и ватный тампон в устье воронки, отжимают остаток растительного материала и добавляют воду ( через тот же растительный материал ) до предписанного объёма вытяжки.",
+        "normalized_rule_text": "по истечении указанного выше времени инфундирку снимают с водяной бани и охлаждают при комнатной температуре настои 45 отвары 10 минут после чего процеживают в мерный цилиндр при помощи пресс цидилки через двойной слой марли и ватный тампон в устье воронки отжимают остаток растительного материала и добавляют воду через тот же растительный материал до предписанного объёма вытяжки",
+        "category_primary": "heating",
+        "categories": [
+          "filtration",
+          "heating",
+          "mixing_order"
+        ],
+        "score": 9,
+        "matched_cues": [
+          "водяная баня",
+          "добавление",
+          "порядок внесения",
+          "процеживание"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [
+              "infusions_decoctions"
+            ],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 20"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0023",
+            "section_title": "Глава 20",
+            "chunk_id": "c00622",
+            "chunk_index": 20
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00021"
+      }
+    },
+    {
+      "batch_rank": 39,
+      "candidate_id": "cand_00020",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "резание, измельчение, растирание, преобразование в порох, раздавливание, просеивание, процеживание, снятие пены, выпаривание, дистилляция.",
+        "normalized_rule_text": "резание измельчение растирание преобразование в порох раздавливание просеивание процеживание снятие пены выпаривание дистилляция",
+        "category_primary": "filtration",
+        "categories": [
+          "filtration",
+          "trituration"
+        ],
+        "score": 9,
+        "matched_cues": [
+          "измельчение",
+          "процеживание",
+          "растирание"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 2"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0003",
+            "section_title": "Глава 2",
+            "chunk_id": "c00046",
+            "chunk_index": 11
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00020"
+      }
+    },
+    {
+      "batch_rank": 40,
+      "candidate_id": "cand_00022",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "В ступке измельчают 3,0 г стрептоцида с 15 каплями спирта 95 % (труднопорошкуемое вещество), добавляют 2,0 г серы, 3,0 г глицерина и растирают до однородной кашицы.",
+        "normalized_rule_text": "в ступке измельчают 3 0 г стрептоцида с 15 каплями спирта 95 труднопорошкуемое вещество добавляют 2 0 г серы 3 0 г глицерина и растирают до однородной кашицы",
+        "category_primary": "mixing_order",
+        "categories": [
+          "mixing_order",
+          "trituration"
+        ],
+        "score": 9,
+        "matched_cues": [
+          "добавление",
+          "измельчение",
+          "растирание",
+          "ступка"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 18"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0021",
+            "section_title": "Глава 18",
+            "chunk_id": "c00573",
+            "chunk_index": 20
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00022"
+      }
+    },
+    {
+      "batch_rank": 41,
+      "candidate_id": "cand_00023",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "WaterSolutionsBlock",
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Мазь для носа Колларгол (3,0г) растирают в ступке с водой (20 капель) и оставляют на несколько минут, потом добавляют ланолин водный (2,0г) и перемешивают до поглощения раствора, после чего добавляют вазелин и смешивают до однородности.",
+        "normalized_rule_text": "мазь для носа колларгол 3 0г растирают в ступке с водой 20 капель и оставляют на несколько минут потом добавляют ланолин водный 2 0г и перемешивают до поглощения раствора после чего добавляют вазелин и смешивают до однородности",
+        "category_primary": "mixing_order",
+        "categories": [
+          "mixing_order",
+          "trituration"
+        ],
+        "score": 9,
+        "matched_cues": [
+          "добавление",
+          "перемешивание",
+          "порядок внесения",
+          "растирание",
+          "ступка"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [
+              "solutions",
+              "ointments"
+            ],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 22"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0026",
+            "section_title": "Глава 22",
+            "chunk_id": "c00720",
+            "chunk_index": 60
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00023"
+      }
+    },
+    {
+      "batch_rank": 42,
+      "candidate_id": "cand_00024",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "Первую часть помещают в фарфоровую ступку и перемешивают несколько раз для затирания пор ступки, затем добавляют исходное вещество и растирают тщательно с усилием в течение 6 минут, после чего в течение 4 минут соскабливают и перемешивают, опять растирают 6 минут и снова соскабливают в течение 4 минут.",
+        "normalized_rule_text": "первую часть помещают в фарфоровую ступку и перемешивают несколько раз для затирания пор ступки затем добавляют исходное вещество и растирают тщательно с усилием в течение 6 минут после чего в течение 4 минут соскабливают и перемешивают опять растирают 6 минут и снова соскабливают в течение 4 минут",
+        "category_primary": "mixing_order",
+        "categories": [
+          "mixing_order",
+          "trituration"
+        ],
+        "score": 9,
+        "matched_cues": [
+          "добавление",
+          "перемешивание",
+          "порядок внесения",
+          "растирание",
+          "ступка"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 31"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0033",
+            "section_title": "Глава 31",
+            "chunk_id": "c00981",
+            "chunk_index": 26
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00024"
+      }
+    },
+    {
+      "batch_rank": 43,
+      "candidate_id": "cand_00025",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "По 1 столовой ложке 3 раза в день В этом случае 2,0 г висмута нитрата основного тщательно растирают в ступке, затем добавляют 1 мл мятной воды (по правилу Деря-гина), растирают, добавляют 5- или 10-кратное количество мятной воды (около 10 мл), перемешивают и оставляют в покое на 2—3 минуты, чтобы более крупные частицы осели, а тонкую смесь сливают во флакон для отпуска.",
+        "normalized_rule_text": "по 1 столовой ложке 3 раза в день в этом случае 2 0 г висмута нитрата основного тщательно растирают в ступке затем добавляют 1 мл мятной воды по правилу деря гина растирают добавляют 5 или 10 кратное количество мятной воды около 10 мл перемешивают и оставляют в покое на 2 3 минуты чтобы более крупные частицы осели а тонкую смесь сливают во флакон для отпуска",
+        "category_primary": "mixing_order",
+        "categories": [
+          "mixing_order",
+          "trituration"
+        ],
+        "score": 9,
+        "matched_cues": [
+          "добавление",
+          "перемешивание",
+          "порядок внесения",
+          "растирание",
+          "ступка"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 18"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0021",
+            "section_title": "Глава 18",
+            "chunk_id": "c00568",
+            "chunk_index": 15
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00025"
+      }
+    },
+    {
+      "batch_rank": 44,
+      "candidate_id": "cand_00026",
+      "review_priority": "P2",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": true,
+      "candidate": {
+        "rule_text": "ьно растирают и к полученной смеси при перемешивании добавляют 0,2 г папаверина гидрохлорида, смешивают несколько раз, снимая порошок со стенок ступки и пестика, затем добавляют оставшееся количество растертого сахара и снова хорошо перемешивают.",
+        "normalized_rule_text": "ьно растирают и к полученной смеси при перемешивании добавляют 0 2 г папаверина гидрохлорида смешивают несколько раз снимая порошок со стенок ступки и пестика затем добавляют оставшееся количество растертого сахара и снова хорошо перемешивают",
+        "category_primary": "mixing_order",
+        "categories": [
+          "mixing_order",
+          "trituration"
+        ],
+        "score": 9,
+        "matched_cues": [
+          "добавление",
+          "перемешивание",
+          "порядок внесения",
+          "растирание",
+          "ступка"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 11"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0013",
+            "section_title": "Глава 11",
+            "chunk_id": "c00373",
+            "chunk_index": 42
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00026"
+      }
+    },
+    {
+      "batch_rank": 45,
+      "candidate_id": "cand_00032",
+      "review_priority": "P3",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": false,
+      "candidate": {
+        "rule_text": "В данном случае в ступке растирают протаргол с 6—8 каплями глицерина, после чего его растворяют в воде (0,9 мл).",
+        "normalized_rule_text": "в данном случае в ступке растирают протаргол с 6 8 каплями глицерина после чего его растворяют в воде 0 9 мл",
+        "category_primary": "dissolution",
+        "categories": [
+          "dissolution",
+          "mixing_order",
+          "trituration"
+        ],
+        "score": 8,
+        "matched_cues": [
+          "порядок внесения",
+          "раствор",
+          "растирание",
+          "ступка"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 22"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0026",
+            "section_title": "Глава 22",
+            "chunk_id": "c00719",
+            "chunk_index": 59
+          },
+          {
+            "section_id": "s0026",
+            "section_title": "Глава 22",
+            "chunk_id": "c00720",
+            "chunk_index": 60
+          }
+        ],
+        "occurrences": 2,
+        "id": "cand_00032"
+      }
+    },
+    {
+      "batch_rank": 46,
+      "candidate_id": "cand_00044",
+      "review_priority": "P3",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock"
+      ],
+      "requires_regression_tests": false,
+      "candidate": {
+        "rule_text": "Остаток снова растирают, добавляют 5—10-кратное количество воды, перемешивают, оставляют в покое, а затем сливают во флакон для отпуска.",
+        "normalized_rule_text": "остаток снова растирают добавляют 5 10 кратное количество воды перемешивают оставляют в покое а затем сливают во флакон для отпуска",
+        "category_primary": "mixing_order",
+        "categories": [
+          "mixing_order",
+          "trituration"
+        ],
+        "score": 8,
+        "matched_cues": [
+          "добавление",
+          "перемешивание",
+          "порядок внесения",
+          "растирание"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 18"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0021",
+            "section_title": "Глава 18",
+            "chunk_id": "c00568",
+            "chunk_index": 15
+          },
+          {
+            "section_id": "s0021",
+            "section_title": "Глава 18",
+            "chunk_id": "c00569",
+            "chunk_index": 16
+          }
+        ],
+        "occurrences": 2,
+        "id": "cand_00044"
+      }
+    },
+    {
+      "batch_rank": 47,
+      "candidate_id": "cand_00050",
+      "review_priority": "P3",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock",
+        "PpkRenderer"
+      ],
+      "requires_regression_tests": false,
+      "candidate": {
+        "rule_text": "Важнейшей составной частью технологического процесса всех инъекционных лекарственных форм является организация работы в асептических условиях и стерилизация.",
+        "normalized_rule_text": "важнейшей составной частью технологического процесса всех инъекционных лекарственных форм является организация работы в асептических условиях и стерилизация",
+        "category_primary": "sterility",
+        "categories": [
+          "sterility"
+        ],
+        "score": 8,
+        "matched_cues": [
+          "асептика",
+          "стерильность"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 25"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0030",
+            "section_title": "Глава 25",
+            "chunk_id": "c00820",
+            "chunk_index": 7
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00050"
+      }
+    },
+    {
+      "batch_rank": 48,
+      "candidate_id": "cand_00051",
+      "review_priority": "P3",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock",
+        "PpkRenderer"
+      ],
+      "requires_regression_tests": false,
+      "candidate": {
+        "rule_text": "Встраивается в проем стены, разделяющей асептический блок и стерилизационную комнату.",
+        "normalized_rule_text": "встраивается в проем стены разделяющей асептический блок и стерилизационную комнату",
+        "category_primary": "sterility",
+        "categories": [
+          "sterility"
+        ],
+        "score": 8,
+        "matched_cues": [
+          "асептика",
+          "стерильность"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 25"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0030",
+            "section_title": "Глава 25",
+            "chunk_id": "c00859",
+            "chunk_index": 46
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00051"
+      }
+    },
+    {
+      "batch_rank": 49,
+      "candidate_id": "cand_00052",
+      "review_priority": "P3",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "OphthalmicDropsBlock",
+        "DropsBlock",
+        "BaseTechnologyBlock",
+        "PpkRenderer"
+      ],
+      "requires_regression_tests": false,
+      "candidate": {
+        "rule_text": "Глазные капли со стрептомицином готовят в асептических условиях на стерильном изотоническом растворе натрия хлорида в концентрации 10000—100000 ЕД стрептомицина на 1 мл раствора.",
+        "normalized_rule_text": "глазные капли со стрептомицином готовят в асептических условиях на стерильном изотоническом растворе натрия хлорида в концентрации 10000 100000 ед стрептомицина на 1 мл раствора",
+        "category_primary": "sterility",
+        "categories": [
+          "sterility"
+        ],
+        "score": 8,
+        "matched_cues": [
+          "асептика",
+          "стерильность"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [
+              "solutions",
+              "drops"
+            ],
+            "solvents": [],
+            "routes": [
+              "ophthalmic"
+            ],
+            "substances": [],
+            "section_hints": [
+              "Глава 25"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0030",
+            "section_title": "Глава 25",
+            "chunk_id": "c00876",
+            "chunk_index": 63
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00052"
+      }
+    },
+    {
+      "batch_rank": 50,
+      "candidate_id": "cand_00053",
+      "review_priority": "P3",
+      "validation_status": "pending_review",
+      "review_result": null,
+      "reviewer_notes": "",
+      "engine_target_suggestion": [
+        "BaseTechnologyBlock",
+        "PpkRenderer"
+      ],
+      "requires_regression_tests": false,
+      "candidate": {
+        "rule_text": "Для промывания ран Сначала готовят стерильный изотонический раствор натрия хлорида, в котором растворяют 0,12 г бензилпенициллина натриевой соли.",
+        "normalized_rule_text": "для промывания ран сначала готовят стерильный изотонический раствор натрия хлорида в котором растворяют 0 12 г бензилпенициллина натриевой соли",
+        "category_primary": "sterility",
+        "categories": [
+          "dissolution",
+          "mixing_order",
+          "sterility"
+        ],
+        "score": 8,
+        "matched_cues": [
+          "порядок внесения",
+          "раствор",
+          "стерильность"
+        ],
+        "status": "candidate",
+        "suggested": {
+          "severity": "info_candidate",
+          "applies_to": {
+            "forms": [
+              "solutions"
+            ],
+            "solvents": [],
+            "routes": [],
+            "substances": [],
+            "section_hints": [
+              "Глава 25"
+            ]
+          },
+          "conflict_policy": "append_as_hint_after_validation"
+        },
+        "sources": [
+          {
+            "section_id": "s0030",
+            "section_title": "Глава 25",
+            "chunk_id": "c00873",
+            "chunk_index": 60
+          }
+        ],
+        "occurrences": 1,
+        "id": "cand_00053"
+      }
+    }
+  ]
+}

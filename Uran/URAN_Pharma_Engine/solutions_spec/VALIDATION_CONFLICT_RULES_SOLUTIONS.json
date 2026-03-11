@@ -1,0 +1,449 @@
+{
+  "version": "1.0",
+  "description": "Validation and conflict detection rules for pharmaceutical solutions engine in URAN Pharma",
+  "severityLevels": [
+    "info",
+    "warning",
+    "critical"
+  ],
+  "rules": [
+    {
+      "ruleKey": "solution_treated_as_solid",
+      "category": "ingredient_role_conflict",
+      "severity": "critical",
+      "condition": "ingredient.presentationKind in ['solution', 'standardSolution', 'concentrate'] AND ingredient included in solids branch",
+      "message": ".",
+      "engineAction": "block_kvo_for_that_ingredient_and_raise_conflict",
+      "notes": [
+        "Ready solution, standard solution, and concentrate must remain liquid objects"
+      ]
+    },
+    {
+      "ruleKey": "kvo_applied_to_ready_solution",
+      "category": "kvo_conflict",
+      "severity": "critical",
+      "condition": "ingredient.presentationKind in ['solution', 'standardSolution', 'concentrate'] AND kvo applied",
+      "message": ".",
+      "engineAction": "disable_kvo_for_that_ingredient_and_raise_conflict",
+      "notes": [
+        "KVO is only for valid dry-substance branch"
+      ]
+    },
+    {
+      "ruleKey": "multiple_ad_conflict",
+      "category": "ad_conflict",
+      "severity": "critical",
+      "condition": "count(ad_markers) > 1",
+      "message": "ad/q.s. .",
+      "engineAction": "stop_full_deterministic_resolution",
+      "notes": [
+        "Do not guess which ad marker is primary"
+      ]
+    },
+    {
+      "ruleKey": "fixed_water_vs_ad_conflict",
+      "category": "ad_conflict",
+      "severity": "critical",
+      "condition": "explicit_fixed_water_present AND water_ad_present AND no_staged_resolution_rule",
+      "message": "' ad .",
+      "engineAction": "raise_conflict_and_require_resolution",
+      "notes": [
+        "Do not silently double count water"
+      ]
+    },
+    {
+      "ruleKey": "target_volume_missing",
+      "category": "target_conflict",
+      "severity": "critical",
+      "condition": "final_volume_required_but_not_resolved",
+      "message": "' .",
+      "engineAction": "stop_final_ad_calculation",
+      "notes": [
+        "Without target volume ad path cannot be safely completed"
+      ]
+    },
+    {
+      "ruleKey": "target_inferred_by_fallback",
+      "category": "target_conflict",
+      "severity": "warning",
+      "condition": "target volume inferred only by largest-liquid fallback",
+      "message": "' .",
+      "engineAction": "allow_partial_resolution_with_warning",
+      "notes": [
+        "Should not be considered exact"
+      ]
+    },
+    {
+      "ruleKey": "impossible_formulation",
+      "category": "volume_conflict",
+      "severity": "critical",
+      "condition": "sum_counted_liquids > target_volume",
+      "message": "'.",
+      "engineAction": "stop_final_volume_resolution",
+      "notes": [
+        "This is a physical impossibility for ordinary ad logic"
+      ]
+    },
+    {
+      "ruleKey": "negative_water_result",
+      "category": "volume_conflict",
+      "severity": "critical",
+      "condition": "calculated_water_to_add < 0",
+      "message": "' ' .",
+      "engineAction": "stop_and_mark_impossible",
+      "notes": [
+        "Equivalent to impossible formulation in ad path"
+      ]
+    },
+    {
+      "ruleKey": "zero_water_with_unexplained_ad",
+      "category": "volume_conflict",
+      "severity": "warning",
+      "condition": "calculated_water_to_add == 0 AND ad_path_used AND no_explicit_explanation",
+      "message": "ad ; .",
+      "engineAction": "allow_with_warning",
+      "notes": []
+    },
+    {
+      "ruleKey": "ingredient_form_conflict",
+      "category": "ingredient_role_conflict",
+      "severity": "warning",
+      "condition": "ingredient_name_suggests_solution_but_metadata_says_solid OR reverse",
+      "message": ".",
+      "engineAction": "keep_trace_and_require_preferred_source_priority",
+      "notes": [
+        "Use source priority, do not silently ignore the mismatch"
+      ]
+    },
+    {
+      "ruleKey": "missing_behavior_profile",
+      "category": "behavior_conflict",
+      "severity": "warning",
+      "condition": "ingredient_behavior_profile_missing_or_partial",
+      "message": ".",
+      "engineAction": "calculate_only_safe_subset",
+      "notes": [
+        "Do not invent order-sensitive or solvent-sensitive technology"
+      ]
+    },
+    {
+      "ruleKey": "requires_separate_dissolution_unhandled",
+      "category": "technology_conflict",
+      "severity": "critical",
+      "condition": "ingredient.requiresSeparateDissolution == true AND no_separate_stage_created",
+      "message": ", .",
+      "engineAction": "block_technology_rendering_as_complete",
+      "notes": [
+        "This is one of the main recipe-breaker cases"
+      ]
+    },
+    {
+      "ruleKey": "special_dissolution_case_ignored",
+      "category": "technology_conflict",
+      "severity": "critical",
+      "condition": "special_dissolution_case_found AND generic_solution_path_used",
+      "message": ", .",
+      "engineAction": "override_generic_path_or_stop_with_conflict",
+      "notes": [
+        "Examples: Protargolum, Iodum, Mentholum, Camphora, Acidum boricum"
+      ]
+    },
+    {
+      "ruleKey": "co_solvent_required_but_missing",
+      "category": "solubility_conflict",
+      "severity": "critical",
+      "condition": "ingredient.requiresCoSolvent == true AND selected_branch_has_no_co_solvent",
+      "message": ", .",
+      "engineAction": "block_simple_true_solution_resolution",
+      "notes": [
+        "Do not force plain aqueous solution path"
+      ]
+    },
+    {
+      "ruleKey": "blocked_aqueous_true_solution_used",
+      "category": "solubility_conflict",
+      "severity": "critical",
+      "condition": "solubility.solutionGate in ['block_simple_aqueous_true_solution', 'block_aqueous_true_solution'] AND aqueous_true_solution_path_selected",
+      "message": ".",
+      "engineAction": "switch_branch_or_stop",
+      "notes": []
+    },
+    {
+      "ruleKey": "branch_not_allowed_for_substance",
+      "category": "solubility_conflict",
+      "severity": "critical",
+      "condition": "selected_solution_branch NOT IN allowedSolutionBranches_for_substance",
+      "message": ".",
+      "engineAction": "stop_full_resolution_or_require_reference",
+      "notes": []
+    },
+    {
+      "ruleKey": "branch_not_allowed_for_route",
+      "category": "route_conflict",
+      "severity": "critical",
+      "condition": "selected_solution_branch NOT IN allowedSolutionBranches_for_route",
+      "message": ".",
+      "engineAction": "stop_or_require_route_specific_reference",
+      "notes": [
+        "Especially important for ophthalmic, nasal, inhalation, injection"
+      ]
+    },
+    {
+      "ruleKey": "route_policy_conflict",
+      "category": "route_conflict",
+      "severity": "warning",
+      "condition": "route_specific_policy_has_unresolved_restrictions",
+      "message": ".",
+      "engineAction": "allow_partial_resolution_with_warning",
+      "notes": []
+    },
+    {
+      "ruleKey": "sterility_required_but_not_supported",
+      "category": "route_conflict",
+      "severity": "critical",
+      "condition": "route_requires_sterility AND sterile_path_not_available",
+      "message": ", .",
+      "engineAction": "block_complete_claim",
+      "notes": [
+        "Critical for ophthalmic and parenteral routes"
+      ]
+    },
+    {
+      "ruleKey": "isotonicity_required_but_not_checked",
+      "category": "route_conflict",
+      "severity": "warning",
+      "condition": "route_requires_isotonicity_check AND isotonicity_check_not_available",
+      "message": ", .",
+      "engineAction": "allow_with_warning",
+      "notes": []
+    },
+    {
+      "ruleKey": "ph_check_required_but_missing",
+      "category": "route_conflict",
+      "severity": "warning",
+      "condition": "route_requires_pH_check AND pH_check_not_available",
+      "message": "pH, .",
+      "engineAction": "allow_with_warning",
+      "notes": []
+    },
+    {
+      "ruleKey": "incompatible_solvent_phases",
+      "category": "phase_conflict",
+      "severity": "critical",
+      "condition": "phase_compatibility_validator_reports_incompatibility",
+      "message": ".",
+      "engineAction": "block_true_solution_classification",
+      "notes": [
+        "Example: water + oil without suitable system"
+      ]
+    },
+    {
+      "ruleKey": "volatile_component_heating_conflict",
+      "category": "technology_conflict",
+      "severity": "critical",
+      "condition": "volatile_component_present AND heating_step_inserted",
+      "message": ".",
+      "engineAction": "remove_heating_step_and_raise_conflict",
+      "notes": []
+    },
+    {
+      "ruleKey": "no_heating_component_conflict",
+      "category": "technology_conflict",
+      "severity": "critical",
+      "condition": "component.requiresNoHeating == true AND heating_step_inserted",
+      "message": ", , .",
+      "engineAction": "remove_heating_step_or_stop",
+      "notes": []
+    },
+    {
+      "ruleKey": "late_addition_component_ignored",
+      "category": "technology_conflict",
+      "severity": "warning",
+      "condition": "component.prefersAddAtEnd == true AND technology_order_places_it_early",
+      "message": ", .",
+      "engineAction": "reorder_technology_if_possible",
+      "notes": [
+        "Typical for tinctures, aromatic waters, volatile components"
+      ]
+    },
+    {
+      "ruleKey": "filtration_policy_conflict",
+      "category": "technology_conflict",
+      "severity": "warning",
+      "condition": "filtration_caution_present AND routine_filtration_inserted",
+      "message": ".",
+      "engineAction": "downgrade_filtration_to_if_needed",
+      "notes": []
+    },
+    {
+      "ruleKey": "true_solution_wrong_shake_label",
+      "category": "label_conflict",
+      "severity": "warning",
+      "condition": "classification_is_true_solution AND no_shake_trigger_present AND shake_label_added",
+      "message": "××.",
+      "engineAction": "remove_shake_label",
+      "notes": []
+    },
+    {
+      "ruleKey": "missing_shake_when_required",
+      "category": "label_conflict",
+      "severity": "warning",
+      "condition": "shake_trigger_present AND shake_label_missing",
+      "message": ".",
+      "engineAction": "add_shake_label",
+      "notes": []
+    },
+    {
+      "ruleKey": "dark_glass_missing_when_required",
+      "category": "packaging_conflict",
+      "severity": "warning",
+      "condition": "light_sensitive_component_present AND dark_glass_not_assigned",
+      "message": ".",
+      "engineAction": "upgrade_packaging_to_dark_glass",
+      "notes": []
+    },
+    {
+      "ruleKey": "cool_storage_missing_when_required",
+      "category": "packaging_conflict",
+      "severity": "warning",
+      "condition": "cool_storage_required_by_any_component AND cool_storage_label_missing",
+      "message": ", .",
+      "engineAction": "add_cool_storage_label",
+      "notes": []
+    },
+    {
+      "ruleKey": "tight_closure_missing_for_volatile_system",
+      "category": "packaging_conflict",
+      "severity": "warning",
+      "condition": "volatile_component_present AND tight_closure_not_assigned",
+      "message": ".",
+      "engineAction": "upgrade_packaging_to_tight_closure",
+      "notes": []
+    },
+    {
+      "ruleKey": "stock_qc_text_leak",
+      "category": "ppc_render_conflict",
+      "severity": "critical",
+      "condition": "final_preparation_is_not_stock_concentrate AND qc_text_mentions_stock_concentrate_control",
+      "message": ".",
+      "engineAction": "replace_with_final_preparation_qc",
+      "notes": [
+        "This is one of the ugliest rendering bugs"
+      ]
+    },
+    {
+      "ruleKey": "duplicate_section_render",
+      "category": "ppc_render_conflict",
+      "severity": "warning",
+      "condition": "same_ppc_section_rendered_multiple_times",
+      "message": ".",
+      "engineAction": "deduplicate_sections",
+      "notes": []
+    },
+    {
+      "ruleKey": "classification_phrase_conflict",
+      "category": "ppc_render_conflict",
+      "severity": "warning",
+      "condition": "ppc_text_contains_phrases_from_wrong_classification",
+      "message": ", .",
+      "engineAction": "re-render_phrase_block_by_classification_policy",
+      "notes": []
+    },
+    {
+      "ruleKey": "route_label_conflict",
+      "category": "label_conflict",
+      "severity": "critical",
+      "condition": "route_is_oral_and_external_label_present OR route_is_external_and_internal_label_present OR route_specific_label_mismatch",
+      "message": ".",
+      "engineAction": "replace_labels_by_route_policy",
+      "notes": []
+    },
+    {
+      "ruleKey": "dose_control_required_but_unresolved",
+      "category": "dose_conflict",
+      "severity": "warning",
+      "condition": "safety_profile_requires_dose_control AND signa_not_parseable",
+      "message": "- Signa.",
+      "engineAction": "keep_warning_and_do_not_mark_as_fully_validated",
+      "notes": []
+    },
+    {
+      "ruleKey": "dose_count_non_integer_unacknowledged",
+      "category": "dose_conflict",
+      "severity": "info",
+      "condition": "doses_per_container_non_integer AND no_approximate_note_rendered",
+      "message": "' , .",
+      "engineAction": "mark_dose_count_as_approximate",
+      "notes": []
+    },
+    {
+      "ruleKey": "unresolved_rule_hidden",
+      "category": "transparency_conflict",
+      "severity": "critical",
+      "condition": "unresolved_rule_exists AND final_status_marked_as_exact_without_warning",
+      "message": ", .",
+      "engineAction": "downgrade_confidence_and_render_warning",
+      "notes": []
+    },
+    {
+      "ruleKey": "reference_required_but_invented",
+      "category": "transparency_conflict",
+      "severity": "critical",
+      "condition": "special_case_requires_reference AND engine_generated_specific_protocol_without_reference",
+      "message": ", .",
+      "engineAction": "remove_invented_protocol_and_raise_conflict",
+      "notes": []
+    },
+    {
+      "ruleKey": "unsupported_route_claimed_complete",
+      "category": "transparency_conflict",
+      "severity": "critical",
+      "condition": "route_is_strict_special_route AND no_special_module_exists AND output_marked_complete",
+      "message": ".",
+      "engineAction": "downgrade_to_partial_or_block",
+      "notes": [
+        "Important for ophthalmic, inhalation, injection"
+      ]
+    },
+    {
+      "ruleKey": "missing_patient_name",
+      "category": "metadata_conflict",
+      "severity": "info",
+      "condition": "patient_name_required_by_ppc_format AND patient_name_missing",
+      "message": ".",
+      "engineAction": "render_warning_only",
+      "notes": []
+    },
+    {
+      "ruleKey": "missing_recipe_number",
+      "category": "metadata_conflict",
+      "severity": "info",
+      "condition": "recipe_number_required_by_ppc_format AND recipe_number_missing",
+      "message": ".",
+      "engineAction": "render_warning_only",
+      "notes": []
+    }
+  ],
+  "postValidationPolicies": [
+    {
+      "policyKey": "exact_result_policy",
+      "condition": "no_critical_conflicts AND no_unresolved_rules AND no_fallback_target_inference",
+      "finalConfidence": "exact"
+    },
+    {
+      "policyKey": "approximate_result_policy",
+      "condition": "no_critical_conflicts AND warnings_present",
+      "finalConfidence": "approximate"
+    },
+    {
+      "policyKey": "heuristic_result_policy",
+      "condition": "fallback_inference_used OR partial_reference_missing",
+      "finalConfidence": "heuristic"
+    },
+    {
+      "policyKey": "blocked_result_policy",
+      "condition": "any_critical_conflict_present_that_blocks_safe_resolution",
+      "finalConfidence": "blocked"
+    }
+  ]
+}
