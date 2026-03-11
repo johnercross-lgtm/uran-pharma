@@ -1,9 +1,5 @@
 name: Solution Engine Quality Gate
 
-permissions:
-  contents: read
-  statuses: write
-
 on:
   pull_request:
     paths:
@@ -54,32 +50,3 @@ jobs:
           chmod +x scripts/run_solution_quality_gate.sh
           chmod +x scripts/run_solution_breaker_gate.sh
           scripts/run_solution_quality_gate.sh --skip-build
-
-      - name: Publish required status context
-        if: always()
-        env:
-          GH_TOKEN: ${{ github.token }}
-          REPO: ${{ github.repository }}
-          SHA: ${{ github.sha }}
-          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          JOB_STATUS: ${{ job.status }}
-        run: |
-          if [[ "$JOB_STATUS" == "success" ]]; then
-            state="success"
-            desc="quality gate passed"
-          else
-            state="failure"
-            desc="quality gate failed"
-          fi
-
-          payload=$(
-            cat <<JSON
-{"state":"$state","context":"Solution Engine Quality Gate / quality-gate","description":"$desc","target_url":"$RUN_URL"}
-JSON
-          )
-
-          curl -sS -X POST \
-            -H "Authorization: Bearer $GH_TOKEN" \
-            -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/repos/$REPO/statuses/$SHA" \
-            -d "$payload"
